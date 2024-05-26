@@ -1,8 +1,8 @@
 @extends('layouts.logout')
 
 @section('content')
-<!-- 適切なURLを入力してください -->
-{!! Form::open(['url' => '/〇〇']) !!}
+<!-- viewファイルにあるフォームファサードで送るデータの記述先の記載。 -->
+{!! Form::open(['url' => '/author/create']) !!}
 
 <h2>新規ユーザー登録</h2>
 
