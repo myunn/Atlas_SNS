@@ -12,5 +12,8 @@ class AuthorsTableSeeder extends Seeder
     public function run()
     {
         //
+        DB::table('authors')->insert([
+            [''],
+        ]);
     }
 }

@@ -18,6 +18,11 @@
 
 //Auth::routes();
 
+// 1つのルートに対してミドルウェアを指定する場合
+Route::get('/',function(){
+
+})->middleware('auth');
+
 
 //ログアウト中のページ
 Route::get('/login', 'Auth\LoginController@login');

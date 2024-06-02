@@ -54,7 +54,7 @@ class RegisterController extends Controller
 
             // セッションを使用してユーザー名を表示させる。
             $request->session()->put('username', $username);
-            return redirect('added');
+            return redirect('added')->with('username', $input);
         }
         return view('auth.register');
     }
