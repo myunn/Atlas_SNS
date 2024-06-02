@@ -11,7 +11,7 @@ class AuthorsTableSeeder extends Seeder
      */
     public function run()
     {
-        //
+        //下記にコード記述？
         DB::table('authors')->insert([
             [''],
         ]);

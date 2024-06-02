@@ -2,7 +2,7 @@
 
 @section('content')
 <!-- viewファイルにあるフォームファサードで送るデータの記述先の記載。 -->
-{!! Form::open(['url' => '/author/create']) !!}
+{!! Form::open(['url' => '/auth/top']) !!}
 
 <p>AtlasSNSへようこそ</p>
 

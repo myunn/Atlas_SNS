@@ -2,7 +2,7 @@
 
 @section('content')
 <!-- viewファイルにあるフォームファサードで送るデータの記述先の記載。 -->
-{!! Form::open(['url' => '/author/create']) !!}
+{!! Form::open(['url' => '/auth/added']) !!}
 
 <h2>新規ユーザー登録</h2>
 

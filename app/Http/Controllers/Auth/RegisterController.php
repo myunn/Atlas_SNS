@@ -46,20 +46,27 @@ class RegisterController extends Controller
             $mail = $request->input('mail');
             $password = $request->input('password');
 
+            // 記述：ユーザー情報作成
+            // メモ：bcryptが暗号化処理の記述
             User::create([
                 'username' => $username,
                 'mail' => $mail,
                 'password' => bcrypt($password),
             ]);
 
-            // セッションを使用してユーザー名を表示させる。
+            // 記述：セッションを使用してユーザー名を表示させる記述
             $request->session()->put('username', $username);
             return redirect('added')->with('username', $input);
         }
         return view('auth.register');
     }
 
-    public function added(){
-        return view('auth.added');
+    // 記述：下記（）に$idと追記
+    // これは違う？public function added($id){
+        // $user = user::where('id',$id)->first();
+        // return view('auth.added',['user'=>$user]);
+        public function added(){
+        $user = user::where('id',$id)->first();
+        return view('auth.added',['user'=>$user]);
     }
 }
