@@ -2,7 +2,7 @@
 
 @section('content')
 <!-- viewファイルにあるフォームファサードで送るデータの記述先の記載。 -->
-{!! Form::open(['url' => '/auth/added']) !!}
+{!! Form::open(['url' => '/register']) !!}
 
 <h2>新規ユーザー登録</h2>
 
@@ -23,6 +23,17 @@
 <p><a href="/login">ログイン画面へ戻る</a></p>
 
 {!! Form::close() !!}
+
+<!-- 記載：バリデーションのエラー表示させるコード？ -->
+@if($errors->any())
+    <div class="alert alert-danger">
+      <ul>
+        @foreach($errors->all() as $error)
+        <li>{{ $error }}</li>
+        @endforeach
+      </ul>
+    </div>
+@endif
 
 
 @endsection

@@ -6,6 +6,7 @@ use App\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class RegisterController extends Controller
 {
@@ -38,7 +39,7 @@ class RegisterController extends Controller
     {
         $this->middleware('guest');
     }
-
+//
     public function register(Request $request){
         if($request->isMethod('post')){
 
@@ -56,9 +57,20 @@ class RegisterController extends Controller
 
             // 記述：セッションを使用してユーザー名を表示させる記述
             $request->session()->put('username', $username);
-            return redirect('added')->with('username', $input);
+            return redirect('added');
         }
         return view('auth.register');
+    }
+
+// 記載：バリデーション機能の実装(新規登録)
+    public function Autors(Request $request)
+    {
+        $request->validate([
+            'username' => 'required|min:2|max:12',
+            'mail' => 'required|unique:authors,min5|max40|string|email',
+            'Password' => 'required|alpha_num|min:8|max:20',
+            'Password_confirmation' => 'required|alpha_num|min:8|max:20|password:confirmation'
+        ]);
     }
 
     // 記述：下記（）に$idと追記
@@ -66,7 +78,7 @@ class RegisterController extends Controller
         // $user = user::where('id',$id)->first();
         // return view('auth.added',['user'=>$user]);
         public function added(){
-        $user = user::where('id',$id)->first();
-        return view('auth.added',['user'=>$user]);
+        // $user = user::where('id',$id)->first();
+        return view('auth.added');
     }
 }
