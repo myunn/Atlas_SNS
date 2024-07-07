@@ -39,8 +39,35 @@ class RegisterController extends Controller
     {
         $this->middleware('guest');
     }
-//
-    public function register(Request $request){
+
+    public function register(Request $request){{
+
+        // 記載：新規登録情報のバリデーション機能実装
+        $request->validate([
+            'username' => 'required|min:2|max:12',
+            'mail' => 'required|unique:authors,min5|max40|string|mail',
+            'password' => 'required|alpha_num|min:8|max:20',
+            'password_confirmation' => 'required|alpha_num|min:8|max:20|password:confirmation'
+        ]);
+
+        $username = $request->input('username');
+            $mail = $request->input('mail');
+            $password = bcrypt($result->input('password'));
+
+        User::create([
+            'username' => $username,
+            'mail' => $mail,
+            'password' => $password,
+        ]);
+
+        return redirect('/added')->with('username',$username);
+        }
+
+        public function added(){
+            $value = session('username');
+            return view('authadded',compact('value'));
+    }
+
         if($request->isMethod('post')){
 
             $username = $request->input('username');
@@ -57,20 +84,11 @@ class RegisterController extends Controller
 
             // 記述：セッションを使用してユーザー名を表示させる記述
             $request->session()->put('username', $username);
+            $mail->session()->put('mail',$mail);
+            $password->session()->put('password', $password);
             return redirect('added');
         }
         return view('auth.register');
-    }
-
-// 記載：バリデーション機能の実装(新規登録)
-    public function Autors(Request $request)
-    {
-        $request->validate([
-            'username' => 'required|min:2|max:12',
-            'mail' => 'required|unique:authors,min5|max40|string|email',
-            'Password' => 'required|alpha_num|min:8|max:20',
-            'Password_confirmation' => 'required|alpha_num|min:8|max:20|password:confirmation'
-        ]);
     }
 
     // 記述：下記（）に$idと追記

@@ -22,7 +22,8 @@
 <body>
     <header>
         <div id = "head">
-        <h1><a><img src="images/logo.png"></a></h1>
+            <!-- 記載：画像リンク -->
+        <a href="遷移させたいURL"><img src="images/logo.png"></a>
             <div id="">
                 <div id="">
                     <p>〇〇さん<img src="images/arrow.png"></p>

@@ -50,4 +50,7 @@ Route::get('/follower-list','PostsController@index');
 
 // 記述：新規登録
 // これじゃない？　Route::post('/Users/{id}/added','UsersController@users');
-Route::post('/auth/added','UsersController@users');
+// Route::post('/auth/added','UsersController@users');
+
+// 記載：アクセス制限機能
+Route::get('/login','Auth\LoginController@login')-> name('login');
