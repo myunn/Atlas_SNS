@@ -40,35 +40,15 @@ class RegisterController extends Controller
         $this->middleware('guest');
     }
 
-    public function register(Request $request){{
+    public function register(Request $request){
+        if($request->isMethod('post')){
 
-        // 記載：新規登録情報のバリデーション機能実装
+            // 記載：新規登録情報のバリデーション機能実装
         $request->validate([
             'username' => 'required|min:2|max:12',
-            'mail' => 'required|unique:authors,min5|max40|string|mail',
-            'password' => 'required|alpha_num|min:8|max:20',
-            'password_confirmation' => 'required|alpha_num|min:8|max:20|password:confirmation'
+            'mail' => 'required|unique:users|email|min:5|max:40|string|mail',
+            'password' => 'required|confirmed|alpha_num|min:8|max:20',
         ]);
-
-        $username = $request->input('username');
-            $mail = $request->input('mail');
-            $password = bcrypt($result->input('password'));
-
-        User::create([
-            'username' => $username,
-            'mail' => $mail,
-            'password' => $password,
-        ]);
-
-        return redirect('/added')->with('username',$username);
-        }
-
-        public function added(){
-            $value = session('username');
-            return view('authadded',compact('value'));
-    }
-
-        if($request->isMethod('post')){
 
             $username = $request->input('username');
             $mail = $request->input('mail');
@@ -86,17 +66,30 @@ class RegisterController extends Controller
             $request->session()->put('username', $username);
             $mail->session()->put('mail',$mail);
             $password->session()->put('password', $password);
-            return redirect('added');
+            // return redirect('added');
+            return redirect('/added')->with('username',$username);
         }
         return view('auth.register');
     }
+        public function added(){
+            $value = session('username');
+            return view('auth.added',compact('value'));
+    }
+// 記載：登録完了時ユーザー名の表示
+    public function users(Request $request)
+    {
+        $name = $request->input('username');
+        return back();
+    }
+
+
 
     // 記述：下記（）に$idと追記
     // これは違う？public function added($id){
         // $user = user::where('id',$id)->first();
         // return view('auth.added',['user'=>$user]);
-        public function added(){
+        // public function added(){
         // $user = user::where('id',$id)->first();
-        return view('auth.added');
-    }
+        // return view('auth.added');
+    // }
 }
