@@ -11,21 +11,10 @@
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-// Route::get('/home', 'HomeController@index')->name('home');
-
-//Auth::routes();
-
-// 記述：1つのルートに対してミドルウェアを指定する場合?
-Route::get('/',function(){
-})->middleware('auth');
-
-
 //ログアウト中のページ
 // ログイン用画面
-Route::get('/login', 'Auth\LoginController@login');
+// アクセス制限の為、ログインしてない場合は『ログインページ』に戻るようにRoute処理『login』と名前を付けた
+Route::get('/login', 'Auth\LoginController@login')->name('login');
 Route::post('/login', 'Auth\LoginController@login');
 
 // 新規ユーザー登録画面
@@ -35,22 +24,19 @@ Route::post('/register', 'Auth\RegisterController@register');
 Route::get('/added', 'Auth\RegisterController@added');
 Route::post('/added', 'Auth\RegisterController@added');
 
-//ログイン中のページ
+// 記述：ログインした人だけがアクセス可能なページ
+Route::group(['middleware' => 'auth'], function () {
+  // 記述：この中にアクセス制限をかけたいルーティングのコードを記載する。
+  // 今回アクセス制限かけたいのは右記：トップページ、プロフィール編集ページ、ユーザー検索ページ、フォローリストページ、フォロワーリストページ、相手ユーザーのプロフィールページ
+  //ログイン中のページ
 // ログイントップ画面
 Route::get('/top','PostsController@index');
 // ユーザー情報画面
 Route::get('/profile','UsersController@profile');
 // 検索
 Route::get('/search','UsersController@index');
-
 // フォローリスト
 Route::get('/follow-list','PostsController@index');
 // フォロワーリスト
 Route::get('/follower-list','PostsController@index');
-
-// 記述：新規登録
-// これじゃない？　Route::post('/Users/{id}/added','UsersController@users');
-// Route::post('/auth/added','UsersController@users');
-
-// 記載：アクセス制限機能
-Route::get('/login','Auth\LoginController@login')-> name('login');
+});

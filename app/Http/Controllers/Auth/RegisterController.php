@@ -46,7 +46,7 @@ class RegisterController extends Controller
             // 記載：新規登録情報のバリデーション機能実装
         $request->validate([
             'username' => 'required|min:2|max:12',
-            'mail' => 'required|unique:users|email|min:5|max:40|string|mail',
+            'mail' => 'required|unique:users|min:5|max:40|string|email',
             'password' => 'required|confirmed|alpha_num|min:8|max:20',
         ]);
 
@@ -64,8 +64,6 @@ class RegisterController extends Controller
 
             // 記述：セッションを使用してユーザー名を表示させる記述
             $request->session()->put('username', $username);
-            $mail->session()->put('mail',$mail);
-            $password->session()->put('password', $password);
             // return redirect('added');
             return redirect('/added')->with('username',$username);
         }
