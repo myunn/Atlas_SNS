@@ -29,8 +29,8 @@ Route::group(['middleware' => 'auth'], function () {
   // 記述：この中にアクセス制限をかけたいルーティングのコードを記載する。
   // 今回アクセス制限かけたいのは右記：トップページ、プロフィール編集ページ、ユーザー検索ページ、フォローリストページ、フォロワーリストページ、相手ユーザーのプロフィールページ
   //ログイン中のページ
-// ログイントップ画面
-Route::get('/top','PostsController@index');
+// ログイントップ画面(topページ遷移の為にRouteに『top』と名前を付けた)
+Route::get('/top','PostsController@index')->name('top');
 // ユーザー情報画面
 Route::get('/profile','UsersController@profile');
 // 検索

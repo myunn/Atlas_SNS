@@ -16,25 +16,30 @@
     <link rel="icon" href="画像URL" sizes="48x48" type="image/png" />
     <link rel="icon" href="画像URL" sizes="62x62" type="image/png" />
     <!--iphoneのアプリアイコン指定-->
-    <link rel="apple-touch-icon-precomposed" href="画像のURL" />
+    <link rel="apple-touch-icon-precom
+    ed" href="画像のURL" />
     <!--OGPタグ/twitterカード-->
 </head>
 <body>
     <header>
         <div id = "head">
             <!-- 記載：画像リンク -->
-        <a href="遷移させたいURL"><img src="images/logo.png"></a>
+        <h1><a href="/top"><img src="http://127.0.0.1:8000/images/atlas.png"></a></h1>
             <div id="">
                 <div id="">
                     <p>〇〇さん<img src="images/arrow.png"></p>
                 <div>
-                <ul>
-                    <li><a href="/top">ホーム</a></li>
-                    <li><a href="/profile">プロフィール</a></li>
-                    <li><a href="/logout">ログアウト</a></li>
-                </ul>
+                    <!-- 記載：アコーディオンメニュー設定 -->
+                    <div class="accordion">
+                        <p class="nav-btn">ボタン</p>
+                        <ul class="nav-menu">
+                            <li><a href="/top">ホーム</a></li>
+                            <li><a href="/profile">プロフィール</a></li>
+                            <li><a href="/logout">ログアウト</a></li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-        </div>
     </header>
     <div id="row">
         <div id="container">
@@ -59,7 +64,7 @@
     </div>
     <footer>
     </footer>
-    <script src="JavaScriptファイルのURL"></script>
-    <script src="JavaScriptファイルのURL"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="{{ asset('js/script.js') }} "></script>
 </body>
 </html>
