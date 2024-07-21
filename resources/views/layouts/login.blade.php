@@ -27,14 +27,14 @@
         <h1><a href="/top"><img src="http://127.0.0.1:8000/images/atlas.png"></a></h1>
             <div id="">
                 <div id="">
-                    <p>〇〇さん<img src="images/arrow.png"></p>
+                    <p>〇〇さん<img src="images/icon1.png"></p>
                 <div>
                     <!-- 記載：アコーディオンメニュー設定 -->
                     <div class="accordion">
                         <p class="nav-btn">ボタン</p>
                         <ul class="nav-menu">
-                            <li><a href="/top">ホーム</a></li>
-                            <li><a href="/profile">プロフィール</a></li>
+                            <li><a href="/top">HOME</a></li>
+                            <li><a href="/profile">プロフィール編集</a></li>
                             <li><a href="/logout">ログアウト</a></li>
                         </ul>
                     </div>

@@ -13,6 +13,13 @@ class UsersController extends Controller
     public function search(){
         return view('users.search');
     }
+    // 記載：フォロワーとフォローリスト
+    public function followerList(){
+        return view('follows.followerList');
+    }
+    public function followList(){
+        return view('follows.followList');
+    }
     // 記述：下記にユーザー情報を受け取る
     // これじゃない？public function users(Request $request){
         // $username = $request->input('username');
