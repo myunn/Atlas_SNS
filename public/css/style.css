@@ -6,38 +6,53 @@ body {}
 
 /* header */
 header {
+    z-index: 3;
     background: #186AC9;
+}
 
-    /* 記述：ハンバーガーメニュー（∨＝rotate） */
-    .nav-menu {
-        display: block;
-        position: fixed;
-        z-index: 2;
-        padding-top: 60px;
-        transform: rotate(-100%);
-        -webkit-transform: rotate(135deg);
-        transition: .5s ease-in-out;
-        height: 100vh;
-    }
+/* 記述：ハンバーガーメニュー */
+.nav-menu {
+    display: block;
+    position: fixed;
+    z-index: 1;
+    padding-top: 60px;
+    transform: translateY(-130%);
+    transition: .5s ease-in-out;
+    height: 100vh;
+    background-color: #fff;
+}
 
-    .nav-menu.active {
-        transform: rotate(0%);
-        -webkit-transform: rotate(135deg);
-        transition: .5s ease-in-out;
-    }
+.nav-btn {
+    height: 15px;
+    width: 15px;
+    border-top: solid 2px #fff;
+    border-right: solid 2px #fff;
+    transform: rotate(135deg);
+    transition: .5s ease-in-out;
 
-    /* main content */
-    #row {
-        display: flex;
-        flex-flow: row wrap;
-    }
+}
 
-    #container {
-        flex: 0 0 80%;
-    }
+.nav-btn.active {
+    transform: rotate(-45deg);
+    transition: .5s ease-in-out;
+}
 
-    #side-bar {
-        flex: 0 0 19%;
-        border-left: 1px solid #727272;
-    }
+.nav-menu.active {
+    transform: translateY(0%);
+    transition: .5s ease-in-out;
+}
+
+/* main content */
+#row {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+#container {
+    flex: 0 0 80%;
+}
+
+#side-bar {
+    flex: 0 0 19%;
+    border-left: 1px solid #727272;
 }

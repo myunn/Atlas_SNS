@@ -31,7 +31,7 @@
                 <div>
                     <!-- 記載：アコーディオンメニュー設定 -->
                     <div class="accordion">
-                        <p class="nav-btn">ボタン</p>
+                        <p class="nav-btn"> </p>
                         <ul class="nav-menu">
                             <li><a href="/top">HOME</a></li>
                             <li><a href="/profile">プロフィール編集</a></li>

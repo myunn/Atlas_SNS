@@ -40,3 +40,6 @@ Route::get('/follow-list','PostsController@index');
 // フォロワーリスト
 Route::get('/follower-list','PostsController@index');
 });
+
+// 記載：ログアウト機能
+Route::get('/login','Auth\LoginController@logout')->name('logout');

@@ -16,7 +16,7 @@ class FollowsController extends Controller
 
     public function followed(){
         $followeds = Follow::where('followed_id',Auth::id())->get();
-        return view('auth.login',compact('followeds'));
+        return view('auth.login',compact('followerds'));
     }
 
     // 記載：フォロー・フォロワーリストに戻る

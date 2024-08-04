@@ -17,4 +17,10 @@ class PostsController extends Controller
     public function index(){
         return view('posts.index');
     }
+
+    public function create(Request $request){
+        $comment = $request->input('comment');
+        return view('post.index')->with(["comment" =>$comment,
+    ]);
+    }
 }
