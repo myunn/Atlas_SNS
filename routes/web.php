@@ -34,12 +34,16 @@ Route::get('/top','PostsController@index')->name('top');
 // ユーザー情報画面
 Route::get('/profile','UsersController@profile');
 // 検索
-Route::get('/search','UsersController@index');
+Route::get('/search','UsersController@search');
 // フォローリスト
-Route::get('/follow-list','PostsController@index');
+Route::get('/follow-list','FollowsController@followList');
 // フォロワーリスト
-Route::get('/follower-list','PostsController@index');
+Route::get('/follower-list','FollowsController@followerList');
 });
 
 // 記載：ログアウト機能
-Route::get('/login','Auth\LoginController@logout')->name('logout');
+Route::get('/logout','Auth\LoginController@logout')->name('logout');
+
+// フォーム作成
+Route::get('/index','PostsController@index');
+Route::post('/index','PostsController@index');

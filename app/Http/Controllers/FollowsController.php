@@ -21,7 +21,7 @@ class FollowsController extends Controller
 
     // 記載：フォロー・フォロワーリストに戻る
     public function followList(){
-        return view('follows.folllowList');
+        return view('follows.followList');
     }
     public function followerList(){
         return view('follows.followerList');
