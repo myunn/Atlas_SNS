@@ -4,10 +4,27 @@ html {}
 
 body {}
 
+
+/* 記述：loginページ */
+.background {
+    background: linear-gradient(blue, yellow);
+}
+
 /* header */
 header {
     z-index: 3;
     background: #186AC9;
+}
+
+img {
+    size: 60px 70px;
+}
+
+/* 記述：メインコンテンツ */
+#head {
+    display: flex;
+    align-items: center;
+    position: relative;
 }
 
 /* 記述：ハンバーガーメニュー */
@@ -55,4 +72,12 @@ header {
 #side-bar {
     flex: 0 0 19%;
     border-left: 1px solid #727272;
+}
+
+/* 送信ボタンに画像挿入したい */
+.submit-btn {
+    border: 0px;
+    width: 0px;
+    height: 0px;
+    background: url(../img/post.png) left top no-repeat;
 }

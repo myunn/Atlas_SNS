@@ -19,8 +19,12 @@ class PostsController extends Controller
     }
 
     public function create(Request $request){
-        $comment = $request->input('comment');
-        return view('post.index')->with(["comment" =>$comment,
+        $post = $request->input('post');
+        $user_id = Auth::id();
+        post::create(['post' => $post, 'user_id' => $user_id]);
+        return view('post.index')->with(["post" =>$post,
     ]);
+
     }
+
 }

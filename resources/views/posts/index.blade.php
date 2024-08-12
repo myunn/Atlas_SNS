@@ -8,12 +8,15 @@
 <!DOCTYPE HTML>
 <html>
 <body>
-  <form action="/post" method="POST">
-  <h2><a href="/top"><img src="http://127.0.0.1:8000/images/icon1.png"></a></h2>
-  <textarea placeholder="投稿内容を入力ください。"></textarea>
-  <!-- {!! Form::open(['url' => '/author/index']) !!} -->
-  <!-- {{ Form::input('text','index' null,['required','class' => 'form-control','placeholder' => 'コメント'])}} -->
-  <h2><a href="/post"><img src="http://127.0.0.1:8000/images/post.png"></a></h2>
+<h2><a href="/top"><img src="http://127.0.0.1:8000/images/icon1.png"></a></h2>
+<form action="/post" method="POST">
+  <!-- @csrf:フォームの脆弱性対策コードなので、フォーム使用時に必要（ないとエラー出る） -->
+  @csrf
+  <input type="text" name="post" placeholder="投稿内容を入力ください。">
+  {!! Form::open(['url' => 'post/create']) !!}
+  <!--<input type="hidden" name="user_id" value="{{-- Auth::id() --}}">-->
+  <input type="submit" value=" " class="submit_btn">
+  {!! Form::close() !!}
   </form>
 </body>
 </html>

@@ -31,6 +31,8 @@ Route::group(['middleware' => 'auth'], function () {
   //ログイン中のページ
 // ログイントップ画面(topページ遷移の為にRouteに『top』と名前を付けた)
 Route::get('/top','PostsController@index')->name('top');
+// 投稿内容の新規作成
+Route::post('/post','PostsController@create');
 // ユーザー情報画面
 Route::get('/profile','UsersController@profile');
 // 検索
