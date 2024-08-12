@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use App\Post;
 
 class PostsController extends Controller
 {
@@ -20,10 +22,12 @@ class PostsController extends Controller
 
     public function create(Request $request){
         $post = $request->input('post');
+        // Auth::id()はbladeに記載しなくても、controllerのみに記載でOK
         $user_id = Auth::id();
-        post::create(['post' => $post, 'user_id' => $user_id]);
-        return view('post.index')->with(["post" =>$post,
-    ]);
+        Post::create(['post' => $post, 'user_id' => $user_id]);
+        // use宣言しないとどこのことかわからないから機能しないので注意！また、頭文字は大文字になるのでこそも注意！(Authとpost)
+        // redirect:URLで記載する。（web.phpの"/top"表示に入りなおす指示。
+        return redirect('/top');
 
     }
 

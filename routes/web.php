@@ -1,5 +1,14 @@
 <?php
 
+use App\Http\Controllers\Controller;
+use Illuminate\support\Facades\Route;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\PostsController;
+use App\Http\Controllers\UsersController;
+use App\Http\Controllers\FollowsController;
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -47,5 +56,5 @@ Route::get('/follower-list','FollowsController@followerList');
 Route::get('/logout','Auth\LoginController@logout')->name('logout');
 
 // フォーム作成
-Route::get('/index','PostsController@index');
-Route::post('/index','PostsController@index');
+// Route::get('/index','PostsController@index');
+// Route::post('/index','PostsController@index');

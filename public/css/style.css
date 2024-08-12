@@ -6,7 +6,7 @@ body {}
 
 
 /* 記述：loginページ */
-.background {
+.background_login {
     background: linear-gradient(blue, yellow);
 }
 
