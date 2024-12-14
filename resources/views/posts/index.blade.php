@@ -18,6 +18,14 @@
   <input type="submit" value=" " class="submit_btn">
   {!! Form::close() !!}
   </form>
+
+  <!-- 一覧表示 -->
+  @foreach ($posts as $post)
+  <div>
+      <p>{{ $post->post }}</p>
+      <p>{{ $post->updated_at }}</p>
+  </div>
+  @endforeach
 </body>
 </html>
 
