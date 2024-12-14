@@ -6,8 +6,11 @@ body {}
 
 
 /* 記述：loginページ */
+/* 上から下にグラデーションするため2行追加し、カラーのコード記載 */
 .background_login {
-    background: linear-gradient(blue, yellow);
+    background: -moz-linear-gradient(top, #186AC9, #FFF);
+    background: -webkit-linear-gradient(top, #186AC9, #FFF);
+    background: linear-gradient(to bottom, #186AC9, #FFFF00);
 }
 
 /* header */

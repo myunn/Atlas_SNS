@@ -8,6 +8,7 @@
 
 {{ Form::label('e-mail') }}
 {{ Form::text('mail',null,['class' => 'input']) }}
+<br>
 {{ Form::label('password') }}
 {{ Form::password('password',['class' => 'input']) }}
 
