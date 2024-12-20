@@ -6,19 +6,24 @@
 
 <div class="wrapper">
 
-<p class='welcome'>AtlasSNSへようこそ</p>
+<p class="welcome">AtlasSNSへようこそ</p>
 
-{{ Form::label('メールアドレス') }}
-{{ Form::text('mail',null,['class' => 'input']) }}
-<br>
-{{ Form::label('パスワード') }}
-{{ Form::password('password',['class' => 'input']) }}
-<br>
-{{ Form::submit('ログイン') }}
-<br>
-<p class='newuser'><a href="/register">新規ユーザーの方はこちら</a></p>
-<br>
+<div>
+  <div class="form-input">
+    {{ Form::label('メールアドレス') }}
+    {{ Form::text('mail',null,['class' => 'input']) }}
+  </div>
+  <div class="form-input">
+    {{ Form::label('パスワード') }}
+    {{ Form::password('password',['class' => 'input']) }}
+  </div>
+</div>
+<div>
+  {{ Form::submit('ログイン') }}
+  <p class='newuser'><a href="/register">新規ユーザーの方はこちら</a></p>
+</div>
 {!! Form::close() !!}
+
 
 </div>
 @endsection
