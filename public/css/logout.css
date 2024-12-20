@@ -7,7 +7,7 @@ html {
 
 header {
     width: 50%;
-    margin: 0 auto 20px;
+    margin: 120px auto 20px;
     text-align: center;
 }
 
@@ -27,13 +27,25 @@ body {
 
 .wrapper {
     display: block;
-    width: 50%;
+    border-radius: 5px;
+    width: 30%;
     margin: 0 auto;
     text-align: center;
-    padding: 20px 5px 30px;
+    padding: 20px 5px 70px;
 }
 
+/* 構成2：メアドとPWの設定 */
 .form-input {
     display: flex;
     flex-direction: column;
+    text-align: left;
+}
+
+/* 構成3：ログインと新規ユーザー */
+.loginbtn {
+    text-align: right;
+}
+
+.newuser {
+    text-align: center;
 }

@@ -156,14 +156,6 @@ table {
 	color: white;
 }
 
-/* 枠で囲う */
-.wrapper {
-	background-color: #000;
-	color: #fff;
-	opacity: .5;
-	display: flex;
-}
-
 /* 新規登録画面 */
 /* 枠で囲う */
 .wrapper {
