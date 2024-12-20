@@ -137,8 +137,43 @@ table {
 	border-spacing: 0;
 }
 
+/* ログイン前(ログアウト)画面 */
+
+/* 『ようこそ』を白色にする */
+.welcome {
+	color: white;
+}
+
 /* 『新規ユーザーはこちら』に下線をつける */
 .newuser {
 	text-decoration: underline;
 	text-decoration-color: white;
+}
+
+/* Social~ の文字の大きさを他よりも大きく・文字を白色にする*/
+.em {
+	font-size: 1.5em;
+	color: white;
+}
+
+/* 枠で囲う */
+.wrapper {
+	background-color: #000;
+	color: #fff;
+	opacity: .5;
+	display: flex;
+}
+
+/* 新規登録画面 */
+/* 枠で囲う */
+.wrapper {
+	background-color: #000;
+	color: #fff;
+	opacity: .5;
+	display: flex;
+}
+
+/* 両方共通：改行したい */
+div {
+	word-wrap: break-word;
 }
