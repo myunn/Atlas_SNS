@@ -70,9 +70,22 @@ img {
     flex: 0 0 80%;
 }
 
-/* 改行したい */
+/* 改行したいから入れてみた */
 div {
     word-wrap: break-word;
+}
+
+/* テキストとフォームの間に間隔を作る */
+label {
+    display: inline-block;
+    height: 50px;
+    width: 150px;
+    vertical-align: top;
+}
+
+/* 更新ボタンを右側におく */
+.updatebtn {
+    text-align: center;
 }
 
 #side-bar {
