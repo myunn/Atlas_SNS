@@ -72,6 +72,7 @@ img {
 
 /* 改行したいから入れてみた */
 div {
+    text-align: center;
     word-wrap: break-word;
 }
 
@@ -83,9 +84,9 @@ label {
     vertical-align: top;
 }
 
-/* 更新ボタンを右側におく */
-.updatebtn {
-    text-align: center;
+/* フォーム背景に色を付ける */
+text {
+    background-color: #cccccc;
 }
 
 #side-bar {
