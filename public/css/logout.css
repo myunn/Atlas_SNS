@@ -42,10 +42,10 @@ body {
 }
 
 /* 構成3：ログインと新規ユーザー */
-.loginbtn {
+.updatebtn {
     text-align: right;
 }
 
-.newuser {
+.new-user {
     text-align: center;
 }
