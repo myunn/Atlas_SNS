@@ -32,6 +32,8 @@
 <div>
 {{ Form::label('アイコン画像') }}
 {{ Form::text('picture',null,['class' => 'input']) }}
+<!-- 上だけでいける？ -->
+  <input type="text" name="post" placeholder="画像を挿入">
 </div>
 
 <div class="updatebtn">

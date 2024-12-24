@@ -24,6 +24,8 @@
   <div>
       <p>{{ $post->post }}</p>
       <p>{{ $post->updated_at }}</p>
+      <p>{{ $post->user->username }}</p>
+      <img src="http://127.0.0.1:8000/images/{{$post->user->images}}">
   </div>
   @endforeach
 </body>
