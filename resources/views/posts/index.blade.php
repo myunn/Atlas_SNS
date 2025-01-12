@@ -20,7 +20,7 @@
 
   <!-- 画像に機能を追加する -->
   <div>
-  <input type="image" value="" src="http://127.0.0.1:8000/images/post.png" class="submit_btn">
+  <img  src="http://127.0.0.1:8000/images/post.png" class="submit_btn">
   {!! Form::close() !!}
   </div>
   </form>
