@@ -12,11 +12,11 @@
 <form action="/post" method="POST">
   <!-- @csrf:フォームの脆弱性対策コードなので、フォーム使用時に必要（ないとエラー出る） -->
   @csrf
-  <div class="text-post">>
+  <div class="text-post">
   <input type="text" name="post" placeholder="投稿内容を入力ください。">
   {!! Form::open(['url' => 'post/create']) !!}
   <!--<input type="hidden" name="user_id" value="{{-- Auth::id() --}}">-->
-  </class=>
+</div>
 
   <!-- 画像に機能を追加する -->
   <div>
@@ -32,6 +32,48 @@
       <p>{{ $post->user->username }}</p>
       <p>{{ $post->updated_at }}</p>
       <p>{{ $post->post }}</p>
+
+<!-- ログインユーザーの記載・削除アイコンの表示指定 -->
+  @if ($post->user_id == Auth::id())
+  <!-- コメント編集用のモーダル追加 -->
+  <button class="modal-open js-modal-open">
+      <img src="http://127.0.0.1:8000/images/edit.png">
+</button>
+<div class="modal js-modal">
+  <div class="modal-container">
+    <!-- モーダルを閉じるボタン -->
+    <div class="modal-close js-modal-close">
+      <img src="http://127.0.0.1:8000/images/edit.png">
+    </div>
+    <!-- モーダル内部のコンテンツ -->
+    <div class="modal-content">
+      <form action="/post" method="POST">
+  <!-- @csrf:フォームの脆弱性対策コードなので、フォーム使用時に必要（ないとエラー出る） -->
+  @csrf
+  <div class="text-post">
+    <input type="text" name="post">
+  {!! Form::open(['url' => 'post/create']) !!}
+    </div>
+  </div>
+</div>
+
+<!-- 削除用のモーダル作成 -->
+      <button class="modal-open js-modal-open">
+<img src="http://127.0.0.1:8000/images/trash.png">
+</button>
+<div class="modal js-modal">
+  <div class="modal-container">
+    <!-- モーダルを閉じるボタン -->
+    <div class="deletebtn">
+ <button id="delete-button"><a href="/top">OK</a></button>
+ </div>
+ <button id="cxl-button"><a href="/top">キャンセル</a></button>
+</div>
+    </div>
+    <!-- モーダル内部のコンテンツ -->
+    <div class="modal-content">
+      <form action="/post" method="POST">
+  @endif
     </div>
   @endforeach
 </body>
