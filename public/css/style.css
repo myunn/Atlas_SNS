@@ -17,18 +17,21 @@ header {
     background: #186AC9;
 }
 
+/* 記述）topページ：アイコン */
 img {
+    width: 40px;
+    height: 40px;
     size: 60px 70px;
 }
 
-/* 記述：メインコンテンツ */
+/* 記述）メインコンテンツ */
 #head {
     display: flex;
     align-items: center;
     position: relative;
 }
 
-/* 記述：ハンバーガーメニュー */
+/* 記述）top等共通のハンバーガーメニュー */
 .nav-menu {
     display: block;
     position: fixed;
@@ -70,13 +73,13 @@ img {
     flex: 0 0 80%;
 }
 
-/* 改行したいから入れてみた */
+/* 記述）topページ：改行用コマンド */
 div {
     text-align: center;
     word-wrap: break-word;
 }
 
-/* テキストとフォームの間に間隔を作る */
+/* 記述）topページ：テキストとフォーム間隔コマンド */
 label {
     display: inline-block;
     height: 50px;
@@ -84,7 +87,7 @@ label {
     vertical-align: top;
 }
 
-/* フォーム背景に色を付ける */
+/* 記述）topページ：フォーム背景に色を付ける */
 text {
     background-color: #cccccc;
 }
@@ -100,4 +103,26 @@ text {
     width: 0px;
     height: 0px;
     background: url(../img/post.png) left top no-repeat;
+}
+
+/* 記述）topページ：投稿入力欄 */
+/* .text-post { */
+/* width: 100px; */
+/* height: 50px; */
+/* } */
+
+
+/* 記述)topページ：投稿ボタン */
+.image {
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+    text-align: left;
+}
+
+/* プロフィール編集 */
+.user_image_name {
+    display: flex;
+    justify-content: flex-end;
+    position: fixed;
 }

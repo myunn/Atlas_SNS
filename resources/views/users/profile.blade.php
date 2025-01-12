@@ -4,7 +4,8 @@
 
 <!-- 記述： プロフィール内容-->
 
-<div>
+<div class="user_image_name">
+<h5><a href="/top"><img src="http://127.0.0.1:8000/images/icon1.png"></a></h5>
 {{ Form::label('ユーザー名') }}
 {{ Form::text('username',null,['class' => 'input']) }}
 </div>
@@ -36,11 +37,9 @@
   <input type="text" name="post" placeholder="画像を挿入">
 </div>
 
+ <!-- ボタンに機能を追加する -->
 <div class="updatebtn">
-<!-- 下記ボタンは欲しいがTOPへ遷移したい -->
-{{ Form::submit('更新') }}
-
- <p class="btn"><a href="/top">更新</a></p>
+ <button id="update-button"><a href="/top">更新</a></button>
 </div>
 
 
