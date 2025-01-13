@@ -37,7 +37,7 @@
   @if ($post->user_id == Auth::id())
   <!-- コメント編集用のモーダル追加 -->
   <button class="modal-open js-modal-open">
-      <img src="http://127.0.0.1:8000/images/edit.png">
+  <img src="http://127.0.0.1:8000/images/edit.png">
 </button>
 <div class="modal js-modal">
   <div class="modal-container">
