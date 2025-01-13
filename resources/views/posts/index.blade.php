@@ -3,7 +3,7 @@
 
 @section('content')
 
-
+<!-- 新規投稿エリア -->
 <!-- 記述： 投稿内容の入力欄作成-->
 <!DOCTYPE HTML>
 <html>
@@ -24,7 +24,9 @@
   {!! Form::close() !!}
   </div>
   </form>
+  <!-- ここまで新規投稿エリア -->
 
+<!-- 投稿一覧エリア -->
   <!-- 一覧表示 postからとってきた情報の何を表示するか指定-->
   @foreach ($posts as $post)
   <div>
@@ -35,47 +37,39 @@
 
 <!-- ログインユーザーの記載・削除アイコンの表示指定 -->
   @if ($post->user_id == Auth::id())
-  <!-- コメント編集用のモーダル追加 -->
-  <button class="modal-open js-modal-open">
+  <!-- 編集ボタン -->
+  <button class="modal-open js-modal-open" post="{{ $post->post }}" post_id="{{ $post->id }}">
   <img src="http://127.0.0.1:8000/images/edit.png">
 </button>
-<div class="modal js-modal">
-  <div class="modal-container">
-    <!-- モーダルを閉じるボタン -->
-    <div class="modal-close js-modal-close">
-      <img src="http://127.0.0.1:8000/images/edit.png">
-    </div>
-    <!-- モーダル内部のコンテンツ -->
-    <div class="modal-content">
-      <form action="/post" method="POST">
-  <!-- @csrf:フォームの脆弱性対策コードなので、フォーム使用時に必要（ないとエラー出る） -->
-  @csrf
-  <div class="text-post">
-    <input type="text" name="post">
-  {!! Form::open(['url' => 'post/create']) !!}
+<!-- ここまで編集ボタン -->
+<!-- 削除ボタン -->
+<a class="btn btn-danger" href="/post/{{$post->id }}/delete" onclick="return confirm('こちらの投稿を削除してもよろしいでしょうか？')"><img src="http://127.0.0.1:8000/images/trash.png"></a>
+<!-- ここまで削除ボタン -->
+@endif
+</div>
+ @endforeach
+ <!-- ここまで投稿一覧エリア -->
+
+ <!-- モーダルエリア -->
+  <div class="modal js-modal">
+    <div class="modal-container">
+      <!-- モーダルを閉じるボタン -->
+      <div class="modal-close js-modal-close">
+        <img src="http://127.0.0.1:8000/images/edit.png">
+      </div>
+      <!-- モーダル内部のコンテンツ -->
+      <div class="modal-content">
+        <form action="/update" method="POST">
+          @csrf
+          <!-- @csrf:フォームの脆弱性対策コードなので、フォーム使用時に必要（ないとエラー出る） -->
+          <div class="text-post">
+            <input type="text" name="post" value="" class="modal_post">
+            <input type="hidden" name="post_id" value="" class="modal_id">
+          </div>
+        </form>
+      </div>
     </div>
   </div>
-</div>
-
-<!-- 削除用のモーダル作成 -->
-      <button class="modal-open js-modal-open">
-<img src="http://127.0.0.1:8000/images/trash.png">
-</button>
-<div class="modal js-modal">
-  <div class="modal-container">
-    <!-- モーダルを閉じるボタン -->
-    <div class="deletebtn">
- <button id="delete-button"><a href="/top">OK</a></button>
- </div>
- <button id="cxl-button"><a href="/top">キャンセル</a></button>
-</div>
-    </div>
-    <!-- モーダル内部のコンテンツ -->
-    <div class="modal-content">
-      <form action="/post" method="POST">
-  @endif
-    </div>
-  @endforeach
 </body>
 </html>
 

@@ -42,6 +42,10 @@ Route::group(['middleware' => 'auth'], function () {
 Route::get('/top','PostsController@index')->name('top');
 // 投稿内容の新規作成
 Route::post('/post','PostsController@create');
+// 記載）投稿内容の更新
+Route::post('/update','PostsController@update');
+// 記載）投稿内容の削除
+Route::get('/post/{id}/delete','PostsController@delete');
 // ユーザー情報画面
 Route::get('/profile','UsersController@profile');
 // 検索

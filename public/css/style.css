@@ -130,9 +130,9 @@ text {
 
 /* 記述)top:コメント編集 */
 /* ①モーダルを開くボタン */
-.modal-open {
-    position: fixed;
-    top: 50%;
+/* .modal-open { */
+/* position: fixed; */
+/* top: 50%;
     left: 50%;
     font-size: 16px;
     font-weight: bold;
@@ -143,7 +143,7 @@ text {
     border: solid 1px black;
     cursor: pointer;
     translate: -50% -50%;
-}
+} */
 
 /* モーダルと背景の指定 */
 .modal {
@@ -164,11 +164,11 @@ text {
 }
 
 /* モーダルのホバー設定 */
-.modal:hover {
+/* .modal:hover {
     background: red;
     color: white;
     border-radius: 20px;
-}
+} */
 
 /* モーダルの擬似要素の指定 */
 .modal:before {
