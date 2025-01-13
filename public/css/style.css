@@ -163,6 +163,13 @@ text {
     background-color: #fff;
 }
 
+/* モーダルのホバー設定 */
+.modal:hover {
+    background: red;
+    color: white;
+    border-radius: 20px;
+}
+
 /* モーダルの擬似要素の指定 */
 .modal:before {
     content: "";
@@ -214,4 +221,26 @@ text {
 /* モーダルのコンテンツ部分のテキストの指定 */
 .modal-content p {
     margin: 1em 0;
+}
+
+/* ボタンの並列 */
+button {
+    display: inline-block;
+}
+
+div {
+    text-align: center;
+}
+
+
+/* 記述）ユーザー検索（フォロー・フォロー解除のボタン機能 */
+.followbutton {
+    background-color: red;
+    color: white;
+}
+
+/* 記述）ユーザー検索（フォロー・フォロー解除のボタン機能 */
+.unfollowbtn {
+    color: skyblue;
+    color: white;
 }
