@@ -39,7 +39,8 @@
 
  <!-- ボタンに機能を追加する -->
 <div class="updatebtn">
- <button id="update-button"><a href="/top">更新</a></button>
+<button id="update-button"><a href="/top">更新</a></button>
+
 </div>
 
 

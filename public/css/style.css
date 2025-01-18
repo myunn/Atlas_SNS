@@ -128,6 +128,7 @@ text {
     position: fixed;
 }
 
+
 /* 記述)top:コメント編集 */
 /* ①モーダルを開くボタン */
 /* .modal-open { */
@@ -226,6 +227,8 @@ text {
 /* ボタンの並列 */
 button {
     display: inline-block;
+    background-color: red;
+    color: white;
 }
 
 div {
@@ -240,7 +243,7 @@ div {
 }
 
 /* 記述）ユーザー検索（フォロー・フォロー解除のボタン機能 */
-.unfollowbtn {
+.unfollow_btn {
     color: skyblue;
     color: white;
 }

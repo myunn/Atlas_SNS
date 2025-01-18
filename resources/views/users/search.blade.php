@@ -9,7 +9,7 @@
 </form>
 
 <!-- フォロー・フォロー解除ボタン -->
-<div class="followbutton">
+<div class="follow-button">
  <button id="follow-button"><a href="/search">フォローする</a></button>
 </div>
 <div class="unfollowbtn">
