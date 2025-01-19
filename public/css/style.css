@@ -229,21 +229,50 @@ button {
     display: inline-block;
     background-color: red;
     color: white;
+    border-radius: 7px;
+    border: solid 0px;
 }
 
 div {
     text-align: center;
 }
 
-
-/* 記述）ユーザー検索（フォロー・フォロー解除のボタン機能 */
-.followbutton {
-    background-color: red;
-    color: white;
+/* ユーザー検索要素 */
+/* 記述）フォローボタン機能 */
+.follow-button {
+    background-color: #4fbaf4;
+    border-radius: 7px;
+    border: solid 0px;
+    padding: 5px;
 }
 
-/* 記述）ユーザー検索（フォロー・フォロー解除のボタン機能 */
-.unfollow_btn {
-    color: skyblue;
+/* 記述）フォロー解除のボタン機能 */
+.unfollow-button {
+    background-color: red;
+    border-radius: 7px;
+    border: solid 0px;
+    padding: 5px;
+}
+
+
+/* 共通箇所 */
+/* ボタン文字色（コンマで区切る。button class とa は間に空白入れればOK） */
+
+/* 横のバー要素のボタン色 */
+.follow-list,
+.follower-list,
+.user-search {
+    background-color: blue;
+    padding: 5px;
+}
+
+
+
+/* ボタンの文字色 */
+.follow-list a,
+.follower-list a,
+.user-search a,
+.follow-button a,
+.unfollow-button a {
     color: white;
 }

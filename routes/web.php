@@ -52,6 +52,7 @@ Route::get('/profile','UsersController@profile');
 Route::get('/search','UsersController@search');
 // フォローリスト
 Route::get('/follow-list','FollowsController@followList');
+Route::post('/follow/{Id}','FollowsController@followList');
 // フォロワーリスト
 Route::get('/follower-list','FollowsController@followerList');
 });

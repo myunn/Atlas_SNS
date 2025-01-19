@@ -3,6 +3,8 @@
 @section('content')
 フォローリスト
 
+<p>{{ $posts->count() }}</p>
+
 <!-- 記述）必要情報を引っ張って反映させたい -->
 <h2>フォロー数：<%= @user.followings.count %></h2>
     <% @user.followings.each do |u| %>

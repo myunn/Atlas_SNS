@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\User;
 
 class UsersController extends Controller
 {
@@ -11,7 +12,8 @@ class UsersController extends Controller
         return view('users.profile');
     }
     public function search(){
-        return view('users.search');
+        $users = User::get();
+        return view('users.search',['users'=>$users]);
     }
     // 記載：フォロワーとフォローリスト
     public function followerList(){
@@ -20,13 +22,7 @@ class UsersController extends Controller
     public function followList(){
         return view('follows.followList');
     }
-    // 記述：下記にユーザー情報を受け取る
-    // これじゃない？public function users(Request $request){
-        // $username = $request->input('username');
-        // Register::create(['username' => $username]);
-        // return back();
     public function users(){
         return view('Auth.added');
-
     }
 }

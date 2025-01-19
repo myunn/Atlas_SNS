@@ -31,3 +31,14 @@ class User extends Authenticatable
         return $this->hasMany('App\Post');
     }
 }
+
+// 記述)フォロー・フォロワーの抽出
+// フォローした人
+public function users (){
+    return $this->belongToMany('App/provides/users','follows','following_id','followed_id')
+}
+
+// フォローされた人
+public function users (){
+    return $this->belongToMany('App/provides/users','follows','followed_id','following_id')
+}

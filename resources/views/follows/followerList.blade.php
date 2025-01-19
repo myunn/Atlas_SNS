@@ -3,6 +3,8 @@
 @section('content')
 フォロワーリスト
 
+<p>{{ $posts->count() }}</p>
+
 <!-- 記述）必要情報を引っ張って反映させたい -->
   @foreach ($posts as $post)
   <div>

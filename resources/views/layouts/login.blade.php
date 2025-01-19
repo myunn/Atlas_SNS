@@ -52,18 +52,18 @@
                 <p>フォロー数</p>
                 <p>〇〇名</p>
                 </div>
-                <div class="follow-list">
-                <button id="follow-list"><a href="/search">フォローリスト</a></button>
+                <div>
+                <button class="follow-list"><a href="/search">フォローリスト</a></button>
                 <div>
                 <p>フォロワー数</p>
                 <p>〇〇名</p>
                 </div>
-                <div class="follower-list">
-                <button id="follower-list"><a href="/search">フォロワーリスト</a></button>
+                <div>
+                <button class="follower-list"><a href="/search">フォロワーリスト</a></button>
                 <!-- <p class="btn"><a href="/follower-list">フォロワーリスト</a></p> -->
             </div>
-            <div class="user-search">
-            <button id="user-search"><a href="/search">ユーザー検索</a></button>
+            <div>
+            <button class="user-search"><a href="/search">ユーザー検索</a></button>
             <!-- <p class="btn"><a href="/search">ユーザー検索</a></p> -->
         </div>
     </div>
