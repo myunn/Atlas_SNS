@@ -6,6 +6,8 @@
 @csrf
 <div class=becide>
   <input type="text" name="keyword" class="form" placeholder="ユーザー名">
+</div>
+<div class=becide>
   <h1><a href="/user"><img src="http://127.0.0.1:8000/images/search.png"></a></h1>
   </form>
 </div>

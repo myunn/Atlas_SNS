@@ -23,12 +23,12 @@ class PostsController extends Controller
 
     // 記述）フォローしているユーザーのみ情報を取得
     // 記述）ユーザーIDの取得
-    public function index(){
-        $following_id = Auth::user()->follows()->pluck('user_id');
-    // フォローしているユーザーのIDを元に投稿内容を取得
-    $posts = Post::with('user')->whereIn('post',$following_id)->get();
-    return view('posts.index',compact('posts'));
-    }
+    // public function index(){
+    //     $following_id = Auth::user()->follows()->pluck('user_id');
+    // // フォローしているユーザーのIDを元に投稿内容を取得
+    // $posts = Post::with('user')->whereIn('post',$following_id)->get();
+    // return view('posts.index',compact('posts'));
+    // }
 
     public function create(Request $request){
         $post = $request->input('post');
