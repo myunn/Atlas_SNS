@@ -3,16 +3,17 @@
 @section('content')
 <!-- 検索用の入力箇所・ボタン設定 -->
 <div class="search_area">
-  <form action="/search" method="post">
-  @csrf
-    <div class=becide>
-      <input type="text" name="keyword" class="form" placeholder="ユーザー名">
-    </div>
-    <div class=becide>
-      <h1><a href="/user"><img src="http://127.0.0.1:8000/images/search.png"></a></h1>
-    </div>
-  </form>
-</div>
+    <form action="/search" method="post">
+    @csrf
+      <div class=becide>
+        <input type="text" name="keyword" class="form" placeholder="ユーザー名">
+      </div>
+      <div class=becide>
+        <h1><a href="/user"><img src="http://127.0.0.1:8000/images/search.png"></a></h1>
+      </div>
+    </form>
+  <div id="under-bar">
+  </div>
 
 <!-- ユーザー一覧表示 -->
 @foreach($users as $user)

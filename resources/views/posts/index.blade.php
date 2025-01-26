@@ -13,7 +13,7 @@
   <!-- @csrf:フォームの脆弱性対策コードなので、フォーム使用時に必要（ないとエラー出る） -->
   @csrf
   <div class="text-post">
-  <input type="text" name="post" placeholder="投稿内容を入力ください。">
+  <input type="text" name="post" class="form" placeholder="投稿内容を入力ください。">
   {!! Form::open(['url' => 'post/create']) !!}
   <!--<input type="hidden" name="user_id" value="{{-- Auth::id() --}}">-->
 </div>

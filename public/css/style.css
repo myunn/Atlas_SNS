@@ -233,10 +233,6 @@ button {
     border: solid 0px;
 }
 
-div {
-    text-align: center;
-}
-
 /* ユーザー検索要素 */
 /* 記述）フォローボタン機能 */
 .follow-button {
@@ -269,6 +265,22 @@ div {
     margin-right: 200px;
 }
 
+.search_area form {
+    margin: 30px 5px 30px 50px;
+}
+
+.becide {
+    margin-right: 15px;
+}
+
+/* 検索ページの線引き */
+#under-bar {
+    border-bottom: 5px solid #EEEEEE;
+    width: 900px;
+}
+
+
+
 /* 共通箇所 */
 /* ボタン文字色（コンマで区切る。button class とa は間に空白入れればOK） */
 
@@ -280,8 +292,6 @@ div {
     padding: 5px;
 }
 
-
-
 /* ボタンの文字色 */
 .follow-list a,
 .follower-list a,
@@ -289,4 +299,10 @@ div {
 .follow-button a,
 .unfollow-button a {
     color: white;
+}
+
+/* テキストボックスの大きさ */
+input.form {
+    width: 200px;
+    height: 30px;
 }
