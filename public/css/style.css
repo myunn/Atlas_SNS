@@ -255,8 +255,18 @@ div {
 }
 
 /* 記述)検索ページの検索コメント・ボタンの並列要素 */
-.becide {
-    float: left;
+.user_list,
+.user_info,
+.search_area form {
+    display: flex;
+}
+
+.user_list {
+    margin: 0 0 15px 250px;
+}
+
+.user_info {
+    margin-right: 200px;
 }
 
 /* 共通箇所 */
