@@ -14,8 +14,12 @@
 {{ Form::label('メールアドレス') }}
 {{ Form::text('mail',null,['class' => 'input']) }}
 <br>
-{{ Form::label('パスワード') }}
-{{ Form::text('password',null,['class' => 'input']) }}
+<form>
+  <label for="password">パスワード</label>
+  <input type="password" id="password" name="password">
+</form>
+<!-- {{ Form::label('パスワード') }}
+{{ Form::text('password',null,['class' => 'input']) }} -->
 <br>
 {{ Form::label('パスワード確認') }}
 {{ Form::text('password_confirmation',null,['class' => 'input']) }}

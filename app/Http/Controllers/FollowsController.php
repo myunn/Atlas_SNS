@@ -27,20 +27,29 @@ class FollowsController extends Controller
     public function followerList(){
         return view('follows.followerList');
     }
-}
 
-// あってるかわからん(https://laratech.jp/posts/laravel-follow/)
-// 記述)フォロー・フォロワー情報の引用
-// {
-//     public function ($user_Id)
-//     {
-//         Auth::user()->follows()->attach($user_Id);
-//         return;
-//     }
-// }
-
-// フォロー・フォロワー数の表示
-public function postCounts(){
-    $posts = Post::get();
-    return view('follows',compact('posts'));
+    // フォロー・フォロー解除
+    public function follow(User $user)
+    {
+        $follower = auth()->user();
+        // フォローしているか
+        $is_following = $follower->isFollowing($user->id);
+        if(!$is_following) {
+            // フォローしていなければフォローする
+            $follower->follow($user->id);
+            return back();
+        }
+    }
+    // フォロー解除
+    public function unfollow(User $user)
+    {
+        $follower = auth()->user();
+        // フォローしているか
+        $is_following = $follower->isFollowing($user->id);
+        if($is_following) {
+            // フォローしていればフォローを解除する
+            $follower->unfollow($user->id);
+            return back();
+        }
+    }
 }

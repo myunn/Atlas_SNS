@@ -30,15 +30,29 @@ class User extends Authenticatable
     public function posts(){
         return $this->hasMany('App\Post');
     }
+
+    // フォロー・フォロー解除
+    // リレーション
+    public function follows()
+    {
+        return $this->belongsToMany(self::class, 'follows', 'following_id', 'followed_id');
+    }
+
+    // フォローする
+    public function follow(Int $user_id)
+    {
+        return $this->follows()->attach($user_id);
+    }
+
+    // フォロー解除する
+    public function unfollow(Int $user_id)
+    {
+        return $this->follows()->detach($user_id);
+    }
+
+    // フォローしているか
+    public function isFollowing(Int $user_id)
+    {
+        return (boolean) $this->follows()->where('followed_id', $user_id)->first(['id']);
+    }
 }
-
-// 記述)フォロー・フォロワーの抽出
-// フォローした人
-// public function users (){
-//     return $this->belongToMany('App/provides/users','follows','following_id','followed_id')
-// }
-
-// フォローされた人
-// public function users (){
-//     return $this->belongToMany('App/provides/users','follows','followed_id','following_id')
-// }

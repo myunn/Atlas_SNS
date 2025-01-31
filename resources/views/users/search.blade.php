@@ -14,6 +14,7 @@
     </form>
   <div id="under-bar">
   </div>
+</div>
 
 <!-- ユーザー一覧表示 -->
 @foreach($users as $user)
@@ -25,8 +26,21 @@
 
 
   <!-- フォロー・フォロー解除ボタン -->
-  <button class="follow-button"><a href="/search">フォローする</a></button>
-  <button class="unfollow-button"><a href="/search">フォロー解除</a></button>
+<div class="d-flex justify-content-end flex-grow-1">
+  @if (auth()->user()->isFollowing($user->id))
+      <form action="{{ route('unfollow', $user) }}" method="POST">
+          {{ csrf_field() }}
+          {{ method_field('DELETE') }}
+
+          <button type="submit" class="btn btn-danger">フォロー解除</button>
+      </form>
+  @else
+      <form action="{{ route('follow', $user) }}" method="POST">
+          {{ csrf_field() }}
+
+          <button type="submit" class="btn btn-primary">フォローする</button>
+      </form>
+  @endif
 </div>
 @endforeach
 
