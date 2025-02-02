@@ -17,7 +17,8 @@ header {
     background: #186AC9;
 }
 
-/* 記述）topページ：アイコン */
+/* topページ */
+/* アイコン */
 img {
     width: 40px;
     height: 40px;
@@ -25,14 +26,14 @@ img {
     border-radius: 5px;
 }
 
-/* 記述）メインコンテンツ */
+/* メインコンテンツ */
 #head {
     display: flex;
     align-items: center;
     position: relative;
 }
 
-/* 記述）top等共通のハンバーガーメニュー */
+/* top等共通のハンバーガーメニュー */
 .nav-menu {
     display: block;
     position: fixed;
@@ -74,13 +75,13 @@ img {
     flex: 0 0 80%;
 }
 
-/* 記述）topページ：改行用コマンド */
+/* 改行用コマンド */
 div {
     text-align: center;
     word-wrap: break-word;
 }
 
-/* 記述）topページ：テキストとフォーム間隔コマンド */
+/* テキストとフォーム間隔コマンド */
 label {
     display: inline-block;
     height: 50px;
@@ -88,7 +89,7 @@ label {
     vertical-align: top;
 }
 
-/* 記述）topページ：フォーム背景に色を付ける */
+/* フォーム背景に色を付ける */
 text {
     background-color: #cccccc;
 }
@@ -106,14 +107,14 @@ text {
     background: url(../img/post.png) left top no-repeat;
 }
 
-/* 記述）topページ：投稿入力欄 */
+/* 投稿入力欄 */
 /* .text-post { */
 /* width: 100px; */
 /* height: 50px; */
 /* } */
 
 
-/* 記述)topページ：投稿ボタン */
+/* 投稿ボタン */
 .image {
     width: 40px;
     height: 40px;
@@ -127,6 +128,14 @@ text {
     justify-content: flex-end;
     position: fixed;
 }
+
+/* topページの編集ボタン背景 */
+/* .modal-open js-modal-open {
+    display: inline-block;
+    color: white;
+    border-radius: 7px;
+    border: solid 0px;
+} */
 
 
 /* 記述)top:コメント編集 */
@@ -227,10 +236,12 @@ text {
 /* ボタンの並列 */
 button {
     display: inline-block;
-    background-color: red;
     color: white;
+    background-color: #FF3333;
     border-radius: 7px;
     border: solid 0px;
+    width: 150px;
+    height: 30px;
 }
 
 /* ユーザー検索要素 */
@@ -277,6 +288,27 @@ button {
 #under-bar {
     border-bottom: 5px solid #EEEEEE;
     width: 900px;
+}
+
+/* ハンバーガーメニュー */
+/* プロフィール編集 */
+.input {
+    text-align: center;
+    margin: 0 0 15px 250px;
+    background-color: #DDDDDD;
+    width: 200px;
+    height: 30px;
+}
+
+.updatebtn a {
+    color: #fff;
+    background-color: #FF3333;
+}
+
+/* プロフィールページ */
+.profile {
+    text-align: center;
+    word-wrap: break-word;
 }
 
 
