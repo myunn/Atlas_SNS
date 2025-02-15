@@ -8,11 +8,12 @@
 
 <h2>新規ユーザー登録</h2>
 <form action="profile.blade.php" method="post">
-  <li class="profile">
-    <li class=yoko>
+  <!-- <a class="profile">
+    <a class=yoko>
       <label>ユーザー名</label>
-    </li>
-  </li>
+    </a>
+  </a> -->
+
 
   {{ Form::label('ユーザー名') }}
   {{ Form::text('username',null,['class' => 'input']) }}
@@ -22,12 +23,22 @@
   {{ Form::text('mail',null,['class' => 'input']) }}
   <br>
 
-  {{ Form::label('パスワード') }}
-  {{ Form::text('password',null,['class' => 'input']) }}
+  <!-- {{ Form::label('パスワード') }}
+  {{ Form::text('password',null,['class' => 'input']) }} -->
+  <!-- 伏字方法これ？↓ -->
+  <form>
+    <label for="password">パスワード</label>
+    <input type="password" name="password">
+  </form>
   <br>
 
-  {{ Form::label('パスワード確認') }}
-  {{ Form::text('password_confirmation',null,['class' => 'input']) }}
+  <!-- {{ Form::label('パスワード確認') }}
+  {{ Form::text('password_confirmation',null,['class' => 'input']) }} -->
+    <!-- 伏字方法これ？↓ -->
+  <form>
+    <label for="password_confirmation">パスワード確認</label>
+    <input type="password" name="password_confirmation">
+  </form>
   <br>
   {{ Form::submit('新規登録') }}
 </form>

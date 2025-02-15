@@ -33,6 +33,12 @@ img {
     position: relative;
 }
 
+/* ツイート下線 */
+.under-bar2{
+    border-bottom: 1px solid;
+    width: 900px;
+}
+
 /* top等共通のハンバーガーメニュー */
 .nav-menu {
     display: block;
@@ -261,13 +267,6 @@ button {
     padding: 5px;
 }
 
-/* 記述)検索ページの検索コメント・ボタンの並列要素 */
-.user_list,
-.user_info,
-.search_area form {
-    display: flex;
-}
-
 .user_list {
     margin: 0 0 15px 250px;
 }
@@ -309,6 +308,7 @@ button {
 .profile {
     text-align: center;
     word-wrap: break-word;
+    font-size: 18px;
 }
 
 
@@ -337,4 +337,14 @@ button {
 input.form {
     width: 200px;
     height: 30px;
+}
+
+/* 要素の並列 */
+/* 検索ページの検索コメント・ボタンの並列要素 */
+.text-post,
+.icon_image,
+.user_list,
+.user_info,
+.search_area form {
+    display: flex;
 }

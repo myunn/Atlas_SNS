@@ -60,4 +60,19 @@ class PostsController extends Controller
         Post::where('id', $id)->delete();
         return redirect('/top');
     }
+
+        // バリデーション：PW確認
+        public function authorCreate(Request $request)
+    {
+        $request->validate([
+            'username' => 'required|min:2|max:12'
+            'mail' => 'required|min:5|max40|email|unique:users|email'
+            'password' => 'required|alpha_dash|min:8|max:20'
+            'passwordconfirm' => 'required|alpha_dash|min:8|max:20|confirmed'
+            ]);
+
+    }
+            'password' => 'required|confirmed'
+            ]);
+    }
 }

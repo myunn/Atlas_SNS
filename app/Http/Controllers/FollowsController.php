@@ -28,7 +28,9 @@ class FollowsController extends Controller
         return view('follows.followerList');
     }
 
+
     // フォロー・フォロー解除
+    // フォロー
     public function follow(User $user)
     {
         $follower = auth()->user();
