@@ -252,15 +252,17 @@ button {
 
 /* ユーザー検索要素 */
 /* 記述）フォローボタン機能 */
-.follow-button {
-    background-color: #4fbaf4;
+.btn-primary {
+    background-color: #66CCFF;
     border-radius: 7px;
     border: solid 0px;
     padding: 5px;
 }
 
+
+
 /* 記述）フォロー解除のボタン機能 */
-.unfollow-button {
+.btn-danger {
     background-color: red;
     border-radius: 7px;
     border: solid 0px;
@@ -268,7 +270,7 @@ button {
 }
 
 .user_list {
-    margin: 0 0 15px 250px;
+    margin: 15px 250px;
 }
 
 .user_info {
@@ -286,7 +288,6 @@ button {
 /* 検索ページの線引き */
 #under-bar {
     border-bottom: 5px solid #EEEEEE;
-    width: 900px;
 }
 
 /* ハンバーガーメニュー */

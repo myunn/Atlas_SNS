@@ -27,7 +27,7 @@
         <h1><a href="/top"><img src="http://127.0.0.1:8000/images/atlas.png"></a></h1>
             <div id="">
                 <div id="">
-                    <p>〇〇さん<img src="images/icon1.png"></p>
+                    <p>〇〇さん<img src="http://127.0.0.1:8000/images/{{$user->images}}"></p>
                 <div>
                     <!-- 記載：アコーディオンメニュー設定 -->
                     <div class="accordion">
@@ -39,7 +39,9 @@
                         </ul>
                     </div>
                 </div>
+                </div>
             </div>
+        </div>
     </header>
     <div id="row">
         <div id="container">

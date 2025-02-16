@@ -25,4 +25,10 @@ class UsersController extends Controller
     public function users(){
         return view('Auth.added');
     }
-}
+
+    }
+
+    // 記載）プロフィールページの現在値表示
+    // public function profile(){
+    //     $username = User::get();
+    //     $mail = Mail::get();
