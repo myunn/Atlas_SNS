@@ -27,7 +27,7 @@
         <h1><a href="/top"><img src="http://127.0.0.1:8000/images/atlas.png"></a></h1>
             <div id="">
                 <div id="">
-                    <p>〇〇さん<img src="http://127.0.0.1:8000/images/{{$user->images}}"></p>
+                    <p class=user_name>{{ $user->username }}さん<img src="http://127.0.0.1:8000/images/{{$user->images}}"></p>
                 <div>
                     <!-- 記載：アコーディオンメニュー設定 -->
                     <div class="accordion">
@@ -64,11 +64,13 @@
                 <button class="follower-list"><a href="/search">フォロワーリスト</a></button>
                 <!-- <p class="btn"><a href="/follower-list">フォロワーリスト</a></p> -->
             </div>
+              <!-- <div class="under-bar2">
+              </div> -->
             <div>
             <button class="user-search"><a href="/search">ユーザー検索</a></button>
             <!-- <p class="btn"><a href="/search">ユーザー検索</a></p> -->
+            </div>
         </div>
-    </div>
     <footer>
     </footer>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>

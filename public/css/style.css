@@ -349,3 +349,9 @@ input.form {
 .search_area form {
     display: flex;
 }
+
+/* 共有ページ */
+/* ユーザーネーム */
+.user_name{
+    color: white;
+}
