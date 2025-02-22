@@ -283,6 +283,15 @@ button {
 
 .becide {
     margin-right: 15px;
+    display: flex;
+    align-items: stretch;
+}
+
+/* 検索ボタン画像 */
+.search_image {
+    border-radius: 7px;
+    width: 40px;
+    margin: 0 15px
 }
 
 /* 検索ページの線引き */
@@ -312,7 +321,11 @@ button {
     font-size: 18px;
 }
 
-
+/* 下線 */
+.follower-list {
+    padding:20px 0;
+    border-top: 1px solid #000;
+}
 
 /* 共通箇所 */
 /* ボタン文字色（コンマで区切る。button class とa は間に空白入れればOK） */

@@ -3,14 +3,16 @@
 @section('content')
 <!-- 検索用の入力箇所・ボタン設定 -->
 <div class="search_area">
-    <form action="/search" method="post">
+    <form action="/search" >
     @csrf
       <div class=becide>
         <input type="text" name="keyword" class="form" placeholder="ユーザー名">
+        <input type="image" name="submit" imag class="search_image" src="http://127.0.0.1:8000/images/search.png">
+
       </div>
-      <div class=becide>
+      <!-- <div class=becide>
         <h1><a href="/user"><img src="http://127.0.0.1:8000/images/search.png"></a></h1>
-      </div>
+      </div> -->
     </form>
   <div id="under-bar">
   </div>

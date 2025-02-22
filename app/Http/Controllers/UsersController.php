@@ -11,10 +11,20 @@ class UsersController extends Controller
     public function profile(){
         return view('users.profile');
     }
-    public function search(){
-        $users = User::get();
+
+    // searchページへの情報取得
+    // 検索ボックスでのキーワード一部でも引っかかれば情報引っ張ってくる
+    public function search(Request $request){
+        $keyword = $request->input('keyword');
+
+        if(!empty($keyword)){
+            $users=User::where('username','like', '%'.$keyword.'%')->get();
+        }else{
+            $users = User::get();
+        }
         return view('users.search',['users'=>$users]);
     }
+
     // 記載：フォロワーとフォローリスト
     public function followerList(){
         return view('follows.followerList');
