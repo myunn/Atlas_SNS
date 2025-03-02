@@ -293,6 +293,10 @@ button {
     border-bottom: 5px solid #EEEEEE;
 }
 
+.search_word {
+    margin-left: 190px;
+}
+
 /* ハンバーガーメニュー */
 /* プロフィール編集 */
 .input {
@@ -374,4 +378,10 @@ input.form {
 /* ユーザーネーム */
 .user_name{
     color: white;
+    margin-left: 1500px;
+}
+
+/* nab-btn */
+.accordion {
+    margin-left: 1500px;
 }
