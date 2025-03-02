@@ -21,8 +21,10 @@ class FollowsController extends Controller
     }
 
     // 記載)フォロー・フォロワーリストに戻る
+    // フォロワーページ
     public function followList(){
-        return view('follows.followList');
+        // $followLists = followList::all();
+            return view('follows.followList');
     }
     public function followerList(){
         return view('follows.followerList');
@@ -54,4 +56,6 @@ class FollowsController extends Controller
             return back();
         }
     }
+
+    //
 }

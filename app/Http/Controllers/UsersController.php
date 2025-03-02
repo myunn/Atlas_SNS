@@ -22,7 +22,7 @@ class UsersController extends Controller
         }else{
             $users = User::get();
         }
-        return view('users.search',['users'=>$users]);
+        return view('users.search',['users'=>$users,'keyword'=>$keyword]);
     }
 
     // 記載：フォロワーとフォローリスト

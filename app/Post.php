@@ -15,7 +15,7 @@ class Post extends Model
         return $this->belongsTo('App\User');
     }
 
-    // 検索ワードの表示
+    // 検索ページの検索ワードの表示
     public function search(Request $request){
         $search_word = $request->input('search_word');
     }

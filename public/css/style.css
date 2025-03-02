@@ -26,6 +26,12 @@ img {
     border-radius: 5px;
 }
 
+/* ロゴ */
+img.logo {
+    width: 100px;
+    height: 40px;
+}
+
 /* メインコンテンツ */
 #head {
     display: flex;

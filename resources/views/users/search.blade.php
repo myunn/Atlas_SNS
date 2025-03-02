@@ -10,9 +10,11 @@
         <input type="image" name="submit" imag class="search_image" src="http://127.0.0.1:8000/images/search.png">
 
         <!-- 検索したワードの表示 -->
-        <h1 class="">
-          <a>検索ワード：</a><span></span>
+        @if (!empty($keyword))
+        <h1 class="search_word">
+          <a href="UsersController.php">検索ワード：{{$keyword}}</a><span></span>
         </h1>
+        @endif
       </div>
     </form>
   <div id="under-bar">

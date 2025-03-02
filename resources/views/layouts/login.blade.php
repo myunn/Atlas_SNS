@@ -24,10 +24,10 @@
     <header>
         <div id = "head">
             <!-- 記載：画像リンク -->
-        <h1><a href="/top"><img src="http://127.0.0.1:8000/images/atlas.png"></a></h1>
+        <h1><a href="/top"><img src="http://127.0.0.1:8000/images/atlas.png" class="logo"></a></h1>
             <div id="">
                 <div id="">
-                    <p class=user_name>{{ $user->username }}さん<img src="http://127.0.0.1:8000/images/{{$user->images}}"></p>
+                    <p class=user_name>{{ Auth::user()->username }}さん<img src="http://127.0.0.1:8000/images/{{Auth::user()->images}}"></p>
                 <div>
                     <!-- 記載：アコーディオンメニュー設定 -->
                     <div class="accordion">
@@ -49,19 +49,19 @@
         </div >
         <div id="side-bar">
             <div id="confirm">
-                <p>{{ $user->username }}さんの</p>
+                <p>{{ Auth::user()->username }}さんの</p>
                 <div>
                 <p>フォロー数</p>
                 <p>〇〇名</p>
                 </div>
                 <div>
-                <button class="follow-list"><a href="/search">フォローリスト</a></button>
+                <button class="follow-list"><a href="/follow-list">フォローリスト</a></button>
                 <div>
                 <p>フォロワー数</p>
                 <p>〇〇名</p>
                 </div>
                 <div>
-                <button class="follower-list"><a href="/search">フォロワーリスト</a></button>
+                <button class="follower-list"><a href="/follower-list">フォロワーリスト</a></button>
                 <!-- <p class="btn"><a href="/follower-list">フォロワーリスト</a></p> -->
             </div>
               <hr>

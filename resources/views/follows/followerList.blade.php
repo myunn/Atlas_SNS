@@ -1,22 +1,17 @@
 @extends('layouts.login')
 
 @section('content')
-フォロワーリスト
-
-<p>{{ $posts->count() }}</p>
-
-<!-- 記述）必要情報を引っ張って反映させたい -->
-  @foreach ($posts as $post)
-  <div>
-      <img src="http://127.0.0.1:8000/images/{{$post->user->images}}">
-      <p>{{ $post->user->username }}</p>
-      <p>{{ $post->updated_at }}</p>
-      <p>{{ $post->post }}</p>
+<!-- アイコン一覧の表示 -->
+<div class=all_users_icon>
+  <a>フォロワーリスト</a>
+  <img src="http://127.0.0.1:8000/images/{{Auth::user()->images}}">
 </div>
- @endforeach
+
+<!-- 投稿一覧 -->
+
+
+<!-- 使用するところは下記 -->
+<!-- followsController>followリストメソッド -->
+<!-- ユーザー取得とか引っ張ってきたい情報を追記する -->
 
 @endsection
-
-<button class="modal-open js-modal-open">
-      <img src="http://127.0.0.1:8000/images/edit.png">
-</button>
