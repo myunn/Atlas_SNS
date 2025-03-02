@@ -9,10 +9,11 @@
         <input type="text" name="keyword" class="form" placeholder="ユーザー名">
         <input type="image" name="submit" imag class="search_image" src="http://127.0.0.1:8000/images/search.png">
 
+        <!-- 検索したワードの表示 -->
+        <h1 class="">
+          <a>検索ワード：</a><span></span>
+        </h1>
       </div>
-      <!-- <div class=becide>
-        <h1><a href="/user"><img src="http://127.0.0.1:8000/images/search.png"></a></h1>
-      </div> -->
     </form>
   <div id="under-bar">
   </div>

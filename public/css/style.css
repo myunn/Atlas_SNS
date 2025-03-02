@@ -33,12 +33,6 @@ img {
     position: relative;
 }
 
-/* ツイート下線 */
-.under-bar2{
-    border-bottom: 1px solid;
-    width: 900px;
-}
-
 /* top等共通のハンバーガーメニュー */
 .nav-menu {
     display: block;
@@ -321,22 +315,35 @@ button {
     font-size: 18px;
 }
 
-/* 下線 */
-.follower-list {
-    padding:20px 0;
-    border-top: 1px solid #000;
+/* ツイート下線 */
+/* .under-bar2 {
+    border-bottom: 1px solid;
+    width: 900px;
 }
+.line {
+padding:20px 0;
+border-top: 5px solid black;
+} */
 
 /* 共通箇所 */
 /* ボタン文字色（コンマで区切る。button class とa は間に空白入れればOK） */
 
-/* 横のバー要素のボタン色 */
+/* 横のバー要素のボタン色・配置 */
 .follow-list,
-.follower-list,
-.user-search {
+.follower-list{
+    margin: 10px 0 10px 100px;
     background-color: blue;
     padding: 5px;
 }
+
+.user-search {
+    margin: 10px;
+    background-color: blue;
+    padding: 5px;
+}
+
+/* 文字位置調整 */
+
 
 /* ボタンの文字色 */
 .follow-list a,

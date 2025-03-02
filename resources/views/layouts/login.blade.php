@@ -49,7 +49,7 @@
         </div >
         <div id="side-bar">
             <div id="confirm">
-                <p>〇〇さんの</p>
+                <p>{{ $user->username }}さんの</p>
                 <div>
                 <p>フォロー数</p>
                 <p>〇〇名</p>
@@ -64,8 +64,8 @@
                 <button class="follower-list"><a href="/search">フォロワーリスト</a></button>
                 <!-- <p class="btn"><a href="/follower-list">フォロワーリスト</a></p> -->
             </div>
-              <!-- <div class="under-bar2">
-              </div> -->
+              <hr>
+              </div>
             <div>
             <button class="user-search"><a href="/search">ユーザー検索</a></button>
             <!-- <p class="btn"><a href="/search">ユーザー検索</a></p> -->
