@@ -19,4 +19,9 @@ class Post extends Model
     public function search(Request $request){
         $search_word = $request->input('search_word');
     }
+
+    // フォローしているユーザーを取得
+    public function followings(){
+        return $this->belongsToMany(User::class,'follows','follower_id','followed_id');
+    }
 }

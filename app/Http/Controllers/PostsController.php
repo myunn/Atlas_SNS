@@ -17,7 +17,7 @@ class PostsController extends Controller
 
     }
     public function index(){
-         $posts = Post::get();
+        $posts = Post::get();
         return view('posts.index',['posts'=>$posts]);
     }
 

@@ -3,7 +3,7 @@
 @section('content')
 <!-- アイコン一覧の表示 -->
 <div class=all_users_icon>
-  <a>フォロワーリスト</a>
+  <p>フォロワーリスト</p>
   <img src="http://127.0.0.1:8000/images/{{Auth::user()->images}}">
 </div>
 

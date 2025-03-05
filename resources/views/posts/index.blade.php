@@ -16,9 +16,9 @@
     <div class="text-post">
     <input type="text" name="post" class="form" placeholder="投稿内容を入力ください。">
     {!! Form::open(['url' => 'post/create']) !!}
-    <div id="under-bar">
-    </div>
-    <!--<input type="hidden" name="user_id" value="{{-- Auth::id() --}}">-->
+
+    <!-- 下線表示 -->
+    <div id="under-bar"></div>
     </div>
 
 <!-- 画像に機能を追加する -->
@@ -26,7 +26,8 @@
     <img  src="http://127.0.0.1:8000/images/post.png" class="submit_btn">
     {!! Form::close() !!}
     </div>
-    </form>
+
+</form>
     <!-- ここまで新規投稿エリア -->
 
 <!-- 投稿一覧エリア -->
@@ -37,7 +38,7 @@
       <p>{{ $post->user->username }}</p>
       <p>{{ $post->updated_at }}</p>
       <p>{{ $post->post }}</p>
-      <a?><hr class="dropdown-divider"></a>
+      <a><hr class="dropdown-divider"></a>
     </div>
 
 <!-- ログインユーザーの記載・削除アイコンの表示指定 -->
@@ -51,7 +52,6 @@
     <a class="btn btn-danger" href="/post/{{$post->id }}/delete" onclick="return confirm('こちらの投稿を削除してもよろしいでしょうか？')"><img src="http://127.0.0.1:8000/images/trash.png"></a>
 <!-- ここまで削除ボタン -->
     @endif
-    </div>
   </div>
     @endforeach
  <!-- ここまで投稿一覧エリア -->
@@ -75,6 +75,7 @@
         </form>
       </div>
     </div>
+  </div>
   </div>
 </body>
 </html>

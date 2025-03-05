@@ -36,6 +36,9 @@ class UsersController extends Controller
         return view('Auth.added');
     }
 
+    // フォロー・フォロワー数の表示
+
+
     }
 
     // 記載）プロフィールページの現在値表示

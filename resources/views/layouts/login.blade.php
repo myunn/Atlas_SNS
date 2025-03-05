@@ -22,7 +22,7 @@
 </head>
 <body>
     <header>
-        <div id = "head">
+        <header class = "head">
             <!-- 記載：画像リンク -->
         <h1><a href="/top"><img src="http://127.0.0.1:8000/images/atlas.png" class="logo"></a></h1>
             <div id="">
@@ -41,18 +41,21 @@
                 </div>
                 </div>
             </div>
-        </div>
+        </header>
     </header>
+    <!-- 共通ぽいからここ？でもここに入れるとそれぞれのページの必要な情報入力できない？ -->
+    <!-- <div id="under-bar"></div> -->
+
     <div id="row">
         <div id="container">
             @yield('content')
         </div >
-        <div id="side-bar">
+        <div class="sidebar">
             <div id="confirm">
                 <p>{{ Auth::user()->username }}さんの</p>
                 <div>
                 <p>フォロー数</p>
-                <p>〇〇名</p>
+                <p>{{Auth::user()->followCount}}名</p>
                 </div>
                 <div>
                 <button class="follow-list"><a href="/follow-list">フォローリスト</a></button>

@@ -100,9 +100,16 @@ text {
     background-color: #cccccc;
 }
 
-#side-bar {
-    flex: 0 0 19%;
-    border-left: 1px solid #727272;
+.sidebar {
+    position: fixed;
+    right: 0;
+    width: 250px;
+    height: 100vh;
+    background-color: #fff;
+    color: black;
+    padding: 20px;
+    box-sizing: border-box;
+    border-left: 1px solid #808080;
 }
 
 /* 送信ボタンに画像挿入したい */
@@ -294,9 +301,16 @@ button {
     margin: 0 15px
 }
 
-/* 検索ページの線引き */
+/* 検索ページ・フォロー・フォロワー・topページの線引き */
 #under-bar {
     border-bottom: 5px solid #EEEEEE;
+}
+
+hr {
+    height: 1px;
+    border: none;
+    color:#DDDDDD;
+    background-color: #DDDDDD;
 }
 
 .search_word {
@@ -325,23 +339,13 @@ button {
     font-size: 18px;
 }
 
-/* ツイート下線 */
-/* .under-bar2 {
-    border-bottom: 1px solid;
-    width: 900px;
-}
-.line {
-padding:20px 0;
-border-top: 5px solid black;
-} */
-
 /* 共通箇所 */
 /* ボタン文字色（コンマで区切る。button class とa は間に空白入れればOK） */
 
 /* 横のバー要素のボタン色・配置 */
 .follow-list,
 .follower-list{
-    margin: 10px 0 10px 100px;
+    margin: 10px 0 10px 30px;
     background-color: blue;
     padding: 5px;
 }
@@ -384,10 +388,46 @@ input.form {
 /* ユーザーネーム */
 .user_name{
     color: white;
-    margin-left: 1500px;
+    display: flex;
+    justify-content: flex-end;
 }
 
 /* nab-btn */
 .accordion {
     margin-left: 1500px;
+}
+
+/* フォローリスト */
+/* アイコン一覧表示 */
+.all_follow-users_icon {
+    float: left;
+    width: 50px;
+    height: 50px;
+}
+
+img.follow-List {
+    margin:0 10px;
+}
+
+/* フォローリストタイトル */
+.follow-list-title {
+    padding: 50px 230px 50px 0px;
+}
+
+/* フォローユーザーの詳細表示 */
+.follow-users-all {
+    display: flex;
+}
+
+.follow-users-info {
+    margin-right: 200px;
+    display: flex;
+}
+
+/* フォローページのフォローユーザーのツイート等表示間隔 */
+.username,
+.date,
+.post {
+    display: inline-block;
+    margin: 0 0 0 auto;
 }

@@ -6,13 +6,19 @@ use Illuminate\Http\Request;
 use App\User;
 use App\Follow;
 use resources\views\Auth;
+use App\Post;
 
 class FollowsController extends Controller
 {
     //記載)フォロー・フォロワー数の表示（following_idにある自分のid＝フォロー数）
-    public function following(){
-        $followings = Follow::where('following_id',Auth::id())->get();
-        return view('auth.login',compact('followings'));
+    public function login($id){
+        $user = User::findOrFail($id);
+        $followCount = $user->followings()->count();
+        return view('auth.login','followCount');
+
+
+        // $followings = Follow::where('following_id',Auth::id())->get();
+        // return view('auth.login',compact('followings'));
     }
 
     public function followed(){
@@ -21,10 +27,11 @@ class FollowsController extends Controller
     }
 
     // 記載)フォロー・フォロワーリストに戻る
-    // フォロワーページ
     public function followList(){
-        // $followLists = followList::all();
-            return view('follows.followList');
+        $posts = Post::get();
+        return view('follows.followList')->with([
+        'posts' => $posts]);
+        // $posts = Post::query()->whereIn('user_id', Auth::user()->follows()->pluck('followed_user_id'))->latest()->get();
     }
     public function followerList(){
         return view('follows.followerList');
