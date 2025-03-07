@@ -431,3 +431,7 @@ img.follow-List {
     display: inline-block;
     margin: 0 0 0 auto;
 }
+
+.A {
+    display: flex;
+}
