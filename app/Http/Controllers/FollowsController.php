@@ -28,10 +28,21 @@ class FollowsController extends Controller
 
     // 記載)フォロー・フォロワーリストに戻る
     public function followList(){
-        $posts = Post::query()->whereIn('user_id',Auth::user()->follows()->pluck('following_id'));
-        dd($posts);
-        return view('follows.followList')->with([
-        'posts' => $posts]);
+        // フォローしているユーザーのIDを取得
+        $followedUserIds = Auth::user()->follows()->pluck('followed_id');
+        // フォローしているユーザーの情報とツイートを取得（新しい順に）
+        $followedUsers = User::whereIn('id',$followedUserIds)->with(['posts' => function($query){
+            $query->orderBy('created_at','desc');
+        }])->get();
+
+        return view('followList',compact('followedUsers'));
+
+        // $posts = Post::query()->whereIn('user_id',Auth::user()->follows()->pluck('following_id'));
+        // return view('follows.followList')->with([
+        // 'posts' => $posts]);
+
+
+        // 下記検索して出てきたやつ
         // $posts = Post::query()->whereIn('user_id', Auth::user()->follows()->pluck('following_id'))->latest()->get();
     }
     public function followerList(){

@@ -24,4 +24,9 @@ class Post extends Model
     public function followings(){
         return $this->belongsToMany(User::class,'follows','follower_id','followed_id');
     }
+
+    // ツイート取得
+    public function posts(){
+        return $this->hasMany(Post::class);
+    }
 }

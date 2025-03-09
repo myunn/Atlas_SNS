@@ -26,7 +26,7 @@
     <img  src="http://127.0.0.1:8000/images/post.png" class="submit_btn">
     {!! Form::close() !!}
     </div>
-
+  </div>
 </form>
     <!-- ここまで新規投稿エリア -->
 
@@ -52,7 +52,7 @@
     <a class="btn btn-danger" href="/post/{{$post->id }}/delete" onclick="return confirm('こちらの投稿を削除してもよろしいでしょうか？')"><img src="http://127.0.0.1:8000/images/trash.png"></a>
 <!-- ここまで削除ボタン -->
     @endif
-  </div>
+
     @endforeach
  <!-- ここまで投稿一覧エリア -->
 
@@ -75,7 +75,6 @@
         </form>
       </div>
     </div>
-  </div>
   </div>
 </body>
 </html>
