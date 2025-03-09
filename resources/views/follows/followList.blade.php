@@ -14,7 +14,7 @@
 </div>
 
 <!-- 投稿一覧 -->
-<div>
+<div class=B>
   @foreach ($posts as $post)
   <div class="follow-users-all">
     <div class="follow-users-info">

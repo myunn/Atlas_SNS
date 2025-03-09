@@ -55,6 +55,7 @@ Route::get('/follow-list','FollowsController@followList');
 Route::post('/follow/{Id}','FollowsController@followList');
 // フォロワーリスト
 Route::get('/follower-list','FollowsController@followerList');
+Route::post('/follower/{Id}','FollowsController@followList');
 // フォロー・フォロー解除
 Route::post('users/{user}/follow', 'FollowsController@follow')->name('follow');
 Route::delete('users/{user}/unfollow', 'FollowsController@unfollow')->name('unfollow');

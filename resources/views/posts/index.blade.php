@@ -34,11 +34,14 @@
     <!-- 一覧表示 postからとってきた情報の何を表示するか指定-->
     @foreach ($posts as $post)
     <div class="user_info">
-      <img src="http://127.0.0.1:8000/images/{{$post->user->images}}">
-      <p>{{ $post->user->username }}</p>
-      <p>{{ $post->updated_at }}</p>
-      <p>{{ $post->post }}</p>
-      <a><hr class="dropdown-divider"></a>
+      <div class="user_image">
+        <img src="http://127.0.0.1:8000/images/{{$post->user->images}}" alt="User Image">
+      </div>
+      <div class="user_details">
+        <p class="username">{{ $post->user->username }}</p>
+        <p class="updated_at">{{ $post->updated_at }}</p>
+        <p class="post_content">{{ $post->post }}</p>
+      </div>
     </div>
 
 <!-- ログインユーザーの記載・削除アイコンの表示指定 -->
@@ -53,6 +56,7 @@
 <!-- ここまで削除ボタン -->
     @endif
 
+    <hr>
     @endforeach
  <!-- ここまで投稿一覧エリア -->
 
