@@ -21,27 +21,22 @@
     <!--OGPタグ/twitterカード-->
 </head>
 <body>
-    <header>
-        <header class = "head">
+    <header class = "head">
             <!-- 記載：画像リンク -->
-        <h1><a href="/top"><img src="http://127.0.0.1:8000/images/atlas.png" class="logo"></a></h1>
-            <div id="">
-                <div id="">
-                    <p class=user_name>{{ Auth::user()->username }}さん<img src="http://127.0.0.1:8000/images/{{Auth::user()->images}}"></p>
-                <div>
-                    <!-- 記載：アコーディオンメニュー設定 -->
-                    <div class="accordion">
-                        <p class="nav-btn"> </p>
-                        <ul class="nav-menu">
-                            <li><a href="/top">HOME</a></li>
-                            <li><a href="/profile">プロフィール編集</a></li>
-                            <li><a href="/logout">ログアウト</a></li>
-                        </ul>
-                    </div>
-                </div>
+        <a href="/top"><img src="http://127.0.0.1:8000/images/atlas.png" class="logo"></a>
+            <div id="login.A">
+                <!-- 記載：アコーディオンメニュー設定 -->
+                <div class="accordion">
+                    <p class=user_name>{{ Auth::user()->username }}さん</p>
+                    <p class="nav-btn"> </p>
+                    <ul class="nav-menu">
+                        <li><a href="/top">HOME</a></li>
+                        <li><a href="/profile">プロフィール編集</a></li>
+                        <li><a href="/logout">ログアウト</a></li>
+                    </ul>
+                    <img src="http://127.0.0.1:8000/images/{{Auth::user()->images}}">
                 </div>
             </div>
-        </header>
     </header>
     <!-- 共通ぽいからここ？でもここに入れるとそれぞれのページの必要な情報入力できない？ -->
     <!-- <div id="under-bar"></div> -->
@@ -53,27 +48,27 @@
         <div class="sidebar">
             <div id="confirm">
                 <p>{{ Auth::user()->username }}さんの</p>
-                <div>
+                <div class=login.C>
                 <p>フォロー数</p>
                 <p>{{Auth::user()->follows()->count()}}名</p>
                 </div>
-                <div>
+                <div class=login.D>
                 <button class="follow-list"><a href="/follow-list">フォローリスト</a></button>
-                <div>
+                <div class=login.E>
                 <p>フォロワー数</p>
                 <p>名</p>
                 </div>
-                <div>
+                <div class=login.F>
                 <button class="follower-list"><a href="/follower-list">フォロワーリスト</a></button>
                 <!-- <p class="btn"><a href="/follower-list">フォロワーリスト</a></p> -->
-            </div>
-              <hr>
-              </div>
-            <div>
+                </div>
+                <hr>
+                </div>
             <button class="user-search"><a href="/search">ユーザー検索</a></button>
             <!-- <p class="btn"><a href="/search">ユーザー検索</a></p> -->
             </div>
         </div>
+    </div>
     <footer>
     </footer>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>

@@ -16,7 +16,6 @@ class FollowsController extends Controller
         $followCount = $user->followings()->count();
         return view('auth.login','followCount');
 
-
         // $followings = Follow::where('following_id',Auth::id())->get();
         // return view('auth.login',compact('followings'));
     }
@@ -28,23 +27,28 @@ class FollowsController extends Controller
 
     // 記載)フォロー・フォロワーリストに戻る
     public function followList(){
-        // フォローしているユーザーのIDを取得
-        $followedUserIds = Auth::user()->follows()->pluck('followed_id');
-        // フォローしているユーザーの情報とツイートを取得（新しい順に）
-        $followedUsers = User::whereIn('id',$followedUserIds)->with(['posts' => function($query){
-            $query->orderBy('created_at','desc');
-        }])->get();
-
-        return view('followList',compact('followedUsers'));
-
-        // $posts = Post::query()->whereIn('user_id',Auth::user()->follows()->pluck('following_id'));
-        // return view('follows.followList')->with([
-        // 'posts' => $posts]);
+        // $posts = Post::get();
+        // $following_id = Auth::user()->follows()->pluck('followed_id');
+        // $posts = Post::with('user')->whereIn('users.id',$following_id)->get();
 
 
-        // 下記検索して出てきたやつ
-        // $posts = Post::query()->whereIn('user_id', Auth::user()->follows()->pluck('following_id'))->latest()->get();
+
+    // 候補２　調べて書いてみたやつ
+    //     // フォローしているユーザーのIDを取得
+    //     $followedUserIds = Auth::user()->follows()->pluck('followed_id');
+    //     // フォローしているユーザーの情報とツイートを取得（新しい順に）
+    //     $followedUsers = User::whereIn('id',$followedUserIds)->with(['posts' => function($query){
+    //         $query->orderBy('created_at','desc');
+    //     }])->get();
+
+    //     return view('followList',compact('followedUsers'));
+
+        // 候補１　下記検索して出てきたやつ
+        $posts = Post::query()->whereIn('user_id', Auth::user()->follows()->pluck('following_id'))->latest()->get();
+
+        return view('follows.followList',compact('posts'));
     }
+
     public function followerList(){
         return view('follows.followerList');
     }

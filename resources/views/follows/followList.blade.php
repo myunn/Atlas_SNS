@@ -4,9 +4,9 @@
 <!-- アイコン一覧の表示 -->
 <p class="follow-list-title">フォローリスト</p>
 <div class=A>
-  @foreach ($followedUserIds as $followedUsers)
+  @foreach ($posts as $post)
   <div class=all_follow-users_icon>
-    <img src="http://127.0.0.1:8000/images/{{$post->user->images}}" class="follow-List">
+    <img src="images/{{$post->user->images}}" class="follow-List">
   </div>
   @endforeach
 
@@ -14,11 +14,11 @@
 </div>
 
 <!-- 投稿一覧 -->
-<div class=B>
-  @foreach ($posts as $post)
+<div>
+  @foreach ($posts as $posts)
   <div class="follow-users-all">
     <div class="follow-users-info">
-      <img src="http://127.0.0.1:8000/images/{{$post->user->images}}">
+      <img src="images/{{$post->user->images}}">
       <p class="username">{{ $post->user->username }}</p>
       <p class="date">{{ $post->updated_at }}</p>
       <p class="post">{{ $post->post }}</p>

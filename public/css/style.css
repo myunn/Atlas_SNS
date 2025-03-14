@@ -40,15 +40,26 @@ img.logo {
 }
 
 /* top等共通のハンバーガーメニュー */
+li {
+    margin: 20px;
+}
+
+li a {
+    color:#808080;
+    border: 1px solid #fff;
+
+}
+
 .nav-menu {
     display: block;
     position: fixed;
     z-index: 1;
     padding-top: 60px;
     transform: translateY(-130%);
-    transition: .5s ease-in-out;
+    transition: 0s ease-in-out;
     height: 100vh;
     background-color: #fff;
+    width: 250px;
 }
 
 .nav-btn {
@@ -57,18 +68,18 @@ img.logo {
     border-top: solid 2px #fff;
     border-right: solid 2px #fff;
     transform: rotate(135deg);
-    transition: .5s ease-in-out;
+    transition: 0s ease-in-out;
 
 }
 
 .nav-btn.active {
     transform: rotate(-45deg);
-    transition: .5s ease-in-out;
+    transition: 0s ease-in-out;
 }
 
 .nav-menu.active {
     transform: translateY(0%);
-    transition: .5s ease-in-out;
+    transition: 0s ease-in-out;
 }
 
 /* main content */
@@ -394,7 +405,8 @@ input.form {
 
 /* nab-btn */
 .accordion {
-    margin-left: 1500px;
+    display: flex;
+    justify-content: right;
 }
 
 /* フォローリスト */
@@ -434,4 +446,10 @@ img.follow-List {
 
 .A {
     display: flex;
+}
+
+.logo {
+
+
+
 }
