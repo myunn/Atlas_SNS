@@ -4,9 +4,9 @@
 <!-- アイコン一覧の表示 -->
 <p class="follow-list-title">フォローリスト</p>
 <div class=A>
-  @foreach ($posts as $post)
+  @foreach ($followed_users as $followed_user)
   <div class=all_follow-users_icon>
-    <img src="images/{{$post->user->images}}" class="follow-List">
+    <img src="images/{{$followed_user->images}}" class="follow-List">
   </div>
   @endforeach
 
@@ -15,7 +15,7 @@
 
 <!-- 投稿一覧 -->
 <div>
-  @foreach ($posts as $posts)
+  @foreach ($posts as $post)
   <div class="follow-users-all">
     <div class="follow-users-info">
       <img src="images/{{$post->user->images}}">
