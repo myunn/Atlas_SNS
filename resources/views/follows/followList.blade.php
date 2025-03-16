@@ -6,10 +6,9 @@
 <p class="follow-list-title">フォローリスト</p>
   @foreach ($followed_users as $followed_user)
   <div class=all_follow-users_icon>
-    <img src="images/{{$followed_user->images}}" class="follow-List">
+    <a href="/users_profile"><img src="images/{{$followed_user->images}}" class="follow-List"></a>
   </div>
   @endforeach
-
 </div>
 
 <div id="under-bar"></div>

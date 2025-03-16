@@ -36,6 +36,9 @@ class UsersController extends Controller
         return view('Auth.added');
     }
 
+    public function users_profile(){
+        return view('users_profile');
+    }
     // フォロー・フォロワー数の表示
 
 
