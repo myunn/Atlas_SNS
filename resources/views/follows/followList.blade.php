@@ -2,16 +2,17 @@
 
 @section('content')
 <!-- アイコン一覧の表示 -->
-<p class="follow-list-title">フォローリスト</p>
 <div class=A>
+<p class="follow-list-title">フォローリスト</p>
   @foreach ($followed_users as $followed_user)
   <div class=all_follow-users_icon>
     <img src="images/{{$followed_user->images}}" class="follow-List">
   </div>
   @endforeach
 
-  <div id="under-bar"></div>
 </div>
+
+<div id="under-bar"></div>
 
 <!-- 投稿一覧 -->
 <div>
