@@ -1,10 +1,11 @@
-<!-- 相手のプロフィール -->
 @extends('layouts.login')
 
 @section('content')
 
-<!-- 作成が必要もの -->
+<div class=1>
+<p>相手のプロフィール</p>
 <!-- 相手ユーザーのアイコン・ユーザーネーム・自己紹介文・フォロー・アンフォロー機能 -->
+@foreach($posts as $post)
 <img src="http://127.0.0.1:8000/images/{{$post->user->images}}" alt="User Image">
 <p class="username">{{ $post->user->username }}</p>
 <p class="self_introduction">{{$post->user->self_introduction }}</p>
@@ -24,9 +25,10 @@
           <button type="submit" class="btn btn-primary">フォローする</button>
       </form>
   @endif
-</div>
-</div>
 @endforeach
+</div>
+</div>
+
 
 
 
@@ -45,10 +47,7 @@
         <p class="post_content">{{ $post->post }}</p>
       </div>
     </div>
-
-
-
-
+    @endforeach
 
 
 

@@ -46,8 +46,7 @@ class FollowsController extends Controller
 
         // フォローしてるユーザーの投稿情報を新しい順で取得
         // 単純に考えると下記
-        $following_posts = Post::query()->whereIn('user_id', Auth::user()->follows()->pluck('following_id'))->latest()->get();
-        return view('follows.followerList',compact('following_posts','following_users'));
+        // $following_posts = Post::query()->whereIn('user_id', Auth::user()->follows()->pluck('following_id'))->latest()->get();
 
         // 候補①：カリキュラム
         $following_posts = Post::with('user')->whereIn('user_id',Auth::user()->follows()->pluck('following_id'))->latest()->get();
@@ -56,6 +55,7 @@ class FollowsController extends Controller
 
         // 候補③：調べたもの
         // $following_posts = Post::query()->whereInAuth::user()->follows()->pluck('following_id')->latest()->get();
+        return view('follows.followerList',compact('following_posts','following_users'));
     }
 
 

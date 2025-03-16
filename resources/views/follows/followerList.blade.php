@@ -25,7 +25,7 @@
     </div>
   </div>
     <!-- 下線追加 -->
-  <hr>
+  <hr size="120" noshade>
   @endforeach
     <!-- 使用するところは下記 -->
     <!-- followsController>followリストメソッド -->
