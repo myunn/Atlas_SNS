@@ -328,14 +328,7 @@ hr {
 }
 
 /* ハンバーガーメニュー */
-/* プロフィール編集 */
-.input {
-    text-align: center;
-    margin: 0 0 15px 250px;
-    background-color: #DDDDDD;
-    width: 200px;
-    height: 30px;
-}
+
 
 .updatebtn a {
     color: #fff;
@@ -347,6 +340,15 @@ hr {
     text-align: center;
     word-wrap: break-word;
     font-size: 18px;
+}
+
+/* プロフィール編集 */
+input {
+    text-align: center;
+    margin: 0 0 15px 250px;
+    background-color: #DDDDDD;
+    width: 200px;
+    height: 30px;
 }
 
 /* 共通箇所 */
@@ -445,10 +447,4 @@ img.follow-List {
 
 .A {
     display: flex;
-}
-
-.logo {
-
-
-
 }
