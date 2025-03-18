@@ -17,28 +17,28 @@
 
   {{ Form::label('ユーザー名') }}
   {{ Form::text('username',null,['class' => 'input']) }}
-
   <br>
+
   {{ Form::label('メールアドレス') }}
   {{ Form::text('mail',null,['class' => 'input']) }}
   <br>
 
-  <!-- {{ Form::label('パスワード') }}
-  {{ Form::text('password',null,['class' => 'input']) }} -->
+  {{ Form::label('パスワード') }}
+  {{ Form::text('password',null,['class' => 'input']) }}
   <!-- 伏字方法これ？↓ -->
-  <form>
+  <!-- <form>
     <label for="password">パスワード</label>
     <input type="password" name="password">
-  </form>
+  </form> -->
   <br>
 
-  <!-- {{ Form::label('パスワード確認') }}
-  {{ Form::text('password_confirmation',null,['class' => 'input']) }} -->
+  {{ Form::label('パスワード確認') }}
+  {{ Form::text('password_confirmation',null,['class' => 'input']) }}
     <!-- 伏字方法これ？↓ -->
-  <form>
+  <!-- <form>
     <label for="password_confirmation">パスワード確認</label>
     <input type="password" name="password_confirmation">
-  </form>
+  </form> -->
   <br>
   {{ Form::submit('新規登録') }}
 </form>
@@ -50,7 +50,7 @@
 {!! Form::close() !!}
 
 <!-- 記載：バリデーションエラーチェック -->
-@if($errors->any())
+<!-- @if($errors->any())
     <div class="alert alert-danger">
       <ul>
         @foreach($errors->all() as $error)
@@ -58,7 +58,7 @@
         @endforeach
       </ul>
     </div>
-@endif
+@endif -->
 
 
 @endsection

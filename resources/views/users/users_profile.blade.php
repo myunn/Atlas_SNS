@@ -3,12 +3,12 @@
 @section('content')
 
 <div class=1>
-<p>相手のプロフィール</p>
+<p class="user_profile">相手のプロフィール</p>
 <!-- 相手ユーザーのアイコン・ユーザーネーム・自己紹介文・フォロー・アンフォロー機能 -->
-@foreach($posts as $post)
-<img src="http://127.0.0.1:8000/images/{{$post->user->images}}" alt="User Image">
-<p class="username">{{ $post->user->username }}</p>
-<p class="self_introduction">{{$post->user->self_introduction }}</p>
+@foreach($users as $user)
+<img src="http://127.0.0.1:8000/images/{{$user->images}}" alt="User Image">
+<p class="username">{{ $user->username }}</p>
+<p class="self_introduction">{{$user->self_introduction }}</p>
   <!-- フォロー・フォロー解除ボタン -->
 <div class="d-flex justify-content-end flex-grow-1">
   @if (auth()->user()->isFollowing($user->id))
