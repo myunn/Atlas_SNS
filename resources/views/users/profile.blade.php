@@ -6,7 +6,7 @@
 
 <div class="profile">
   <div>
-    <h5><a href="/top"><img src="http://127.0.0.1:8000/images/icon1.png"></a></h5>
+    <h5><a href="/top"><img src="images/{{Auth::user()->images}}"></a></h5>
     {{ Form::label('ユーザー名') }}
     {{ Form::text('username',null,['class' => 'input']) }}
   </div>
@@ -33,9 +33,7 @@
 
   <div>
   {{ Form::label('アイコン画像') }}
-  {{ Form::text('picture',null,['class' => 'input']) }}
-  <!-- 上だけでいける？ -->
-  <input type="text" name="post" placeholder="画像を挿入">
+  {{ Form::text('picture',null,['class' => 'input','placeholder' => '画像を挿入']) }}
   </div>
 
   <!-- ボタンに機能を追加する -->
