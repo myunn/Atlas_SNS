@@ -25,6 +25,10 @@ class FollowsController extends Controller
         return view('auth.login',compact('followerds'));
     }
 
+    public function follwers(){
+        return $this->belongsToMany(User::class,'follows','followed_id','following_id');
+    }
+
     // 記載)フォロー・フォロワーリストに戻る
     public function followList(){
         // フォロワーのユーザー情報を取得する

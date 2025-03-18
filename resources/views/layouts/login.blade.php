@@ -56,7 +56,7 @@
                 <button class="follow-list"><a href="/follow-list">フォローリスト</a></button>
                 <div class=login.E>
                 <p>フォロワー数</p>
-                <p>名</p>
+                <p>{{Auth::user()->followers()->count()}}名</p>
                 </div>
                 <div class=login.F>
                 <button class="follower-list"><a href="/follower-list">フォロワーリスト</a></button>
