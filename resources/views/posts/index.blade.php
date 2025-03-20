@@ -8,26 +8,33 @@
 <!DOCTYPE HTML>
 <html>
 <body>
-<h2><a href="/top"><img src="http://127.0.0.1:8000/images/icon1.png"></a></h2>
-<form action="/post" method="POST">
-  <!-- @csrf:フォームの脆弱性対策コードなので、フォーム使用時に必要（ないとエラー出る） -->
-  @csrf
   <div class="top_1">
     <div class="text-post">
-    <input type="text" name="post" class="form" placeholder="投稿内容を入力ください。">
-    {!! Form::open(['url' => 'post/create']) !!}
+      <form action="/post" method="POST">
+      <img src="http://127.0.0.1:8000/images/icon1.png" class="top_icon"></a>
 
-    <!-- 下線表示 -->
-    <div id="under-bar"></div>
-    </div>
+      <!-- @csrf:フォームの脆弱性対策コードなので、フォーム使用時に必要（ないとエラー出る） -->
+      @csrf
 
-<!-- 画像に機能を追加する -->
-    <div class="submit">
-    <img  src="http://127.0.0.1:8000/images/post.png" class="submit_btn">
-    {!! Form::close() !!}
+      <input type="text" name="post" class="top_form" placeholder="投稿内容を入力ください。">
+      {!! Form::open(['url' => 'post/create']) !!}
+
+
+
+      <!-- 画像に機能を追加する -->
+      <div class="submit">
+      <img  src="http://127.0.0.1:8000/images/post.png" class="submit_btn">
+      {!! Form::close() !!}
+
+
+      </div>
+      </form>
     </div>
   </div>
-</form>
+
+  <!-- 下線表示 -->
+  <div id="under-bar"></div>
+
     <!-- ここまで新規投稿エリア -->
 
 <!-- 投稿一覧エリア -->

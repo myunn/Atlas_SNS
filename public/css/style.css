@@ -32,11 +32,21 @@ img.logo {
     height: 40px;
 }
 
+/* 投稿内容のユーザーアイコン */
+img.top_icon {
+    margin: 30px 0 0 0;
+}
+
 /* メインコンテンツ */
 #head {
     display: flex;
     align-items: center;
     position: relative;
+}
+
+/* 投稿内容送信ボタン */
+img.submit_btn {
+    margin-left: 700px;
 }
 
 /* top等共通のハンバーガーメニュー */
@@ -380,10 +390,21 @@ input {
     color: white;
 }
 
+/* トップページのテキストボックスの大きさ */
+input.top_form {
+    border: none;
+    background: white;
+    margin: 0 1px;
+}
+
 /* テキストボックスの大きさ */
 input.form {
+    border-color: #808080;
+    border-radius: 5px;
+    background: white;
     width: 200px;
-    height: 30px;
+    height: 40px;
+    margin: 0 1px;
 }
 
 /* 要素の並列 */
