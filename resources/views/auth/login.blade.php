@@ -21,7 +21,7 @@
   </div>
 </div>
 <div class="loginbtn">
-  {{ Form::submit('ログイン') }}
+  <button id="login-button"><a href="/top">ログイン</a></button>
   <p class='new-user'><a href="/register">新規ユーザーの方はこちら</a></p>
 </div>
 {!! Form::close() !!}

@@ -403,7 +403,7 @@ input.form {
     border-radius: 5px;
     background: white;
     width: 200px;
-    height: 40px;
+    height: 30px;
     margin: 0 1px;
 }
 
@@ -469,3 +469,7 @@ img.follow-List {
 .A {
     display: flex;
 }
+
+
+/* ログインページ */
+/* ロゴ位置 */

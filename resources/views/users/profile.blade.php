@@ -6,8 +6,8 @@
 
 <div class="profile">
   <div class="profile_A">
-    <h5><a href="/top"><img src="images/{{Auth::user()->images}}"></a></h5>
-    {{ Form::label('ユーザー名') }}
+    <a href="/top"><img src="images/{{Auth::user()->images}}"></a>
+    {{ Form::label('ユーザー名') }}</a>
     {{ Form::text('username',Auth::user()->username,null,['class' => 'input']) }}
   </div>
 

@@ -145,7 +145,7 @@ table {
 }
 
 /* 『新規ユーザーはこちら』に下線をつける */
-.newuser {
+#new-user {
 	text-decoration: underline;
 	text-decoration-color: white;
 }
