@@ -316,9 +316,11 @@ hr {
 /* ハンバーガーメニュー */
 
 
-.updatebtn a {
+#update-button {
     color: #fff;
     background-color: #FF3333;
+    border-radius: 5px;
+    border:none;
 }
 
 /* プロフィールページ */
@@ -335,6 +337,7 @@ input {
     background-color: #DDDDDD;
     width: 200px;
     height: 30px;
+    border: solid 1px;
 }
 
 /* 共通箇所 */

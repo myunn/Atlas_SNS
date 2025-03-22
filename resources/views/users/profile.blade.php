@@ -5,6 +5,7 @@
 <!-- 記述： プロフィール内容-->
 
 <div class="profile">
+  {{ Form::open(['url' => '/update', 'method' => 'POST']) }}
   <div class="profile_A">
     <a href="/top"><img src="images/{{Auth::user()->images}}"></a>
     {{ Form::label('ユーザー名') }}
@@ -38,8 +39,10 @@
 
   <!-- ボタンに機能を追加する -->
   <div class="updatebtn">
-  <a href="/top"><button id="update-button">更新</a></button>
+  {{Form::submit('更新',['id' => 'update-button']) }}
+    <!-- <button id="update-button">更新</a></button> -->
   </div>
+  {{Form::close()}}
 </div>
 
 @endsection
