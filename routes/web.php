@@ -48,6 +48,10 @@ Route::post('/update','PostsController@update');
 Route::get('/post/{id}/delete','PostsController@delete');
 // ユーザー情報画面
 Route::get('/profile','UsersController@profile');
+// ユーザー情報の更新
+Route::post('/profile/update','UsersController@update_info');
+// ユーザー情報の画像登録
+Route::post('/profile/update','UsersController@storage');
 // 相手のプロフィール画面
 Route::get('/users_profile/{id}','UsersController@users_profile')->name('users_profile');
 // 検索
@@ -63,7 +67,3 @@ Route::delete('users/{user}/unfollow', 'FollowsController@unfollow')->name('unfo
 
 // 記載：ログアウト機能
 Route::get('/logout','Auth\LoginController@logout')->name('logout');
-
-// フォーム作成
-// Route::get('/index','PostsController@index');
-// Route::post('/index','PostsController@index');

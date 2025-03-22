@@ -5,7 +5,9 @@
 <!-- 記述： プロフィール内容-->
 
 <div class="profile">
-  {{ Form::open(['url' => '/update', 'method' => 'POST']) }}
+  {!! Form::open(['url' => '/profile']) !!}
+  <form action="/profile/update_info" method="post">
+  @csrf
   <div class="profile_A">
     <a href="/top"><img src="images/{{Auth::user()->images}}"></a>
     {{ Form::label('ユーザー名') }}
@@ -29,12 +31,12 @@
 
   <div>
   {{ Form::label('自己紹介') }}
-  {{ Form::text('text',Auth::user()->text,null,['class' => 'input']) }}
+  {{ Form::text('bio',Auth::user()->bio,null,['class' => 'input']) }}
   </div>
 
   <div>
   {{ Form::label('アイコン画像') }}
-  {{ Form::text('picture',null,['class' => 'input','placeholder' => 'ファイルを選択']) }}
+  {{ Form::file('icon_image',null,['class' => 'file-input']) }}
   </div>
 
   <!-- ボタンに機能を追加する -->

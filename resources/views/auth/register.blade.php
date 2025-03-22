@@ -8,12 +8,6 @@
 
 <h2>新規ユーザー登録</h2>
 <form action="profile.blade.php" method="post">
-  <!-- <a class="profile">
-    <a class=yoko>
-      <label>ユーザー名</label>
-    </a>
-  </a> -->
-
 
   {{ Form::label('ユーザー名') }}
   {{ Form::text('username',null,['class' => 'input']) }}

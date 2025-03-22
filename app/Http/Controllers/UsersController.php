@@ -58,6 +58,4 @@ class UsersController extends Controller
     //     return view('users_profile',compact('user','posts'));
     // }
 
-
-
     }
