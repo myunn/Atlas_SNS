@@ -54,11 +54,12 @@
 <!-- ログインユーザーの記載・削除アイコンの表示指定 -->
     @if ($post->user_id == Auth::id())
     <!-- 編集ボタン -->
-    <button class="modal-open js-modal-open" post="{{ $post->post }}" post_id="{{ $post->id }}">
+    <button class="modal-open js-modal-open custom-button" post="{{ $post->post }}" post_id="{{ $post->id }}">
     <img src="http://127.0.0.1:8000/images/edit.png">
     </button>
 <!-- ここまで編集ボタン -->
-<!-- 削除ボタン -->
+
+<!-- 削除ボタンにカーソルをあわせると背景が赤くなる -->
     <a class="btn btn-danger" href="/post/{{$post->id }}/delete" onclick="return confirm('こちらの投稿を削除してもよろしいでしょうか？')"><img src="http://127.0.0.1:8000/images/trash.png"></a>
 <!-- ここまで削除ボタン -->
     @endif
@@ -80,7 +81,7 @@
           @csrf
           <!-- @csrf:フォームの脆弱性対策コードなので、フォーム使用時に必要（ないとエラー出る） -->
           <div class="text-post">
-            <input type="text" name="post" value="" class="modal_post">
+            <input type="text" maxlength="150" name="post" value="" class="modal_post">
             <input type="hidden" name="post_id" value="" class="modal_id">
           </div>
         </form>

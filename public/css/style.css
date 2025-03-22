@@ -163,14 +163,6 @@ text {
     position: fixed;
 }
 
-/* topページの編集ボタン背景 */
-/* .modal-open js-modal-open {
-    display: inline-block;
-    color: white;
-    border-radius: 7px;
-    border: solid 0px;
-} */
-
 
 /* 記述)top:コメント編集 */
 /* ①モーダルを開くボタン */
@@ -207,13 +199,6 @@ text {
     background-color: #fff;
 }
 
-/* モーダルのホバー設定 */
-/* .modal:hover {
-    background: red;
-    color: white;
-    border-radius: 20px;
-} */
-
 /* モーダルの擬似要素の指定 */
 .modal:before {
     content: "";
@@ -244,12 +229,12 @@ text {
     display: flex;
     align-items: center;
     justify-content: center;
-    top: -20px;
-    right: -20px;
+    bottom: -20px;
+    right: 250px;
     width: 40px;
     height: 40px;
     color: #fff;
-    background: #000;
+    background: white;
     border-radius: 50%;
     cursor: pointer;
 }
@@ -287,15 +272,6 @@ button {
     padding: 5px;
 }
 
-
-
-/* 記述）フォロー解除のボタン機能 */
-.btn-danger {
-    background-color: red;
-    border-radius: 7px;
-    border: solid 0px;
-    padding: 5px;
-}
 
 .user_list {
     margin: 15px 250px;
@@ -390,7 +366,8 @@ input {
     color: white;
 }
 
-/* トップページのテキストボックスの大きさ */
+/* トップページ */
+/* テキストボックスの大きさ */
 input.top_form {
     border: none;
     background: white;
@@ -407,6 +384,49 @@ input.form {
     margin: 0 1px;
 }
 
+/* 投稿内容変更ボタン押下後の変更画面 */
+/* .text-post {
+    width:20px;
+    height:200px;
+    margin: 20px auto;
+} */
+
+input.modal_post,
+input.modal_id {
+    text-align: center;
+    margin: auto;
+    border: solid 1px;
+    background-color: white;
+    width: 700px;
+    height: 300px;
+}
+
+/* 記述）フォロー解除のボタン機能 */
+/* 通常時前 */
+.btn.btn-danger {
+    background-color: white;
+    border-radius: 7px;
+    border: solid 0px;
+}
+
+/* ホバー時 */
+.btn-danger:hover {
+    color: white;
+    background-color: red;
+
+
+}
+
+/* トップページのコメント編集ボタン背景 */
+.custom-button {
+    background-color: white;
+    border-radius: 7px;
+    border: solid 0px;
+    width: 40px;
+    height: 40px;
+}
+
+
 /* 要素の並列 */
 /* 検索ページの検索コメント・ボタンの並列要素 */
 .text-post,
@@ -416,6 +436,9 @@ input.form {
 .search_area form {
     display: flex;
 }
+
+
+
 
 /* 共有ページ */
 /* ユーザーネーム */
@@ -469,7 +492,3 @@ img.follow-List {
 .A {
     display: flex;
 }
-
-
-/* ログインページ */
-/* ロゴ位置 */
