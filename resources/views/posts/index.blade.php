@@ -54,9 +54,11 @@
 <!-- ログインユーザーの記載・削除アイコンの表示指定 -->
     @if ($post->user_id == Auth::id())
     <!-- 編集ボタン -->
+    <!-- <div class="modal-container"> -->
     <button class="modal-open js-modal-open custom-button" post="{{ $post->post }}" post_id="{{ $post->id }}">
     <img src="http://127.0.0.1:8000/images/edit.png">
     </button>
+    <!-- </div> -->
 <!-- ここまで編集ボタン -->
 
 <!-- 削除ボタンにカーソルをあわせると背景が赤くなる -->
