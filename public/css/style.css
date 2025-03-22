@@ -164,7 +164,8 @@ text {
 }
 
 /* プロフィール編集：アイコン画像挿入 */
-.file-input::-webkit-file-upload-button {
+.custom-file-input {
+    display: inline-block;
     text-align: center;
     margin: 0 0 15px 250px;
     background-color: #DDDDDD;
