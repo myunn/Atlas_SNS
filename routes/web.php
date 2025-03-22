@@ -49,7 +49,7 @@ Route::get('/post/{id}/delete','PostsController@delete');
 // ユーザー情報画面
 Route::get('/profile','UsersController@profile');
 // 相手のプロフィール画面
-Route::get('users/{id}/users_profile','UsersController@users_profile')->name('users_profile');
+Route::get('/users_profile/{id}','UsersController@users_profile')->name('users_profile');
 // 検索
 Route::get('/search','UsersController@search');
 // フォローリスト

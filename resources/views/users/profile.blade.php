@@ -7,7 +7,7 @@
 <div class="profile">
   <div class="profile_A">
     <a href="/top"><img src="images/{{Auth::user()->images}}"></a>
-    {{ Form::label('ユーザー名') }}</a>
+    {{ Form::label('ユーザー名') }}
     {{ Form::text('username',Auth::user()->username,null,['class' => 'input']) }}
   </div>
 
@@ -38,7 +38,7 @@
 
   <!-- ボタンに機能を追加する -->
   <div class="updatebtn">
-  <button id="update-button"><a href="/top">更新</a></button>
+  <a href="/top"><button id="update-button">更新</a></button>
   </div>
 </div>
 

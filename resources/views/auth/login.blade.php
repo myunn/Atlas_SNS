@@ -22,7 +22,7 @@
 </div>
 <div class="loginbtn">
   <button id="login-button"><a href="/top">ログイン</a></button>
-  <p class='new-user'><a href="/register">新規ユーザーの方はこちら</a></p>
+  <p class="new-user"><a href="/register">新規ユーザーの方はこちら</a></p>
 </div>
 {!! Form::close() !!}
 

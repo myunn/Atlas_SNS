@@ -79,15 +79,4 @@ class RegisterController extends Controller
         $name = $request->input('username');
         return back();
     }
-
-
-
-    // 記述：下記（）に$idと追記
-    // これは違う？public function added($id){
-        // $user = user::where('id',$id)->first();
-        // return view('auth.added',['user'=>$user]);
-        // public function added(){
-        // $user = user::where('id',$id)->first();
-        // return view('auth.added');
-    // }
 }
