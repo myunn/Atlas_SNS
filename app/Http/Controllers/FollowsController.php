@@ -53,7 +53,8 @@ class FollowsController extends Controller
         // $following_posts = Post::query()->whereIn('user_id', Auth::user()->follows()->pluck('following_id'))->latest()->get();
 
         // 候補①：カリキュラム
-        $following_posts = Post::with('user')->whereIn('user_id',Auth::user()->follows()->pluck('following_id'))->latest()->get();
+
+        $following_posts = Post::with('user')->whereIn('user_id',Auth::user()->followers()->pluck('following_id'))->latest()->get();
         // 候補②：調べたもの
         // $following_posts = Post::query()->whereIn('user_id',Auth::user()->follows()->pluck('followed_id'))->orWhere('user_id',Auth::user()->id)->latest()->get();
 

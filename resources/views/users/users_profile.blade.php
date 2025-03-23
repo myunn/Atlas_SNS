@@ -2,11 +2,9 @@
 
 @section('content')
 
-<div class=1>
+<div class="1">
 <p class="user_profile">相手のプロフィール</p>
 <!-- 相手ユーザーのアイコン・ユーザーネーム・自己紹介文・フォロー・アンフォロー機能 -->
-@foreach($users as $user)
-<a href="{{ route('users_profile',$user->id}}">
 <img src="http://127.0.0.1:8000/images/{{$user->images}}" alt="User Image">
 <p class="username">{{ $user->username }}</p></a>
 <p class="self_introduction">{{$user->self_introduction }}</p>
@@ -26,12 +24,8 @@
           <button type="submit" class="btn btn-primary">フォローする</button>
       </form>
   @endif
-@endforeach
 </div>
 </div>
-
-
-
 
 <div id="under-bar"></div>
 
