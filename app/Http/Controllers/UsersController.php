@@ -71,13 +71,13 @@ class UsersController extends Controller
     return view('users_profile', compact('user', 'posts'));
     }
 
+
     // プロフィール編集
-    public function update(Request $request){
-        $user = Auth::user();
-        dd($user);
-    }
-
-
+    // 候補②：調べたやつ（下記は情報拾えてるか確認用でddになってる）
+    // public function update(Request $request){
+    //     $user = Auth::user();
+    //     dd($user);
+    // }
 
     // 候補①：調べたやつ
     // public function update_info (Request $request){
@@ -112,4 +112,43 @@ class UsersController extends Controller
     // public function storage(Request $request){
     //     $image = $request->image->storage('');
     // }
+
+    public function update(Request $request){
+    if($request->isMethod('post')){
+
+    // 編集情報のバリデーション機能実装
+    $request->validate([
+        'username' => 'required|min:2|max:12',
+        'mail' => 'required|unique:users|min:5|max:40|email'.Auth::id(),
+        'password' => 'required|confirmed|alpha_num|min:8|max:20',
+        'password_Confirmation' => 'required|confirmed|alpha_dash|min:8|max:20',
+        'bio' => 'nullable|string|max:150',
+        'icon_image' => 'nullable|image|mimes:jpg,png,bmp,gif,svg|max:2048',
+    ]);
+
+    // バリデーション後の処理
+        $user = User::find(Auth::id());
+        $user->username = $request->input('username');
+        $user->mail = $request->input('mail');
+
+    if ($request->filled('password')) {
+        $user->password = bcrypt($request->input('password'));
+        }
+
+    // 自己紹介は入力されている場合のみ更新
+    if ($request->filled('bio')) {
+        $user->bio = $request->input('bio');
+    }
+    // アイコン画像は登録されれば処理
+    if ($request->hasFile('icon_image')) {
+        $iconImage = $request->file('icon_image');
+        $path = $iconImage->store('icons', 'public'); // 'icons'フォルダに保存
+        $user->icon_image = $path; // パスを保存
+    }
+    // ユーザー情報を保存
+    $user->save();
+
+    return redirect()->back()->with('success', 'ユーザー情報が更新されました。');
+    }
+    }
 }

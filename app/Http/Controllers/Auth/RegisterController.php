@@ -43,7 +43,7 @@ class RegisterController extends Controller
     public function register(Request $request){
         if($request->isMethod('post')){
 
-            // 記載：新規登録情報のバリデーション機能実装
+            // 新規登録情報のバリデーション機能実装
         $request->validate([
             'username' => 'required|min:2|max:12',
             'mail' => 'required|unique:users|min:5|max:40|string|email',
