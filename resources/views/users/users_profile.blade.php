@@ -3,19 +3,18 @@
 @section('content')
 
 <div class="1">
-<p class="user_profile">相手のプロフィール</p>
 <!-- 相手ユーザーのアイコン・ユーザーネーム・自己紹介文・フォロー・アンフォロー機能 -->
 <img src="http://127.0.0.1:8000/images/{{$user->images}}" alt="User Image">
-<p class="username">{{ $user->username }}</p></a>
-<p class="self_introduction">{{$user->self_introduction }}</p>
+<p class="username">ユーザー名{{ $user->username }}</p></a>
+<p class="self_introduction">自己紹介{{$user->self_introduction }}</p>
   <!-- フォロー・フォロー解除ボタン -->
 <div class="d-flex justify-content-end flex-grow-1">
   @if (auth()->user()->isFollowing($user->id))
-      <form action="{{ route('unfollow', $user) }}" method="POST">
+      <form action="{{ route('unfollow', $user) }}" class="users_profile_btn" method="POST">
           {{ csrf_field() }}
           {{ method_field('DELETE') }}
 
-          <button type="submit" class="btn btn-danger">フォロー解除</button>
+          <button type="submit" class="btn btn-danger-profile">フォロー解除</button>
       </form>
   @else
       <form action="{{ route('follow', $user) }}" method="POST">
@@ -42,6 +41,7 @@
         <p class="post_content">{{ $post->post }}</p>
       </div>
     </div>
+    <hr>
     @endforeach
 
 

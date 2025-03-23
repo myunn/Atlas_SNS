@@ -21,15 +21,6 @@ class PostsController extends Controller
         return view('posts.index',['posts'=>$posts]);
     }
 
-    // 記述）フォローしているユーザーのみ情報を取得
-    // 記述）ユーザーIDの取得
-    // public function index(){
-    //     $following_id = Auth::user()->follows()->pluck('user_id');
-    // // フォローしているユーザーのIDを元に投稿内容を取得
-    // $posts = Post::with('user')->whereIn('post',$following_id)->get();
-    // return view('posts.index',compact('posts'));
-    // }
-
     public function create(Request $request){
         $post = $request->input('post');
         // Auth::id()はbladeに記載しなくても、controllerのみに記載でOK
@@ -74,38 +65,4 @@ class PostsController extends Controller
     // }
     //         'password' => 'required|confirmed'
     //         ]);
-
-        // プロフィール編集
-    public function update_info (Request $request){
-        $$id = Auth::id();
-        $username = $request->input('username');
-        $mail = $request->input('mail');
-        $password = $request->input('password');
-        $bio = $request->input('bio');
-        $icon_image = $request->file('icon_image');
-        if ($request->hasFile('image')) {
-            $path = \Strage::put('/public',$images);
-            $path = explode('/',$path);
-        } else {
-            $path = null;
-        }
-        \DB::table('users')
-            ->where('id',$id)
-            ->update(
-                [
-                    'username' => $username,
-                    'mail' => $mail,
-                    'password' => $password,
-                    'text' => $text,
-                    'images' => $images
-                ]
-                );
-                return redirect('top');
-    }
-
-
-    // プロフィール編集：アイコン画像のアップデート
-    public function storage(Request $request){
-        $image = $request->image->storage('');
-    }
     }

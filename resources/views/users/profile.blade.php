@@ -6,7 +6,7 @@
 
 <div class="profile">
   {!! Form::open(['url' => '/profile']) !!}
-  <form action="/profile/update_info" method="post">
+  <form action="/user.update" method="post">
   @csrf
   <div class="profile_A">
     <a href="/top"><img src="images/{{Auth::user()->images}}"></a>

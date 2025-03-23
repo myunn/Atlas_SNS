@@ -426,7 +426,6 @@ input.modal_id {
 /* 記述）フォロー解除のボタン機能 */
 /* 通常時前 */
 .btn.btn-danger {
-    background-color: white;
     border-radius: 7px;
     border: solid 0px;
 }
@@ -503,6 +502,11 @@ img.follow-List {
     display: flex;
 }
 
+/* フォロワーリスト：下線上の余白 */
+.follower-list-title {
+padding: 50px 230px 50px 50px;
+}
+
 /* フォローページのフォローユーザーのツイート等表示間隔 */
 .username,
 .date,
@@ -513,4 +517,15 @@ img.follow-List {
 
 .A {
     display: flex;
+}
+
+/* 相手のユーザープロフィール */
+.btn.btn-danger-profile {
+    border-radius: 7px;
+    border: solid 0px;
+}
+
+/* 相手のユーザープロ：フォロー・フォロー解除ボタン位置 */
+.users_profile_btn {
+    margin-left: 600px;
 }

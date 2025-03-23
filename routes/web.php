@@ -37,25 +37,31 @@ Route::post('/added', 'Auth\RegisterController@added');
 Route::group(['middleware' => 'auth'], function () {
   // 記述：この中にアクセス制限をかけたいルーティングのコードを記載する。
   // 今回アクセス制限かけたいのは右記：トップページ、プロフィール編集ページ、ユーザー検索ページ、フォローリストページ、フォロワーリストページ、相手ユーザーのプロフィールページ
+
   //ログイン中のページ
 // ログイントップ画面(topページ遷移の為にRouteに『top』と名前を付けた)
 Route::get('/top','PostsController@index')->name('top');
 // 投稿内容の新規作成
 Route::post('/post','PostsController@create');
-// 記載）投稿内容の更新
+// 投稿内容の更新
 Route::post('/update','PostsController@update');
-// 記載）投稿内容の削除
+// 投稿内容の削除
 Route::get('/post/{id}/delete','PostsController@delete');
+
 // ユーザー情報画面
 Route::get('/profile','UsersController@profile');
 // ユーザー情報の更新
-Route::post('/profile/update','UsersController@update_info');
+Route::post('/user/update','UsersController@update')->name('user.update');
 // ユーザー情報の画像登録
-Route::post('/profile/update','UsersController@storage');
+// Route::post('/profile/update','UsersController@storage');
+
+
 // 相手のプロフィール画面
 Route::get('/users_profile/{id}','UsersController@users_profile')->name('users_profile');
+
 // 検索
 Route::get('/search','UsersController@search');
+
 // フォローリスト
 Route::get('/follow-list','FollowsController@followList');
 // フォロワーリスト
