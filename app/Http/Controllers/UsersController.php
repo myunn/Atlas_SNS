@@ -122,8 +122,8 @@ class UsersController extends Controller
         'mail' => 'required|unique:users|min:5|max:40|email'.Auth::id(),
         'password' => 'required|confirmed|alpha_num|min:8|max:20',
         'password_Confirmation' => 'required|confirmed|alpha_dash|min:8|max:20',
-        'bio' => 'nullable|string|max:150',
-        'icon_image' => 'nullable|image|mimes:jpg,png,bmp,gif,svg|max:2048',
+        'bio' => 'nullable|max:150',
+        'icon_image' => 'nullable|image|mimes:jpg,png,bmp,gif,svg',
     ]);
 
     // バリデーション後の処理
@@ -148,7 +148,7 @@ class UsersController extends Controller
     // ユーザー情報を保存
     $user->save();
 
-    return redirect()->back()->with('success', 'ユーザー情報が更新されました。');
+    return redirect('/top');
     }
     }
 }
