@@ -6,7 +6,7 @@
 <p class="follower-list-title">フォロワーリスト</p>
   @foreach ($following_users as $following_user)
   <div class=all_follow-users_icon>
-    <a href="/users_profile"><img src="images/{{$following_user->images}}" class="follow-List"></a>
+    <a href="/users_profile/{{$following_user->id}}"><img src="images/{{$following_user->images}}" class="follow-List"></a>
   </div>
   @endforeach
 </div>
