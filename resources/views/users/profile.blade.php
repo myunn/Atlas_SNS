@@ -21,12 +21,12 @@
 
   <div>
   {{ Form::label('パスワード') }}
-  {{ Form::text('password',Auth::user()->password,null,['class' => 'input']) }}
+  {{ Form::password('password',['class' => 'input']) }}
   </div>
 
   <div>
   {{ Form::label('パスワード確認') }}
-  {{ Form::text('password_confirmation',Auth::user()->password,null,['class' => 'input']) }}
+  {{ Form::password('password_confirmation',['class' => 'input']) }}
   </div>
 
   <div>
@@ -36,8 +36,8 @@
 
   <div>
   {{ Form::label('アイコン画像') }}
-  {{ Form::file('icon_image',null,['class' => 'file-input', 'id' =>'icon_image','style'=>'display:none;']) }}
-  <label for="icon_image" class="custom-file-input">ファイルを選択</label>
+  {{ Form::file('icon_image',['class' => 'file-input', 'id' =>'icon_image','style'=>'display:none;']) }}
+  <label for="icon_image" class="custom-file-input"><div class="frame">ファイルを選択</div></label>
   </div>
 
   <!-- ボタンに機能を追加する -->

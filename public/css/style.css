@@ -166,22 +166,21 @@ text {
 /* プロフィール編集：アイコン画像挿入 */
 .custom-file-input {
     display: inline-block;
-    text-align: center;
     margin: 0 0 15px 250px;
     background-color: #DDDDDD;
     width: 200px;
     height: 30px;
-    border: solid 1px;
+    border: solid 1px gray;
+    line-height: normal;
 }
 
-.file-input[type="file"] {
+/* アイコン画像挿入枠 */
+.frame {
     display: inline-block;
-    text-align: center;
-    margin: 0 0 15px 250px;
-    background-color: #DDDDDD;
-    width: 200px;
-    height: 30px;
-    border: solid 1px;
+    border: solid 1px gray;
+    background-color: white;
+    color: gray;
+    font-size: 15px;
 }
 
 
@@ -353,12 +352,11 @@ hr {
 
 /* プロフィール編集 */
 input {
-    text-align: center;
     margin: 0 0 15px 250px;
     background-color: #DDDDDD;
     width: 200px;
     height: 30px;
-    border: solid 1px;
+    border: solid 1px gray;
 }
 
 /* 共通箇所 */
