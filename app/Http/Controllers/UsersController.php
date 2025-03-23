@@ -47,8 +47,6 @@ class UsersController extends Controller
         $posts = Post::with('user')->where('user_id',$user->id)->latest()->get();
     //     // フォローしているかどうか確認
         $isFollowing = Auth::user()->isFollowing($user->id);
-    //     // 候補①：フォロー・フォロワーからの参考
-    // // $posts = Post::with('user')->whereIn('user_id',Auth::user()->follows()->pluck('following_id'))->latest()->get();
         return view('users.users_profile',compact('user','posts','isFollowing'));
     }
 
@@ -109,46 +107,82 @@ class UsersController extends Controller
 
 
     // // プロフィール編集：アイコン画像のアップデート
+    // 候補①：調べたやつ
     // public function storage(Request $request){
     //     $image = $request->image->storage('');
     // }
 
-    public function update(Request $request){
-    if($request->isMethod('post')){
+    // 候補②：調べたやつ
+    // public function update(Request $request){
+    // if($request->isMethod('post')){
 
-    // 編集情報のバリデーション機能実装
-    $request->validate([
-        'username' => 'required|min:2|max:12',
-        'mail' => 'required|unique:users|min:5|max:40|email'.Auth::id(),
-        'password' => 'required|confirmed|alpha_num|min:8|max:20',
-        'password_Confirmation' => 'required|confirmed|alpha_dash|min:8|max:20',
-        'bio' => 'nullable|max:150',
-        'icon_image' => 'nullable|image|mimes:jpg,png,bmp,gif,svg',
-    ]);
+//     // 編集情報のバリデーション機能実装
+//     $request->validate([
+//         'username' => 'required|min:2|max:12',
+//         'mail' => 'required|unique:users|min:5|max:40|email'.Auth::id(),
+//         'password' => 'required|confirmed|alpha_num|min:8|max:20',
+//         'password_Confirmation' => 'required|confirmed|alpha_dash|min:8|max:20',
+//         'bio' => 'nullable|max:150',
+//         'icon_image' => 'nullable|image|mimes:jpg,png,bmp,gif,svg',
+//     ]);
 
-    // バリデーション後の処理
-        $user = User::find(Auth::id());
-        $user->username = $request->input('username');
-        $user->mail = $request->input('mail');
+//     // バリデーション後の処理
+// 調べたやつ
+//         $user = User::find(Auth::id());
+//         $user->username = $request->input('username');
+//         $user->mail = $request->input('mail');
 
-    if ($request->filled('password')) {
-        $user->password = bcrypt($request->input('password'));
-        }
+//     if ($request->filled('password')) {
+//         $user->password = bcrypt($request->input('password'));
+//         }
 
-    // 自己紹介は入力されている場合のみ更新
-    if ($request->filled('bio')) {
-        $user->bio = $request->input('bio');
+//     // 自己紹介は入力されている場合のみ更新
+//     if ($request->filled('bio')) {
+//         $user->bio = $request->input('bio');
+//     }
+//     // アイコン画像は登録されれば処理
+//     if ($request->hasFile('icon_image')) {
+//         $iconImage = $request->file('icon_image');
+//         $path = $iconImage->store('icons', 'public'); // 'icons'フォルダに保存
+//         $user->icon_image = $path; // パスを保存
+//     }
+//     // ユーザー情報を保存
+//     $user->save();
+
+//     return redirect('/top');
+//     }
+//     }
+
+// ユーザー情報の更新
+// 候補③：調べたやつ
+    // public function update($id){
+    //     $user = username::where('id',$id)->first();
+    //     dd($user);
+    //     return view('user.users_profile',['username'=>$username]);
+    // }
+
+    // 候補④：過去の対応見直してみたやつ
+    //     public function update(Request $request){
+    //     $username = $request->input('username');
+    //     User::where('id', $username)->update([
+    //         'username' => $username
+    //     ]);
+    //     return redirect('/top');
+
+    // }
+
+    // 候補⑤:似た記載の引用
+            public function update(Request $request){
+        $username = $request->input('username');
+        $mail = $request->input('mail');
+        $password = $request->input('password');
+
+        User::update([
+            'username' => $username,
+            'mail'=> $mail,
+            'password'=> $bcrypt($password),
+        ]);
+
     }
-    // アイコン画像は登録されれば処理
-    if ($request->hasFile('icon_image')) {
-        $iconImage = $request->file('icon_image');
-        $path = $iconImage->store('icons', 'public'); // 'icons'フォルダに保存
-        $user->icon_image = $path; // パスを保存
-    }
-    // ユーザー情報を保存
-    $user->save();
 
-    return redirect('/top');
-    }
-    }
 }

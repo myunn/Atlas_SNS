@@ -6,12 +6,13 @@
 
 <div class="profile">
   {!! Form::open(['url' => '/profile']) !!}
-  <form action="/user.update" method="post">
+  <form action="/update" method="POST">
   @csrf
   <div class="profile_A">
     <a href="/top"><img src="images/{{Auth::user()->images}}"></a>
     {{ Form::label('ユーザー名') }}
     {{ Form::text('username',Auth::user()->username,null,['class' => 'input']) }}
+    <input type="hidden" name="username" value="">
   </div>
 
   <div>

@@ -41,25 +41,7 @@ class FollowsController extends Controller
     public function followerList(){
         // フォローしてるユーザー情報を取得するにしたい
         $following_users = Auth::user()->followers;
-
-        // 単純に考えると下記
-        // $following_users = User::query()->whereIn('id',Auth::user()->follows()->pluck('following_id'))->get();
-        // 候補①：カリキュラム
-        // $following_users = Auth::user()->follows()->pluck('following_id');
-
-
-        // フォローしてるユーザーの投稿情報を新しい順で取得
-        // 単純に考えると下記
-        // $following_posts = Post::query()->whereIn('user_id', Auth::user()->follows()->pluck('following_id'))->latest()->get();
-
-        // 候補①：カリキュラム
-
         $following_posts = Post::with('user')->whereIn('user_id',Auth::user()->followers()->pluck('following_id'))->latest()->get();
-        // 候補②：調べたもの
-        // $following_posts = Post::query()->whereIn('user_id',Auth::user()->follows()->pluck('followed_id'))->orWhere('user_id',Auth::user()->id)->latest()->get();
-
-        // 候補③：調べたもの
-        // $following_posts = Post::query()->whereInAuth::user()->follows()->pluck('following_id')->latest()->get();
         return view('follows.followerList',compact('following_posts','following_users'));
     }
 
