@@ -176,12 +176,17 @@ class UsersController extends Controller
         $username = $request->input('username');
         $mail = $request->input('mail');
         $password = $request->input('password');
+        $bio = $request->input('bio');
+        $images = $request->input('images');
 
         User::update([
             'username' => $username,
             'mail'=> $mail,
             'password'=> $bcrypt($password),
+            'bio' => $bio,
+            'images' => $images,
         ]);
+        return redirect('/top');
 
     }
 
