@@ -12,7 +12,6 @@
     <a href="/top"><img src="images/{{Auth::user()->images}}"></a>
     {{ Form::label('ユーザー名') }}
     {{ Form::text('username',Auth::user()->username,null,['class' => 'input']) }}
-    <input type="hidden" name="username" value="">
   </div>
 
   <div>

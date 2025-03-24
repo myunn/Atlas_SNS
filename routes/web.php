@@ -51,7 +51,7 @@ Route::get('/post/{id}/delete','PostsController@delete');
 // ユーザー情報画面
 Route::get('/profile','UsersController@profile');
 // ユーザー情報の更新
-Route::get('/Register/{id}/update','UsersController@update')->name('users_profile');
+Route::post('/profile','UsersController@update')->name('users_profile');
 // ユーザー情報の画像登録
 // Route::post('/profile/update','UsersController@storage');
 

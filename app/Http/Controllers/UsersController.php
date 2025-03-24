@@ -172,6 +172,7 @@ class UsersController extends Controller
     // }
 
     // 候補⑤:似た記載の引用
+    // 入力されたデータ
             public function update(Request $request){
         $username = $request->input('username');
         $mail = $request->input('mail');
@@ -179,13 +180,16 @@ class UsersController extends Controller
         $bio = $request->input('bio');
         $images = $request->input('images');
 
-        User::update([
+
+        // 実際のアップデート処理
+        $user=Auth::user()->update([
             'username' => $username,
             'mail'=> $mail,
-            'password'=> $bcrypt($password),
-            'bio' => $bio,
+            'password'=> bcrypt($password),
             'images' => $images,
         ]);
+        Auth::user()->bio = $bio;
+        Auth::user()->save();
         return redirect('/top');
 
     }
