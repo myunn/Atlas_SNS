@@ -36,8 +36,8 @@
 
   <div>
   {{ Form::label('アイコン画像') }}
-  {{ Form::file('icon_image',['class' => 'file-input', 'id' =>'icon_image','style'=>'display:none;']) }}
-  <label for="icon_image" class="custom-file-input"><div class="frame">ファイルを選択</div></label>
+  {{ Form::file('images',['class' => 'file-input', 'id' =>'images','style'=>'display:none;']) }}
+  <label for="images" class="custom-file-input"><div class="frame">ファイルを選択</div></label>
   </div>
 
   <!-- ボタンに機能を追加する -->

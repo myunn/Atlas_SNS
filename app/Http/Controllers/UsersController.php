@@ -186,9 +186,10 @@ class UsersController extends Controller
             'username' => $username,
             'mail'=> $mail,
             'password'=> bcrypt($password),
-            'images' => $images,
+
         ]);
         Auth::user()->bio = $bio;
+        Auth::user()->images = $images;
         Auth::user()->save();
         return redirect('/top');
 
