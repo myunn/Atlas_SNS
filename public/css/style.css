@@ -72,26 +72,15 @@ input.form {
     border-radius: 5px;
 }
 
-
 /* ホバー時のスタイル */
 .delete-button:hover {
     background-color: white;
-    /* 背景色を白に変更 */
 }
-
+/* ホバー時の画像の色を変える(今回は白) */
 .delete-button:hover img {
     filter: brightness(0) invert(1);
     /* 画像を反転させて白くする */
 }
-
-
-/* 削除ボタン：ホバー時 */
-/* .delete-button:hover {
-    background-color: red;
-}
-.delete-button img {
-    transition:filter 0.3s ease;
-} */
 
 /* 投稿内容のユーザーアイコン */
 img.top_icon {
