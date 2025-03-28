@@ -79,7 +79,7 @@
     <div class="modal-container">
       <!-- モーダルを閉じるボタン -->
       <div class="modal-close js-modal-close">
-        <img src="http://127.0.0.1:8000/images/edit.png">
+        <img src="http://127.0.0.1:8000/images/edit.png" >
       </div>
       <!-- モーダル内部のコンテンツ -->
       <div class="modal-content">
