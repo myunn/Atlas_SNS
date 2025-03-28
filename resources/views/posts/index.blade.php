@@ -9,31 +9,33 @@
 <html>
 <body>
   <div class="top_1">
-    <div class="text-post">
-      <form action="/post" method="POST">
-      <img src="http://127.0.0.1:8000/images/icon1.png" class="top_icon"></a>
+    <div class="top_2">
+      <div class="text-post">
+        <form action="/post" method="POST">
+        <img src="http://127.0.0.1:8000/images/icon1.png" class="top_icon"></a>
 
-      <!-- @csrf:フォームの脆弱性対策コードなので、フォーム使用時に必要（ないとエラー出る） -->
-      @csrf
+        <!-- @csrf:フォームの脆弱性対策コードなので、フォーム使用時に必要（ないとエラー出る） -->
+        @csrf
 
-      <input type="text" name="post" class="top_form" placeholder="投稿内容を入力ください。">
-      {!! Form::open(['url' => 'post/create']) !!}
-
-
-
-      <!-- 画像に機能を追加する -->
-      <div class="submit">
-      <img  src="http://127.0.0.1:8000/images/post.png" class="submit_btn">
-      {!! Form::close() !!}
+        <input type="text" name="post" class="top_form" placeholder="投稿内容を入力ください。">
+        {!! Form::open(['url' => 'post/create']) !!}
 
 
+
+        <!-- 画像に機能を追加する -->
+        <div class="submit">
+        <img  src="http://127.0.0.1:8000/images/post.png" class="submit_btn">
+        {!! Form::close() !!}
+
+
+        </div>
+        </form>
       </div>
-      </form>
     </div>
-  </div>
 
   <!-- 下線表示 -->
   <div id="under-bar"></div>
+  </div>
 
     <!-- ここまで新規投稿エリア -->
 
@@ -46,8 +48,10 @@
       </div>
       <div class="user_details">
         <p class="username">{{ $post->user->username }}</p>
-        <p class="updated_at">{{ $post->updated_at }}</p>
         <p class="post_content">{{ $post->post }}</p>
+      </div>
+      <div class="user_updated_date">
+        <p class="updated_at">{{ $post->updated_at }}</p>
       </div>
     </div>
 
@@ -62,7 +66,7 @@
 <!-- ここまで編集ボタン -->
 
 <!-- 削除ボタンにカーソルをあわせると背景が赤くなる -->
-    <a class="btn btn-danger" href="/post/{{$post->id }}/delete" onclick="return confirm('こちらの投稿を削除してもよろしいでしょうか？')"><img src="http://127.0.0.1:8000/images/trash.png"></a>
+    <a class="btn btn-danger delete-button" href="/post/{{$post->id }}/delete" onclick="return confirm('こちらの投稿を削除してもよろしいでしょうか？')"><img src="http://127.0.0.1:8000/images/trash.png"></a>
 <!-- ここまで削除ボタン -->
     @endif
 

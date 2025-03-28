@@ -14,8 +14,8 @@ class PostsController extends Controller
         $request->validate([
             'post' => 'required|min:1|max:150',
             ]);
-
     }
+
     public function index(){
         $posts = Post::get();
         return view('posts.index',['posts'=>$posts]);

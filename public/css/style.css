@@ -5,7 +5,7 @@ html {}
 body {}
 
 
-/* 記述：loginページ */
+/* ログインページ */
 /* 上から下にグラデーションするため2行追加し、カラーのコード記載 */
 .background_login {
     background: linear-gradient(blue, yellow);
@@ -15,6 +15,8 @@ body {}
 header {
     z-index: 3;
     background: #186AC9;
+    position: fixed;
+    width: 100%;
 }
 
 /* topページ */
@@ -32,6 +34,65 @@ img.logo {
     height: 40px;
 }
 
+/* テキストボックスの大きさ */
+input.top_form {
+    border: none;
+    background: white;
+    margin: 0 1px;
+}
+
+/* テキストボックスの大きさ */
+input.form {
+    border-color: #808080;
+    border-radius: 5px;
+    background: white;
+    width: 200px;
+    height: 30px;
+    margin: 0 1px;
+}
+
+/* トップページ
+/* レイアウト */
+.user_image {
+
+}
+
+/* コメント編集ボタン背景 */
+.custom-button {
+    background-color: white;
+    border-radius: 7px;
+    border: solid 0px;
+    width: 40px;
+    height: 40px;
+}
+
+/* 削除ボタン：通常時 */
+.delete-button {
+    display: inline-block;
+    border-radius: 5px;
+}
+
+
+/* ホバー時のスタイル */
+.delete-button:hover {
+    background-color: white;
+    /* 背景色を白に変更 */
+}
+
+.delete-button:hover img {
+    filter: brightness(0) invert(1);
+    /* 画像を反転させて白くする */
+}
+
+
+/* 削除ボタン：ホバー時 */
+/* .delete-button:hover {
+    background-color: red;
+}
+.delete-button img {
+    transition:filter 0.3s ease;
+} */
+
 /* 投稿内容のユーザーアイコン */
 img.top_icon {
     margin: 30px 0 0 0;
@@ -42,6 +103,7 @@ img.top_icon {
     display: flex;
     align-items: center;
     position: relative;
+
 }
 
 /* 投稿内容送信ボタン */
@@ -49,7 +111,7 @@ img.submit_btn {
     margin-left: 700px;
 }
 
-/* top等共通のハンバーガーメニュー */
+/* トップ等共通のハンバーガーメニュー */
 li {
     margin: 20px;
 }
@@ -96,6 +158,7 @@ li a {
 #row {
     display: flex;
     flex-flow: row wrap;
+    padding-top: 84px;
 }
 
 #container {
@@ -141,13 +204,6 @@ text {
     background: url(../img/post.png) left top no-repeat;
 }
 
-/* 投稿入力欄 */
-/* .text-post { */
-/* width: 100px; */
-/* height: 50px; */
-/* } */
-
-
 /* 投稿ボタン */
 .image {
     width: 40px;
@@ -182,24 +238,6 @@ text {
     color: gray;
     font-size: 15px;
 }
-
-
-/* 記述)top:コメント編集 */
-/* ①モーダルを開くボタン */
-/* .modal-open { */
-/* position: fixed; */
-/* top: 50%;
-    left: 50%;
-    font-size: 16px;
-    font-weight: bold;
-    width: 700px;
-    height: 300px;
-    color: #fff;
-    background: #fff;
-    border: solid 1px black;
-    cursor: pointer;
-    translate: -50% -50%;
-} */
 
 /* モーダルと背景の指定 */
 .modal {
@@ -292,7 +330,6 @@ button {
     padding: 5px;
 }
 
-
 .user_list {
     margin: 15px 250px;
 }
@@ -318,6 +355,7 @@ button {
     margin: 0 15px
 }
 
+/* 共通 */
 /* 検索ページ・フォロー・フォロワー・topページの線引き */
 #under-bar {
     border-bottom: 5px solid #EEEEEE;
@@ -376,9 +414,6 @@ input {
     padding: 5px;
 }
 
-/* 文字位置調整 */
-
-
 /* ボタンの文字色 */
 .follow-list a,
 .follower-list a,
@@ -387,31 +422,6 @@ input {
 .unfollow-button a {
     color: white;
 }
-
-/* トップページ */
-/* テキストボックスの大きさ */
-input.top_form {
-    border: none;
-    background: white;
-    margin: 0 1px;
-}
-
-/* テキストボックスの大きさ */
-input.form {
-    border-color: #808080;
-    border-radius: 5px;
-    background: white;
-    width: 200px;
-    height: 30px;
-    margin: 0 1px;
-}
-
-/* 投稿内容変更ボタン押下後の変更画面 */
-/* .text-post {
-    width:20px;
-    height:200px;
-    margin: 20px auto;
-} */
 
 input.modal_post,
 input.modal_id {
@@ -434,19 +444,7 @@ input.modal_id {
 .btn-danger:hover {
     color: white;
     background-color: red;
-
-
 }
-
-/* トップページのコメント編集ボタン背景 */
-.custom-button {
-    background-color: white;
-    border-radius: 7px;
-    border: solid 0px;
-    width: 40px;
-    height: 40px;
-}
-
 
 /* 要素の並列 */
 /* 検索ページの検索コメント・ボタンの並列要素 */
@@ -474,6 +472,10 @@ input.modal_id {
     display: flex;
     justify-content: right;
 }
+
+
+
+
 
 /* フォローリスト */
 /* アイコン一覧表示 */

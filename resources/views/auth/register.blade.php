@@ -19,40 +19,17 @@
 
   {{ Form::label('パスワード') }}
   {{ Form::text('password',null,['class' => 'input']) }}
-  <!-- 伏字方法これ？↓ -->
-  <!-- <form>
-    <label for="password">パスワード</label>
-    <input type="password" name="password">
-  </form> -->
   <br>
 
   {{ Form::label('パスワード確認') }}
   {{ Form::text('password_confirmation',null,['class' => 'input']) }}
-    <!-- 伏字方法これ？↓ -->
-  <!-- <form>
-    <label for="password_confirmation">パスワード確認</label>
-    <input type="password" name="password_confirmation">
-  </form> -->
   <br>
   {{ Form::submit('新規登録') }}
 </form>
 
 <p><a href="/login">ログイン画面へ戻る</a></p>
 
-<div class="wrapper">
+</div>
 
 {!! Form::close() !!}
-
-<!-- 記載：バリデーションエラーチェック -->
-<!-- @if($errors->any())
-    <div class="alert alert-danger">
-      <ul>
-        @foreach($errors->all() as $error)
-        <li>{{ $error }}</li>
-        @endforeach
-      </ul>
-    </div>
-@endif -->
-
-
 @endsection

@@ -50,13 +50,8 @@ class UsersController extends Controller
         return view('users.users_profile',compact('user','posts','isFollowing'));
     }
 
-    // 候補②:調べたやつ
-    // public function users_profile(User $user){
-    //     $posts = $user->posts()->latest()->get();
-    //     return view('users_profile',compact('user','posts'));
-    // }
 
-    // プロフィール編集ページから相手のプロフィールへ
+    // フォロー・フォロワーページから相手のプロフィールへ
     public function showUserProfile($userId)
     {
     // ユーザー情報を取得
@@ -71,52 +66,36 @@ class UsersController extends Controller
 
 
     // プロフィール編集
-    // 候補②：調べたやつ（下記は情報拾えてるか確認用でddになってる）
-    // public function update(Request $request){
-    //     $user = Auth::user();
-    //     dd($user);
-    // }
+// ユーザー情報の更新
+    // 入力されたデータ
+    public function update(Request $request){
+        $username = $request->input('username');
+        $mail = $request->input('mail');
+        $password = $request->input('password');
+        $bio = $request->input('bio');
+        $images = $request->input('images');
 
-    // 候補①：調べたやつ
-    // public function update_info (Request $request){
-    //     $$id = Auth::id();
-    //     $username = $request->input('username');
-    //     $mail = $request->input('mail');
-    //     $password = $request->input('password');
-    //     $bio = $request->input('bio');
-    //     $icon_image = $request->file('icon_image');
-    //     if ($request->hasFile('image')) {
-    //         $path = \Strage::put('/public',$images);
-    //         $path = explode('/',$path);
-    //     } else {
-    //         $path = null;
-    //     }
-    //     \DB::table('users')
-    //         ->where('id',$id)
-    //         ->update(
-    //             [
-    //                 'username' => $username,
-    //                 'mail' => $mail,
-    //                 'password' => $password,
-    //                 'text' => $text,
-    //                 'images' => $images
-    //             ]
-    //             );
-    //             return redirect('top');
+        // 実際のアップデート処理
+        $user=Auth::user()->update([
+            'username' => $username,
+            'mail'=> $mail,
+            'password'=> bcrypt($password),
+
+        ]);
+        Auth::user()->bio = $bio;
+        Auth::user()->images = $images;
+        Auth::user()->save();
+        return redirect('/top');
+    }
+
+    // 編集情報のバリデーション機能実装
+    // public function profile(Request $request){
+    //     $request->validate([
+
+    //     ])
     // }
 
 
-    // // プロフィール編集：アイコン画像のアップデート
-    // 候補①：調べたやつ
-    // public function storage(Request $request){
-    //     $image = $request->image->storage('');
-    // }
-
-    // 候補②：調べたやつ
-    // public function update(Request $request){
-    // if($request->isMethod('post')){
-
-//     // 編集情報のバリデーション機能実装
 //     $request->validate([
 //         'username' => 'required|min:2|max:12',
 //         'mail' => 'required|unique:users|min:5|max:40|email'.Auth::id(),
@@ -152,47 +131,5 @@ class UsersController extends Controller
 //     return redirect('/top');
 //     }
 //     }
-
-// ユーザー情報の更新
-// 候補③：調べたやつ
-    // public function update($id){
-    //     $user = username::where('id',$id)->first();
-    //     dd($user);
-    //     return view('user.users_profile',['username'=>$username]);
-    // }
-
-    // 候補④：過去の対応見直してみたやつ
-    //     public function update(Request $request){
-    //     $username = $request->input('username');
-    //     User::where('id', $username)->update([
-    //         'username' => $username
-    //     ]);
-    //     return redirect('/top');
-
-    // }
-
-    // 候補⑤:似た記載の引用
-    // 入力されたデータ
-            public function update(Request $request){
-        $username = $request->input('username');
-        $mail = $request->input('mail');
-        $password = $request->input('password');
-        $bio = $request->input('bio');
-        $images = $request->input('images');
-
-
-        // 実際のアップデート処理
-        $user=Auth::user()->update([
-            'username' => $username,
-            'mail'=> $mail,
-            'password'=> bcrypt($password),
-
-        ]);
-        Auth::user()->bio = $bio;
-        Auth::user()->images = $images;
-        Auth::user()->save();
-        return redirect('/top');
-
-    }
 
 }
