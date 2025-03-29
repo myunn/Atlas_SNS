@@ -69,6 +69,16 @@ class UsersController extends Controller
 // ユーザー情報の更新
     // 入力されたデータ
     public function update(Request $request){
+        if($request->isMethod('post')){
+        // 更新情報のバリデーション機能実装
+        $request->validate([
+            'username' => 'required|min:2|max:12',
+            'mail' => 'required|email|unique:users,mail'.Auth::id().'|min:5|max:40|string',
+            'password' => 'required|confirmed|alpha_num|min:8|max:20',
+            // 'password_Confirmation' => 'required|confirmed|alpha_dash|min:8|max:20',
+            'bio' => 'nullable|max:150',
+            'images' =>'nullable|image|mimes:jpg,png,bmp,gif,svg',
+        ]);
         $username = $request->input('username');
         $mail = $request->input('mail');
         $password = $request->input('password');
@@ -86,50 +96,6 @@ class UsersController extends Controller
         Auth::user()->images = $images;
         Auth::user()->save();
         return redirect('/top');
-    }
-
-    // 編集情報のバリデーション機能実装
-    // public function profile(Request $request){
-    //     $request->validate([
-
-    //     ])
-    // }
-
-
-//     $request->validate([
-//         'username' => 'required|min:2|max:12',
-//         'mail' => 'required|unique:users|min:5|max:40|email'.Auth::id(),
-//         'password' => 'required|confirmed|alpha_num|min:8|max:20',
-//         'password_Confirmation' => 'required|confirmed|alpha_dash|min:8|max:20',
-//         'bio' => 'nullable|max:150',
-//         'icon_image' => 'nullable|image|mimes:jpg,png,bmp,gif,svg',
-//     ]);
-
-//     // バリデーション後の処理
-// 調べたやつ
-//         $user = User::find(Auth::id());
-//         $user->username = $request->input('username');
-//         $user->mail = $request->input('mail');
-
-//     if ($request->filled('password')) {
-//         $user->password = bcrypt($request->input('password'));
-//         }
-
-//     // 自己紹介は入力されている場合のみ更新
-//     if ($request->filled('bio')) {
-//         $user->bio = $request->input('bio');
-//     }
-//     // アイコン画像は登録されれば処理
-//     if ($request->hasFile('icon_image')) {
-//         $iconImage = $request->file('icon_image');
-//         $path = $iconImage->store('icons', 'public'); // 'icons'フォルダに保存
-//         $user->icon_image = $path; // パスを保存
-//     }
-//     // ユーザー情報を保存
-//     $user->save();
-
-//     return redirect('/top');
-//     }
-//     }
-
+        }
+        }
 }
