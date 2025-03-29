@@ -25,13 +25,57 @@ body {
 
 }
 
+h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
 .wrapper {
     display: block;
     border-radius: 5px;
-    width: 30%;
+    width: 25%;
     margin: 0 auto;
     text-align: center;
-    padding: 20px 5px 70px;
+    padding: 20px 5px 90px
+}
+
+.input {
+    width: 80%;
+    margin-bottom: 15px;
+}
+
+/* registerページ */
+.register label {
+    display:block;
+    margin-bottom: 5px;
+    width: 140px;
+    vertical-align: top;
+}
+
+.back_login {
+    display: flex;
+    margin: 30px 95px 0px;
+}
+
+.new_account input {
+    border-style: none;
+    margin-left: 160px;
+    background-color: red;
+    border-radius: 5px;
+    width: 120px;
+    height: 30px;
+}
+
+/* loginページ */
+.form-input label {
+    display: block;
+    margin-bottom: 5px;
+    width: 140px;
+    vertical-align: top;
+}
+
+.new_account_btn {
+    background-color: red;
 }
 
 /* 構成2：メアドとPWの設定 */
@@ -58,9 +102,4 @@ body {
 
 .new-user {
     text-align: center;
-}
-
-/* ログイン（ログアウト）ページレイアウト */
-.input.input {
-    height: 20px;
 }

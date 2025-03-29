@@ -9,6 +9,7 @@
 <h2>新規ユーザー登録</h2>
 <form action="profile.blade.php" method="post">
 
+<div class="register">
   {{ Form::label('ユーザー名') }}
   {{ Form::text('username',null,['class' => 'input']) }}
   <br>
@@ -24,10 +25,13 @@
   {{ Form::label('パスワード確認') }}
   {{ Form::text('password_confirmation',null,['class' => 'input']) }}
   <br>
+  <div class="new_account">
   {{ Form::submit('新規登録') }}
+  </div>
+  </div>
 </form>
 
-<p><a href="/login">ログイン画面へ戻る</a></p>
+<p><a href="/login" class="back_login">ログイン画面へ戻る</a></p>
 
     @if($errors->any())
         <div class="alert alert-danger">
@@ -40,6 +44,5 @@
     @endif
 
 </div>
-
 {!! Form::close() !!}
 @endsection
