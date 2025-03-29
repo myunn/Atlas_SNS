@@ -73,7 +73,7 @@ class UsersController extends Controller
         // 更新情報のバリデーション機能実装
         $request->validate([
             'username' => 'required|min:2|max:12',
-            'mail' => 'required|email|unique:users,mail'.Auth::id().'|min:5|max:40|string',
+            'mail' => ['required','email','min:5','max:40','string','unique:users,mail,'.Auth::user()->mail.',mail'],
             'password' => 'required|confirmed|alpha_num|min:8|max:20',
             // 'password_Confirmation' => 'required|confirmed|alpha_dash|min:8|max:20',
             'bio' => 'nullable|max:150',
