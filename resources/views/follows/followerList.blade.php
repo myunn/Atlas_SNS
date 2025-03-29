@@ -27,8 +27,5 @@
     <!-- 下線追加 -->
   <hr size="120" noshade>
   @endforeach
-    <!-- 使用するところは下記 -->
-    <!-- followsController>followリストメソッド -->
-    <!-- ユーザー取得とか引っ張ってきたい情報を追記する -->
 </div>
 @endsection
