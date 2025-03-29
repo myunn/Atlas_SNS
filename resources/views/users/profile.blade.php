@@ -45,6 +45,17 @@
   {{Form::submit('更新',['id' => 'update-button']) }}
   </div>
   {{Form::close()}}
+
+    @if($errors->any())
+        <div class="alert alert-danger">
+          <ul>
+            @foreach($errors->all() as $error)
+            <li>{{ $error }}</li>
+            @endforeach
+          </ul>
+        </div>
+    @endif
+
 </div>
 
 @endsection
