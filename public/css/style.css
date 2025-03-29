@@ -102,23 +102,32 @@ img.submit_btn {
 
 /* トップ等共通のハンバーガーメニュー */
 li {
-    margin: 20px;
+    padding: 20px;
+    color:gray;
+    border:solid 1px;
+    border-color: darkblue;
+}
+
+li:hover {
+    background-color: darkblue;
+    color: white;
 }
 
 li a {
+    padding: 20px;
     color:#808080;
-    border: 1px solid #fff;
+}
 
+li a:hover{
+    color: white;
 }
 
 .nav-menu {
     display: block;
     position: fixed;
     z-index: 1;
-    padding-top: 60px;
     transform: translateY(-130%);
     transition: 0s ease-in-out;
-    height: 100vh;
     background-color: #fff;
     width: 250px;
 }
@@ -139,7 +148,7 @@ li a {
 }
 
 .nav-menu.active {
-    transform: translateY(0%);
+    transform: translateY(25%);
     transition: 0s ease-in-out;
 }
 
