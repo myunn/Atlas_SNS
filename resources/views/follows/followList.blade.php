@@ -18,11 +18,17 @@
   @foreach ($posts as $post)
   <div class="follow-users-all">
     <div class="follow-users-info">
+      <div class="followlist_1">
       <img src="images/{{$post->user->images}}">
-      <p class="username">{{ $post->user->username }}</p>
+      </div>
+      <div class="followlist_3">
       <p class="date">{{ $post->updated_at }}</p>
-      <p class="post">{{ $post->post }}</p>
+      </div>
     </div>
+      <div class="followlist_2">
+      <p class="username">{{ $post->user->username }}</p>
+      <p class="post">{{ $post->post }}</p>
+      </div>
   </div>
     <!-- 下線追加 -->
   <hr>

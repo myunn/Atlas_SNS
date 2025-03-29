@@ -20,12 +20,9 @@ header {
 }
 
 /* topページ */
-/* アイコン */
-img {
-    width: 40px;
-    height: 40px;
-    size: 60px 70px;
-    border-radius: 5px;
+/* 投稿内容のユーザーアイコン */
+img.top_icon {
+    margin: 30px 0 0 0;
 }
 
 /* ロゴ */
@@ -64,6 +61,7 @@ input.form {
     border: solid 0px;
     width: 40px;
     height: 40px;
+    margin-left:900px;
 }
 
 /* 削除ボタン：通常時 */
@@ -80,11 +78,6 @@ input.form {
 .delete-button:hover img {
     filter: brightness(0) invert(1);
     /* 画像を反転させて白くする */
-}
-
-/* 投稿内容のユーザーアイコン */
-img.top_icon {
-    margin: 30px 0 0 0;
 }
 
 /* メインコンテンツ */
@@ -172,9 +165,9 @@ div {
 /* テキストとフォーム間隔コマンド */
 label {
     display: inline-block;
-    height: 50px;
+    height: 40px;
     width: 150px;
-    vertical-align: top;
+    vertical-align: middle;
 }
 
 /* フォーム背景に色を付ける */
@@ -211,6 +204,14 @@ text {
 }
 
 /* プロフィール編集 */
+/* アイコン */
+img {
+    width: 40px;
+    height: 40px;
+    size: 60px 70px;
+    border-radius: 5px;
+}
+
 .user_image_name {
     display: flex;
     justify-content: flex-end;
@@ -391,7 +392,7 @@ input {
     margin: 0 0 15px 250px;
     background-color: #DDDDDD;
     width: 200px;
-    height: 30px;
+    height: 40px;
     border: solid 1px gray;
 }
 
@@ -495,12 +496,32 @@ img.follow-List {
 /* フォローユーザーの詳細表示 */
 .follow-users-all {
     display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
 }
 
 .follow-users-info {
-    margin-right: 200px;
     display: flex;
+    justify-content: space-between;
+    align-items:center;
+    /* margin-right: 200px; */
 }
+
+.username, .date, .post {
+    text-align: none;
+}
+
+.date {
+    margin-left: auto;
+}
+
+.followlist_2 {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    margin-left: 50px;
+}
+
 
 /* フォロワーリスト：下線上の余白 */
 .follower-list-title {
@@ -512,7 +533,6 @@ padding: 50px 230px 50px 50px;
 .date,
 .post {
     display: inline-block;
-    margin: 0 0 0 auto;
 }
 
 .A {
