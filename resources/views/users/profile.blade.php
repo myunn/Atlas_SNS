@@ -43,7 +43,6 @@
   <!-- ボタンに機能を追加する -->
   <div class="updatebtn">
   {{Form::submit('更新',['id' => 'update-button']) }}
-    <!-- <button id="update-button">更新</a></button> -->
   </div>
   {{Form::close()}}
 </div>
