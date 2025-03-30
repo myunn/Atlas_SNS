@@ -2,11 +2,17 @@
 
 @section('content')
 
-<div class="1">
+<div class="users_profile_1">
 <!-- 相手ユーザーのアイコン・ユーザーネーム・自己紹介文・フォロー・アンフォロー機能 -->
 <img src="http://127.0.0.1:8000/images/{{$user->images}}" alt="User Image">
-<p class="username">ユーザー名{{ $user->username }}</p></a>
-<p class="self_introduction">自己紹介{{$user->bio }}</p>
+<div class="users_profile_2">
+<a>ユーザー名</a>
+<p class="username">{{ $user->username }}</p>
+</div>
+<div class="users_profile_3">
+<a>自己紹介</a>
+<p class="self_introduction">{{$user->bio }}</p>
+</div>
   <!-- フォロー・フォロー解除ボタン -->
 <div class="d-flex justify-content-end flex-grow-1">
   @if (auth()->user()->isFollowing($user->id))

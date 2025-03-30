@@ -9,7 +9,7 @@
   <form action="/update" method="POST">
   @csrf
   <div class="profile_A">
-    <a href="/top"><img src="images/{{Auth::user()->images}}"></a>
+    <a href="/top"><img src="images/{{Auth::user()->images}}" class="profile_A_image"></a>
     {{ Form::label('ユーザー名') }}
     {{ Form::text('username',Auth::user()->username,null,['class' => 'input']) }}
   </div>
