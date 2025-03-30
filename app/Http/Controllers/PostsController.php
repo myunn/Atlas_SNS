@@ -8,24 +8,22 @@ use App\Post;
 
 class PostsController extends Controller
 {
-    // 記載：バリデーション機能の実装(つぶやき投稿)
-    public function authorCreate(Request $request)
-    {
-        $request->validate([
-            'post' => 'required|min:1|max:150',
-            ]);
-    }
-
     public function index(){
         $posts = Post::get();
         return view('posts.index',['posts'=>$posts]);
     }
 
     public function create(Request $request){
-        $post = $request->input('post');
+        if($request->isMethod('post')){
+        // 記載：バリデーション機能の実装(つぶやき投稿)
+        $request->validate([
+            'post' => 'required|min:1|max:150',
+            ]);
         // Auth::id()はbladeに記載しなくても、controllerのみに記載でOK
+        $post = $request->input('post');
         $user_id = Auth::id();
         Post::create(['post' => $post, 'user_id' => $user_id]);
+        }
         // use宣言しないとどこのことかわからないから機能しないので注意！また、頭文字は大文字になるのでこそも注意！(Authとpost)
         // redirect:URLで記載する。（web.phpの"/top"表示に入りなおす指示。
         return redirect('/top');

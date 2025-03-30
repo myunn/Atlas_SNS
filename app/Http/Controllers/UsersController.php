@@ -75,7 +75,6 @@ class UsersController extends Controller
             'username' => 'required|min:2|max:12',
             'mail' => ['required','email','min:5','max:40','string','unique:users,mail,'.Auth::user()->mail.',mail'],
             'password' => 'required|confirmed|alpha_num|min:8|max:20',
-            // 'password_Confirmation' => 'required|confirmed|alpha_dash|min:8|max:20',
             'bio' => 'nullable|max:150',
             'images' =>'nullable|image|mimes:jpg,png,bmp,gif,svg',
         ]);

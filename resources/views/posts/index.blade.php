@@ -85,7 +85,7 @@
             @csrf
             <!-- @csrf:フォームの脆弱性対策コードなので、フォーム使用時に必要（ないとエラー出る） -->
               <div class="text-post">
-                <input type="text" maxlength="150" name="post" value="" class="modal_post">
+                <input type="text" name="post" value="" class="modal_post">
                 <input type="hidden" name="post_id" value="" class="modal_id">
                 <!-- モーダルを閉じるボタン -->
                 {!! Form::open(['url' => 'post/create']) !!}
