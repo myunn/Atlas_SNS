@@ -55,11 +55,13 @@ h2 {
 .back_login {
     display: flex;
     margin: 30px 95px 0px;
+    text-decoration: underline;
+    color: white;
 }
 
 .new_account input {
     border-style: none;
-    margin-left: 160px;
+    margin-left: 180px;
     background-color: red;
     border-radius: 5px;
     width: 120px;
@@ -67,6 +69,16 @@ h2 {
 }
 
 /* loginページ */
+.input {
+    border-style: none;
+    margin-left: 30px;
+    border-radius: 5px;
+    width: 80%;
+    margin-bottom: 15px;
+    height: 30px;
+}
+
+/* 構成2：メアドとPWの設定 */
 .form-input label {
     display: block;
     margin-bottom: 5px;
@@ -74,15 +86,18 @@ h2 {
     vertical-align: top;
 }
 
-.new_account_btn {
-    background-color: red;
+.new-user {
+    text-align: center;
+    margin-top: 80px;
+    text-decoration: underline;
 }
 
-/* 構成2：メアドとPWの設定 */
-.form-input {
-    display: flex;
-    flex-direction: column;
-    text-align: left;
+.new-user a {
+    color: white;
+}
+
+#new_account_btn {
+    background-color: red;
 }
 
 /* 構成3：ログインと新規ユーザー */
@@ -98,8 +113,5 @@ h2 {
     border: solid 0px;
     width: 120px;
     height: 30px;
-}
-
-.new-user {
-    text-align: center;
+    margin: 0px 20px;
 }

@@ -142,6 +142,8 @@ table {
 /* 『ようこそ』を白色にする */
 .welcome {
 	color: white;
+	font-size: 20px;
+	margin: 30px;
 }
 
 /* 『新規ユーザーはこちら』に下線をつける */
