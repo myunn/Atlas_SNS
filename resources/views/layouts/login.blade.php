@@ -22,6 +22,7 @@
 </head>
 <body>
     <header class = "head">
+        <div class="login_0">
             <!-- 記載：画像リンク -->
         <a href="/top"><img src="http://127.0.0.1:8000/images/atlas.png" class="logo"></a>
             <div id="login.A">
@@ -37,6 +38,7 @@
                     <img src="http://127.0.0.1:8000/images/{{Auth::user()->images}}">
                 </div>
             </div>
+        </div>
     </header>
     <!-- 共通ぽいからここ？でもここに入れるとそれぞれのページの必要な情報入力できない？ -->
     <!-- <div id="under-bar"></div> -->
