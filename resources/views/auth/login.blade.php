@@ -7,7 +7,7 @@
 <!-- 構成を『div』で3つに分ける -->
 <div class="wrapper">
 
-<p class="welcome">AtlasSNSへようこそ</p>
+  <p class="welcome">AtlasSNSへようこそ</p>
 
 <div>
   <!-- 入力欄ごとにさらに構成を『div』で分ける -->

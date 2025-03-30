@@ -29,7 +29,6 @@
         <p class="date">{{ $post->updated_at }}</p>
       </div>
     </div>
-
   </div>
     <!-- 下線追加 -->
   <hr>

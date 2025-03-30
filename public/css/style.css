@@ -54,11 +54,10 @@ input.form {
 }
 
 /* トップページ
-/* レイアウト */
-.user_image {
+/* つぶやき編集・削除ボタン */
+.index_button {
 
 }
-
 /* コメント編集ボタン背景 */
 .custom-button {
     background-color: white;
@@ -66,7 +65,6 @@ input.form {
     border: solid 0px;
     width: 40px;
     height: 40px;
-    margin-left:900px;
 }
 
 /* 削除ボタン：通常時 */
@@ -118,11 +116,6 @@ li a {
 
 li a:hover{
     color: white;
-}
-
-.login_0 {
-    text-align: justify;
-    /* justify-content: space-between; */
 }
 
 .nav-menu {
@@ -350,9 +343,6 @@ button {
     margin: 15px 250px;
 }
 
-.user_info {
-    width: 70%;
-}
 
 .search_area form {
     margin: 30px 5px 30px 50px;
@@ -516,7 +506,7 @@ img.follow-List {
 
 /* フォローリストタイトル */
 .follow-list-title {
-    padding: 50px 230px 50px 0px;
+    padding: 30px 20px 50px 100px;
     font-size: 20px;
 }
 
@@ -541,21 +531,13 @@ img.follow-List {
     margin-left: auto;
 }
 
-.followlist_2 {
-    text-align: left;
-    display: flex;
-    flex-direction: column;
-    margin-left: 50px;
-}
-
-
 /* フォロワーリスト：下線上の余白と文字サイズ */
 .follower-list-title {
-    padding: 50px 230px 50px 50px;
+    padding: 30px 20px 50px 100px;
     font-size: 20px;
 }
 
-/* フォロー・フォロワーページのフォローユーザーのツイート等表示間隔 */
+/* フォロー・フォロワーページ共通：フォローユーザーのツイート等表示間隔 */
 .username,
 .date,
 .post {
@@ -565,6 +547,30 @@ img.follow-List {
 .A {
     display: flex;
     margin-top: 30px;
+}
+
+
+/* アイコン位置 */
+.index_1,
+.followlist_1,
+.followerlist_1 {
+    margin-left: 2%;
+}
+
+/* ユーザー名・つぶやき位置 */
+.index_2,
+.followlist_2,
+.followerlist_2 {
+    margin-left: 2%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* つぶやき日位置 */
+.index_3,
+.followlist_3,
+.followerlist_3 {
+    margin-left: 75%;
 }
 
 /* 相手のユーザープロフィール */
@@ -615,19 +621,4 @@ img.follow-List {
 .users_profile_2 p,
 .users_profile_3 p {
     margin-left: 10%;
-}
-
-.followlist_1 {
-    text-align: none;
-    margin-left: 2%;
-}
-
-.followlist_2 {
-    text-align: none;
-    margin-left: 2%;
-}
-
-.followlist_3 {
-    text-align: none;
-    margin-left: 75%;
 }
