@@ -529,7 +529,6 @@ img.follow-List {
 
 .follow-users-info {
     display: flex;
-    justify-content: space-between;
     align-items:center;
     /* margin-right: 200px; */
 }
@@ -580,7 +579,10 @@ img.follow-List {
 }
 
 .users_profile_1 {
+    display: flex;
     margin-top: 30px;
+    margin-left: 10%;
+    height: 20px;
 }
 
 .users_profile_1 img {
@@ -591,11 +593,19 @@ img.follow-List {
 
 .users_profile_2,
 .users_profile_3 {
+    display: flex;
     text-align: left;
     vertical-align: middle;
     float: none;
     margin-bottom: 10px;
+    margin-left: 10%;
 }
+
+.flex-grow-1 button{
+    margin-left: 70%;
+    }
+
+
 
 .users_profile_2 a,
 .users_profile_3 a {
@@ -604,9 +614,20 @@ img.follow-List {
 
 .users_profile_2 p,
 .users_profile_3 p {
-    margin-left: 100px;
+    margin-left: 10%;
 }
 
-.flex-grow-1 button {
-    margin-left: 70%;
+.followlist_1 {
+    text-align: none;
+    margin-left: 2%;
+}
+
+.followlist_2 {
+    text-align: none;
+    margin-left: 2%;
+}
+
+.followlist_3 {
+    text-align: none;
+    margin-left: 75%;
 }
