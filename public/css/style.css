@@ -54,9 +54,24 @@ input.form {
 }
 
 /* トップページ
+/* つぶやき投稿ボタン */
+button.submit_btn {
+    background-color: white;
+    width: 40px;
+    height: 40px;
+}
+
+/* つぶやき投稿ボタンのボタン位置 */
+.text-post {
+    margin-left: 20%;
+}
+.submit {
+    margin-left: 120%;
+}
+
 /* つぶやき編集・削除ボタン */
 .index_button {
-
+    margin-left: 70%;
 }
 /* コメント編集ボタン背景 */
 .custom-button {
@@ -579,11 +594,6 @@ img.follow-List {
     border: solid 0px;
 }
 
-/* 相手のユーザープロ：フォロー・フォロー解除ボタン位置 */
-.users_profile_btn {
-    margin-left: 600px;
-}
-
 .users_profile_1 {
     display: flex;
     margin-top: 30px;
@@ -607,6 +617,9 @@ img.follow-List {
     margin-left: 10%;
 }
 
+.users_profile_3 {
+    float: left;
+}
 .flex-grow-1 button{
     margin-left: 70%;
     }

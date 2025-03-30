@@ -12,7 +12,7 @@
     <div class="top_2">
       <div class="text-post">
         <form action="/post" method="POST">
-        <img src="http://127.0.0.1:8000/images/icon1.png" class="top_icon"></a>
+        <img src="http://127.0.0.1:8000/images/icon1.png" class="top_icon">
 
         <!-- @csrf:フォームの脆弱性対策コードなので、フォーム使用時に必要（ないとエラー出る） -->
         @csrf
@@ -24,7 +24,9 @@
 
         <!-- 画像に機能を追加する -->
         <div class="submit">
-          <img  src="http://127.0.0.1:8000/images/post.png" class="submit_btn">
+          <button type="submit" class="submit_btn">
+          <img src="http://127.0.0.1:8000/images/post.png">
+          </button>
           {!! Form::close() !!}
         </div>
         </form>
@@ -65,9 +67,9 @@
 
 <!-- 削除ボタンにカーソルをあわせると背景が赤くなる -->
         <a class="btn btn-danger delete-button" href="/post/{{$post->id }}/delete" onclick="return confirm('こちらの投稿を削除してもよろしいでしょうか？')"><img src="http://127.0.0.1:8000/images/trash.png"></a>
+        @endif
     </div>
 <!-- ここまで削除ボタン -->
-        @endif
 
         <hr>
         @endforeach
@@ -76,19 +78,24 @@
 <!-- モーダルエリア -->
       <div class="modal js-modal">
         <div class="modal-container">
-          <!-- モーダルを閉じるボタン -->
-          <div class="modal-close js-modal-close">
-            <img src="http://127.0.0.1:8000/images/edit.png" >
-          </div>
-            <!-- モーダル内部のコンテンツ -->
+
+          <!-- モーダル内部のコンテンツ -->
           <div class="modal-content">
             <form action="/update" method="POST">
             @csrf
             <!-- @csrf:フォームの脆弱性対策コードなので、フォーム使用時に必要（ないとエラー出る） -->
-            <div class="text-post">
-              <input type="text" maxlength="150" name="post" value="" class="modal_post">
-              <input type="hidden" name="post_id" value="" class="modal_id">
-            </div>
+              <div class="text-post">
+                <input type="text" maxlength="150" name="post" value="" class="modal_post">
+                <input type="hidden" name="post_id" value="" class="modal_id">
+                <!-- モーダルを閉じるボタン -->
+                {!! Form::open(['url' => 'post/create']) !!}
+                  <div class="modal-close js-modal-close">
+                    <button type="submit" class="submit_btn">
+                      <img src="http://127.0.0.1:8000/images/edit.png" >
+                    </button>
+                {!! Form::close() !!}
+                  </div>
+              </div>
             </form>
           </div>
         </div>
