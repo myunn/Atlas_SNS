@@ -93,7 +93,17 @@
                     <button type="submit" class="submit_btn">
                       <img src="http://127.0.0.1:8000/images/edit.png" >
                     </button>
+                      @if($errors->any())
+                      <div class="alert alert-danger">
+                        <ul>
+                          @foreach($errors->all() as $error)
+                          <li>{{ $error }}</li>
+                          @endforeach
+                        </ul>
+                      </div>
+                      @endif
                 {!! Form::close() !!}
+
                   </div>
               </div>
             </form>

@@ -3,7 +3,7 @@
 @section('content')
 <div class="user_profile_all">
   <div class="users_profile_1">
-  <!-- 相手ユーザーのアイコン・ユーザーネーム・自己紹介文・フォロー・アンフォロー機能 -->
+    <!-- 相手ユーザーのアイコン・ユーザーネーム・自己紹介文・フォロー・アンフォロー機能 -->
     <img src="http://127.0.0.1:8000/images/{{$user->images}}" alt="User Image">
   </div>
   <div class="users_profile_2">
@@ -51,7 +51,5 @@
   </div>
   <hr>
   @endforeach
-
-
 
 @endsection
