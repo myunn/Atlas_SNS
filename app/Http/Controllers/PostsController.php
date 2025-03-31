@@ -17,7 +17,7 @@ class PostsController extends Controller
         if($request->isMethod('post')){
         // 記載：バリデーション機能の実装(つぶやき投稿)
         $request->validate([
-            'post' => 'required|min:1|max:150',
+            'post' => 'required|string|min:1|max:150',
             ]);
         // Auth::id()はbladeに記載しなくても、controllerのみに記載でOK
         $post = $request->input('post');
@@ -26,8 +26,7 @@ class PostsController extends Controller
         }
         // use宣言しないとどこのことかわからないから機能しないので注意！また、頭文字は大文字になるのでこそも注意！(Authとpost)
         // redirect:URLで記載する。（web.phpの"/top"表示に入りなおす指示。
-        return redirect('/top');
-
+        return view('posts.index');
     }
 
         public function update(Request $request){
