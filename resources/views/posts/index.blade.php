@@ -11,26 +11,35 @@
   <div class="top_1">
     <div class="top_2">
       <div class="text-post">
+
         <form action="/post" method="POST">
-        <img src="http://127.0.0.1:8000/images/icon1.png" class="top_icon">
+        <img src="/images/icon1.png" class="top_icon">
 
         <!-- @csrf:フォームの脆弱性対策コードなので、フォーム使用時に必要（ないとエラー出る） -->
         @csrf
-
         <input type="text" name="post" class="top_form" placeholder="投稿内容を入力ください。">
         {!! Form::open(['url' => 'post/create']) !!}
 
-
-
-        <!-- 画像に機能を追加する -->
-        <div class="submit">
-          <button type="submit" class="submit_btn">
-          <img src="http://127.0.0.1:8000/images/post.png">
-          </button>
-          {!! Form::close() !!}
-        </div>
+          <!-- 画像に機能を追加する -->
+          <div class="submit">
+            <button type="submit" class="submit_btn">
+              <img src="/images/post.png">
+            </button>
+            {!! Form::close() !!}
+          </div>
         </form>
       </div>
+
+      @if($errors->any())
+      <div class="alert alert-danger">
+        <ul>
+        @foreach($errors->all() as $error)
+        <li>{{ $error }}</li>
+        @endforeach
+        </ul>
+      </div>
+      @endif
+      {!! Form::close() !!}
     </div>
 
   <!-- 下線表示 -->
@@ -44,7 +53,7 @@
     @foreach ($posts as $post)
       <div class="user_info">
         <div class="index_1">
-          <img src="http://127.0.0.1:8000/images/{{$post->user->images}}" alt="User Image">
+          <img src="images/{{$post->user->images}}" alt="User Image">
         </div>
         <div class="index_2">
           <p class="username">{{ $post->user->username }}</p>
@@ -61,12 +70,12 @@
         @if ($post->user_id == Auth::id())
         <!-- 編集ボタン -->
         <button class="modal-open js-modal-open custom-button" post="{{ $post->post }}" post_id="{{ $post->id }}">
-        <img src="http://127.0.0.1:8000/images/edit.png">
+        <img src="/images/edit.png">
         </button>
         <!-- ここまで編集ボタン -->
 
 <!-- 削除ボタンにカーソルをあわせると背景が赤くなる -->
-        <a class="btn btn-danger delete-button" href="/post/{{$post->id }}/delete" onclick="return confirm('こちらの投稿を削除してもよろしいでしょうか？')"><img src="http://127.0.0.1:8000/images/trash.png"></a>
+        <a class="btn btn-danger delete-button" href="/post/{{$post->id }}/delete" onclick="return confirm('こちらの投稿を削除してもよろしいでしょうか？')"><img src="/images/trash.png"></a>
         @endif
     </div>
 <!-- ここまで削除ボタン -->
@@ -91,19 +100,8 @@
                 {!! Form::open(['url' => 'post/create']) !!}
                   <div class="modal-close js-modal-close">
                     <button type="submit" class="submit_btn">
-                      <img src="http://127.0.0.1:8000/images/edit.png" >
+                      <img src="/images/edit.png" >
                     </button>
-                      @if($errors->any())
-                      <div class="alert alert-danger">
-                        <ul>
-                          @foreach($errors->all() as $error)
-                          <li>{{ $error }}</li>
-                          @endforeach
-                        </ul>
-                      </div>
-                      @endif
-                {!! Form::close() !!}
-
                   </div>
               </div>
             </form>
