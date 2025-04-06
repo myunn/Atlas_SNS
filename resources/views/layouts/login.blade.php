@@ -24,7 +24,7 @@
     <header class = "head">
         <div class="login_0">
             <!-- 記載：画像リンク -->
-        <a href="/top"><img src="http://127.0.0.1:8000/images/atlas.png" class="logo"></a>
+        <a href="/top"><img src="/images/atlas.png" class="logo"></a>
             <div id="login.A">
                 <!-- 記載：アコーディオンメニュー設定 -->
                 <div class="accordion">
@@ -35,7 +35,7 @@
                         <li><a href="/profile">プロフィール編集</a></li>
                         <li><a href="/logout">ログアウト</a></li>
                     </ul>
-                    <img src="http://127.0.0.1:8000/images/{{Auth::user()->images}}">
+                    <img src="/images/{{Auth::user()->images}}">
                 </div>
             </div>
         </div>

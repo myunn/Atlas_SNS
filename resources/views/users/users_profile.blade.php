@@ -4,7 +4,7 @@
 <div class="user_profile_all">
   <div class="users_profile_1">
     <!-- 相手ユーザーのアイコン・ユーザーネーム・自己紹介文・フォロー・アンフォロー機能 -->
-    <img src="http://127.0.0.1:8000/images/{{$user->images}}" alt="User Image">
+    <img src="/images/{{$user->images}}" alt="User Image">
   </div>
   <div class="users_profile_2">
     <a>ユーザー名</a>
@@ -13,9 +13,7 @@
   <div class="users_profile_3">
     <a>自己紹介</a>
     <p class="self_introduction">{{$user->bio }}</p>
-  </div>
-
-  <!-- フォロー・フォロー解除ボタン -->
+      <!-- フォロー・フォロー解除ボタン -->
   <div class="d-flex justify-content-end flex-grow-1">
   @if (auth()->user()->isFollowing($user->id))
     <form action="{{ route('unfollow', $user) }}" class="users_profile_btn" method="POST">
@@ -32,6 +30,9 @@
     </form>
   @endif
   </div>
+  </div>
+
+
 </div>
 
 <div id="under-bar"></div>
@@ -41,7 +42,7 @@
   @foreach ($posts as $post)
   <div class="user_info">
     <div class="user_image">
-      <img src="http://127.0.0.1:8000/images/{{$post->user->images}}" alt="User Image">
+      <img src="/images/{{$post->user->images}}" alt="User Image">
     </div>
     <div class="user_details">
       <p class="username">{{ $post->user->username }}</p>

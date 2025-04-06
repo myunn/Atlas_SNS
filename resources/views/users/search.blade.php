@@ -7,7 +7,7 @@
   @csrf
     <div class=becide>
       <input type="text" name="keyword" class="form" placeholder="ユーザー名">
-      <input type="image" name="submit" imag class="search_image" src="http://127.0.0.1:8000/images/search.png">
+      <input type="image" name="submit" imag class="search_image" src="/images/search.png">
 
       <!-- 検索したワードの表示 -->
       @if (!empty($keyword))
@@ -25,7 +25,7 @@
   @foreach($users as $user)
   <div class="user_list">
       <div class="user_info">
-        <img src="http://127.0.0.1:8000/images/{{$user->images}}">
+        <img src="/images/{{$user->images}}">
         <p>{{ $user->username }}</p>
       </div>
 
