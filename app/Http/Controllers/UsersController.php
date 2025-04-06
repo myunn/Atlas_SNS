@@ -82,19 +82,44 @@ class UsersController extends Controller
         $mail = $request->input('mail');
         $password = $request->input('password');
         $bio = $request->input('bio');
-        $images = $request->input('images');
+        $images = $request->file('images');
 
+        // 一旦下記消してその下を入れてみる
         // 実際のアップデート処理
-        $user=Auth::user()->update([
-            'username' => $username,
-            'mail'=> $mail,
-            'password'=> bcrypt($password),
+        // $user=Auth::user()->update([
+        //     'username' => $username,
+        //     'mail'=> $mail,
+        //     'password'=> bcrypt($password),
 
-        ]);
-        Auth::user()->bio = $bio;
-        Auth::user()->images = $images;
-        Auth::user()->save();
+        // ]);
+        // Auth::user()->bio = $bio;
+        // Auth::user()->images = $images;
+        // Auth::user()->save();
+        // return redirect('/top');
+
+        // お試し追加
+        // 実際のアップデート処理
+        $user = Auth::user();
+        $user->username = $username;
+        $user->mail = $mail;
+        $user->password = bcrypt($password);
+
+        // 画像がアップロードされた場合
+        if ($images) {
+            // 画像の保存処理（例: public/storage/images に保存）
+            $imagePath = $images->store('images', 'public');
+            $user->images = $imagePath;  // 保存した画像のパスを設定
+        }
+
+        // bio の更新
+        $user->bio = $bio;
+
+        // 保存
+        $user->save();
+
         return redirect('/top');
+
+
         }
         }
 }

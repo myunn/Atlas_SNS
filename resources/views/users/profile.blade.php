@@ -5,8 +5,8 @@
 <!-- 記述： プロフィール内容-->
 
 <div class="profile">
-  {!! Form::open(['url' => '/profile']) !!}
-  <form action="/update" method="POST">
+  {!! Form::open(['url' => '/profile', 'enctype' => 'multipart/form-data']) !!}
+  <!-- <form action="/update" method="POST"> -->
   @csrf
   <div class="profile_A">
     <a href="/top"><img src="images/{{Auth::user()->images}}" class="profile_A_image"></a>
