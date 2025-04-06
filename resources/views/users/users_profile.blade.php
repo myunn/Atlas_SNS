@@ -38,16 +38,17 @@
 <div id="under-bar"></div>
 
 <!-- 投稿内容 -->
-<!-- 相手ユーザーの投稿をアイコン・ユーザーネーム・日付・postを最新順で表示させたい -->
   @foreach ($posts as $post)
   <div class="user_info">
-    <div class="user_image">
+    <div class="index_1">
       <img src="/images/{{$post->user->images}}" alt="User Image">
     </div>
-    <div class="user_details">
+    <div class="index_2">
       <p class="username">{{ $post->user->username }}</p>
-      <p class="updated_at">{{ $post->updated_at }}</p>
       <p class="post_content">{{ $post->post }}</p>
+      </div>
+      <div class="index_3">
+      <p class="updated_at">{{ $post->updated_at }}</p>
     </div>
   </div>
   <hr>

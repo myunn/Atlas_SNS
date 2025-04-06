@@ -237,12 +237,6 @@ img {
     margin: 0px -25px;
 }
 
-.user_image_name {
-    display: flex;
-    justify-content: flex-end;
-    position: fixed;
-}
-
 /* プロフィール編集：アイコン画像挿入 */
 .custom-file-input {
     display: inline-block;
@@ -580,7 +574,7 @@ img.follow-List {
 .index_1,
 .followlist_1,
 .followerlist_1 {
-    margin-left: 2%;
+    margin-left: 10%;
 }
 
 /* ユーザー名・つぶやき位置 */
