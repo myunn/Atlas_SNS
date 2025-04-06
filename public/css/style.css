@@ -602,6 +602,11 @@ img.follow-List {
     border: solid 0px;
 }
 
+/* 相手ユーザーの情報 */
+.user_profile_all {
+    justify-content: space-between;
+}
+
 .users_profile_1 {
     display: flex;
     margin-top: 30px;
@@ -612,33 +617,51 @@ img.follow-List {
 .users_profile_1 img {
     float: none;
     margin-top: 10px;
-    margin: 10px 80% 0px 15%;
 }
 
-.users_profile_2,
+/* ユーザー名・自己紹介の位置 */
+.users_profile_2 {
+    display: flex;
+    text-align: left;
+    vertical-align: middle;
+    float: none;
+    margin-bottom: 10px;
+    margin-left: -4.5%;
+    align-items: center;
+    width: 100%;
+}
+
 .users_profile_3 {
     display: flex;
     text-align: left;
     vertical-align: middle;
     float: none;
     margin-bottom: 10px;
-    margin-left: 10%;
+    margin-left: -4.5%;
     align-items: center;
+    width: 100%;
 }
 
-
-.flex-grow-1 button{
-    margin-left: 70%;
-    }
-
-
-
+/* 「ユーザー名」・「自己紹介」の文字表示 */
 .users_profile_2 a,
 .users_profile_3 a {
     margin-left: 20%;
 }
 
+/* 表示されるユーザー名・自己紹介文 */
 .users_profile_2 p,
 .users_profile_3 p {
-    margin-left: 10%;
+    margin-left: 5%;
+}
+
+
+/* .flex-grow-1 button{
+    margin-left: 70%;
+    } */
+
+/* フォロー・フォロー解除ボタンを右寄せ */
+.d-flex.justify-content-end {
+    display: flex;
+    justify-content: flex-end;
+    width: 60%;
 }

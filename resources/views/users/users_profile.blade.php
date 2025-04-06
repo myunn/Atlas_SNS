@@ -14,22 +14,22 @@
     <a>自己紹介</a>
     <p class="self_introduction">{{$user->bio }}</p>
       <!-- フォロー・フォロー解除ボタン -->
-  <div class="d-flex justify-content-end flex-grow-1">
-  @if (auth()->user()->isFollowing($user->id))
-    <form action="{{ route('unfollow', $user) }}" class="users_profile_btn" method="POST">
+    <div class="d-flex justify-content-end flex-grow-1">
+    @if (auth()->user()->isFollowing($user->id))
+      <form action="{{ route('unfollow', $user) }}" class="users_profile_btn" method="POST">
       {{ csrf_field() }}
       {{ method_field('DELETE') }}
 
-      <button type="submit" class="btn btn-danger-profile">フォロー解除</button>
-    </form>
-  @else
-    <form action="{{ route('follow', $user) }}" method="POST">
+        <button type="submit" class="btn btn-danger-profile">フォロー解除</button>
+      </form>
+      @else
+      <form action="{{ route('follow', $user) }}" method="POST">
       {{ csrf_field() }}
 
       <button type="submit" class="btn btn-primary">フォローする</button>
-    </form>
-  @endif
-  </div>
+      </form>
+    @endif
+    </div>
   </div>
 
 
