@@ -541,7 +541,7 @@ img.follow-List {
 .follow-users-info {
     display: flex;
     align-items:center;
-    /* margin-right: 200px; */
+    justify-content: space-between;
 }
 
 .username, .date, .post {
@@ -571,6 +571,11 @@ img.follow-List {
 }
 
 
+/* アイコン・ユーザー名・つぶやき・日時位置微調整 */
+.user_info {
+    justify-content: space-between;
+}
+
 /* アイコン位置 */
 .index_1,
 .followlist_1,
@@ -581,31 +586,21 @@ img.follow-List {
 /* ユーザー名・つぶやき位置 */
 .index_2,
 .followlist_2,
-.followerlist_2 {
+.followerlist_3 {
     margin-left: 2%;
     display: flex;
     flex-direction: column;
-}
-
-/* アイコン・ユーザー名・つぶやき・日時位置微調整 */
-.user_info {
-    justify-content: space-between;
-}
-
-.index_2 {
     text-align: left;
     width: 100%;
 }
 
-.index_3 {
+/* つぶやき日時位置 */
+.index_3,
+.followlist_3,
+.followerlist_3 {
     width: 20%;
 }
 
-/* つぶやき日位置 */
-.followlist_3,
-.followerlist_3 {
-    margin-left: 75%;
-}
 
 /* 相手のユーザープロフィール */
 .btn.btn-danger-profile {
