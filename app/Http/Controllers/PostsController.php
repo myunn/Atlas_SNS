@@ -26,7 +26,7 @@ class PostsController extends Controller
         }
         // use宣言しないとどこのことかわからないから機能しないので注意！また、頭文字は大文字になるのでこそも注意！(Authとpost)
         // redirect:URLで記載する。（web.phpの"/top"表示に入りなおす指示。
-        return view('posts.index');
+        return redirect('/top');
     }
 
         public function update(Request $request){
