@@ -376,6 +376,12 @@ button {
     margin: 0 15px
 }
 
+.user_info p {
+    margin: auto;
+    margin-left: 5px;
+}
+
+
 /* 共通 */
 /* 検索ページ・フォロー・フォロワー・topページの線引き */
 #under-bar {
@@ -581,8 +587,21 @@ img.follow-List {
     flex-direction: column;
 }
 
+/* アイコン・ユーザー名・つぶやき・日時位置微調整 */
+.user_info {
+    justify-content: space-between;
+}
+
+.index_2 {
+    text-align: left;
+    width: 100%;
+}
+
+.index_3 {
+    width: 20%;
+}
+
 /* つぶやき日位置 */
-.index_3,
 .followlist_3,
 .followerlist_3 {
     margin-left: 75%;
@@ -615,11 +634,10 @@ img.follow-List {
     float: none;
     margin-bottom: 10px;
     margin-left: 10%;
+    align-items: center;
 }
 
-.users_profile_3 {
-    float: left;
-}
+
 .flex-grow-1 button{
     margin-left: 70%;
     }
