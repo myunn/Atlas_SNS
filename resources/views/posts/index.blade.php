@@ -53,7 +53,16 @@
     @foreach ($posts as $post)
       <div class="user_info">
         <div class="index_1">
+        <!-- @if($post->user->images)
           <img src="images/{{$post->user->images}}" alt="User Image">
+        @else
+          <img src="{{ Storage::url($post->user->images) }}" alt="User Image">
+        @endif -->
+          @if($post->user->images)
+            <img src="{{ Storage::url($post->user->images) }}" alt="User Image">
+          @else
+            <img src="{{ asset('public/images/($post->user->images') }}" alt="Default User Image">
+          @endif
         </div>
         <div class="index_2">
           <p class="username">{{ $post->user->username }}</p>
@@ -93,7 +102,7 @@
             <form action="/update" method="POST">
             @csrf
             <!-- @csrf:フォームの脆弱性対策コードなので、フォーム使用時に必要（ないとエラー出る） -->
-              <div class="text-post">
+              <div class="modal-text-post">
                 <input type="text" name="post" value="" class="modal_post">
                 <input type="hidden" name="post_id" value="" class="modal_id">
                 <!-- モーダルを閉じるボタン -->
