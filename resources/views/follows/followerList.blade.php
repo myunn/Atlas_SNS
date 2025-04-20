@@ -6,7 +6,13 @@
   <p class="follower-list-title">フォロワーリスト</p>
   @foreach ($following_users as $following_user)
     <div class=all_follow-users_icon>
-     <a href="/users_profile/{{$following_user->id}}"><img src="images/{{$following_user->images}}" class="follow-List"></a>
+     <a href="/users_profile/{{$following_user->id}}">
+          @if ($following_user->images!=="icon1.png")
+            <img src="{{ Storage::url($following_user->images) }}" alt="User Image">
+          @else
+            <img src="{{ asset('/images/icon1.png') }}" alt="Default User Image">
+         @endif
+      </a>
     </div>
   @endforeach
 </div>
@@ -19,7 +25,11 @@
   <div class="follow-users-all">
     <div class="follow-users-info">
       <div class="followerlist_1">
-        <img src="images/{{$following_post->user->images}}">
+        @if ($following_post->user->images!=="icon1.png")
+          <img src="{{ Storage::url($following_post->user->images) }}" alt="User Image">
+          @else
+          <img src="{{ asset('/images/icon1.png') }}" alt="Default User Image">
+        @endif
       </div>
       <div class="followerlist_2">
         <p class="username">{{ $following_post->user->username }}</p>
