@@ -4,7 +4,11 @@
 <div class="user_profile_all">
   <div class="users_profile_1">
     <!-- 相手ユーザーのアイコン・ユーザーネーム・自己紹介文・フォロー・アンフォロー機能 -->
-    <img src="/images/{{$user->images}}" alt="User Image">
+    @if ($user->images!=="icon1.png")
+      <img src="{{ Storage::url($user->images) }}" alt="User Image">
+      @else
+      <img src="{{ asset('/images/icon1.png') }}" alt="Default User Image">
+    @endif
   </div>
   <div class="users_profile_2">
     <a>ユーザー名</a>
@@ -41,7 +45,11 @@
   @foreach ($posts as $post)
   <div class="user_info">
     <div class="index_1">
-      <img src="/images/{{$post->user->images}}" alt="User Image">
+      @if ($post->user->images!=="icon1.png")
+        <img src="{{ Storage::url($post->user->images) }}" alt="User Image">
+        @else
+        <img src="{{ asset('/images/icon1.png') }}" alt="Default User Image">
+      @endif
     </div>
     <div class="index_2">
       <p class="username">{{ $post->user->username }}</p>
