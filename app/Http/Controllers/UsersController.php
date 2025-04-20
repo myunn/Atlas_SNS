@@ -107,7 +107,7 @@ class UsersController extends Controller
         // 画像がアップロードされた場合
         if ($images) {
             // 画像の保存処理（例: public/storage/images に保存）
-            $imagePath = $images->store('images');
+            $imagePath = $images->store('images', 'public');
             $user->images = $imagePath;  // 保存した画像のパスを設定
         }
 
