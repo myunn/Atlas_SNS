@@ -25,7 +25,11 @@
   @foreach($users as $user)
   <div class="user_list">
       <div class="user_info">
-        <img src="/images/{{$user->images}}">
+        @if ($user->images!=="icon1.png")
+          <img src="{{ Storage::url($user->images) }}" alt="User Image">
+          @else
+          <img src="{{ asset('/images/icon1.png') }}" alt="Default User Image">
+        @endif
         <p>{{ $user->username }}</p>
       </div>
 
