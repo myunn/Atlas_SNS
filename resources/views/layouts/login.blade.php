@@ -35,7 +35,11 @@
                         <li><a href="/profile">プロフィール編集</a></li>
                         <li><a href="/logout">ログアウト</a></li>
                     </ul>
-                    <img src="/images/{{Auth::user()->images}}">
+                    @if (!empty(Auth::user()->images))
+                        <img src="{{ Storage::url(Auth::user()->images) }}" alt="User Image">
+                    @else
+                        <img src="{{ asset('images/default-icon.png') }}" alt="Default User Image">
+                    @endif
                 </div>
             </div>
         </div>

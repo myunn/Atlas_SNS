@@ -58,16 +58,6 @@
           @else
             <img src="{{ asset('/images/icon1.png') }}" alt="Default User Image">
           @endif
-        <!-- @if($post->user->images)
-          <img src="images/{{$post->user->images}}" alt="User Image">
-        @else
-          <img src="{{ Storage::url($post->user->images) }}" alt="User Image">
-        @endif -->
-          <!-- @if($post->user->images)
-            <img src="{{ Storage::url($post->user->images) }}" alt="User Image">
-          @else
-            <img src="{{ asset('public/images/($post->user->images') }}" alt="Default User Image">
-          @endif -->
         </div>
         <div class="index_2">
           <p class="username">{{ $post->user->username }}</p>
