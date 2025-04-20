@@ -186,7 +186,7 @@ div {
 label {
     display: inline-block;
     height: 40px;
-    width: 150px;
+    width: 10%;
     vertical-align: middle;
 }
 
@@ -234,8 +234,10 @@ img {
 
 .profile_A_image {
     float: none;
-    margin: 0px -25px;
+    margin: 0px -20px;
 }
+
+
 
 /* プロフィール編集：アイコン画像挿入 */
 .custom-file-input {
